@@ -4,10 +4,16 @@
   "readme": "NativeScript Application",
   "repository": "<fill-your-repository-here>",
   "nativescript": {
-    "id": "net.pciaa.profile"
+    "id": "net.pciaa.profile",
+    "tns-ios": {
+      "version": "4.0.1"
+    }
   },
   "dependencies": {
+    "nativescript-email": "1.5.2",
     "nativescript-fingerprint-auth": "6.0.3",
+    "nativescript-iqkeyboardmanager": "1.3.0",
+    "nativescript-phone": "1.3.1",
     "nativescript-platform-css": "1.6.5",
     "nativescript-theme-core": "~1.0.4",
     "tns-core-modules": "4.0.0"

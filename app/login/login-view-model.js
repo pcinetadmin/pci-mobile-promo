@@ -40,24 +40,51 @@ function LoginViewModel() {
                         global.isPci = true;
                     }
 
-                    var congressUserPosition = global.token.toLowerCase().indexOf("congress+user");
-                    var congressExternalUserPosition = global.token.toLowerCase().indexOf("congress+external+user");
-                    var congressAdminPosition = global.token.toLowerCase().indexOf("congress+admin");
+                    var profileExecutivePosition = global.token.toLowerCase().indexOf("profile+executive");
 
-                    if (congressAdminPosition > 0)
+                    if (profileExecutivePosition > 0)
                     {
-                        global.isCongressAdmin = true;
-                    }
-                    else if (congressUserPosition > 0)
-                    {
-                        global.isCongressUser = true;
-                    }
-                    else if (congressExternalUserPosition > 0)
-                    {
-                        global.isCongressExternalUser = true;
+                        global.isProfileExecutive = true;
+                        global.isExecutive = 'Y';
                     }
 
-                    if (global.isCongressAdmin || global.isCongressUser || global.isCongressExternalUser)
+                    var profileManagerPosition = global.token.toLowerCase().indexOf("profile+manager");
+
+                    if (profileManagerPosition > 0)
+                    {
+                        global.isProfileManager = true;
+                        global.isExecutive = 'Y';
+                    }
+
+                    var profileAccountingPosition = global.token.toLowerCase().indexOf("profile+accounting");
+
+                    if (profileAccountingPosition > 0)
+                    {
+                        global.isProfileAccounting = true;
+                    }
+    
+                    var profilePublicAffairsPosition = global.token.toLowerCase().indexOf("profile+public+affairs");
+
+                    if (profilePublicAffairsPosition > 0)
+                    {
+                        global.isProfileMembership = true;
+                    }
+    
+                    var profileMembershipPosition = global.token.toLowerCase().indexOf("profile+membership");
+    
+                    if (profileMembershipPosition > 0)
+                    {
+                        global.isProfileMembership = true;
+                    }
+    
+                    var profileUserPosition = global.token.toLowerCase().indexOf("profile+user");
+    
+                    if (profileUserPosition > 0)
+                    {
+                        global.isProfileUser = true;
+                    }
+    
+                    if (global.isProfileExecutive || global.isProfileManager || global.isProfileMembership || global.isProfileUser || global.isPci)
                     {
                         var personIdPosition = token.toLowerCase().indexOf("&personid=") + 10;
                         var firstNamePosition = token.toLowerCase().indexOf("&firstname=");
@@ -68,11 +95,6 @@ function LoginViewModel() {
                         var streetAddress1Position = token.toLowerCase().indexOf("&streetaddress1=");
 
                         global.currentUser = decodeURIComponent(token.slice(fullNamePosition, streetAddress1Position)).replace("+", " ");
-
-                        var companyIdPosition = token.toLowerCase().indexOf("&companyid=") + 11;
-                        var deptIdPosition = token.toLowerCase().indexOf("&deptid=");
-
-                        global.companyId = token.slice(companyIdPosition, deptIdPosition);
 
                         const navigationEntry = {
                             moduleName: "main-page", // "home/home-page",
