@@ -7,6 +7,8 @@
     "id": "net.pciaa.profile"
   },
   "dependencies": {
+    "nativescript-fingerprint-auth": "6.0.3",
+    "nativescript-platform-css": "1.6.5",
     "nativescript-theme-core": "~1.0.4",
     "tns-core-modules": "4.0.0"
   },

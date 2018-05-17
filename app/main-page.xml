@@ -1,9 +1,2 @@
-<Page navigatingTo="onNavigatingTo" class="page"
-    xmlns="http://schemas.nativescript.org/tns.xsd" >
-    <ActionBar class="action-bar">
-        <Label class="action-bar-title" text="Home"></Label>
-    </ActionBar>
-
-    <StackLayout>
-    </StackLayout>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" backgroundSpanUnderStatusBar="true" actionBarHidden="true" navigatingTo="onNavigatingTo">
 </Page>

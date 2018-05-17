@@ -5,16 +5,494 @@ http://docs.nativescript.org/ui/styling for a full list of the CSS
 selectors and properties you can use to style UI components.
 
 /*
+For example, the following CSS rule changes the font size of all UI
+components that have the btn class name.
+*/
+ActivityIndicator {
+    color: #0a6fb0;
+}
+
+Page {
+    /* background-color: #34495e; */
+    margin-top: -20; /* fix nested frame spacing */
+}
+
+.android TextField {
+    font: 14;
+}
+
+.android .login-field {
+    margin-bottom: 0;
+    margin-left: 10;
+    margin-right: 10;
+    margin-top: 0;
+}
+
+.ios .login-field {
+    margin-bottom: 10;
+    margin-left: 10;
+    margin-right: 15;
+    margin-top: 10;
+}
+
+.android .login-field-switch {
+    margin-bottom: 5;
+    margin-left: 10;
+    margin-right: 10;
+    margin-top: 5;
+}
+
+.ios .login-field-switch {
+    margin-bottom: 5;
+    margin-left: 10;
+    margin-right: 10;
+    margin-top: 5;
+}
+
+.hr-light {
+    background-color: #e0e0e0;
+    height: 1;
+    width: 100%;
+}
+
+.hr-dark {
+    height: 1;
+    background-color: #303030;
+    width: 100%;
+}
+
+.android .button {
+    background: #eee;
+    border-color: #ccc;
+    border-radius: 3;
+    border-style: solid;
+    border-width: 1;
+    color: black;
+    font-size: 12;
+    height: 30;
+    margin-bottom: 10;
+    margin-top: 10;
+    padding: 0;
+}
+
+.ios .button {
+    background: #eee;
+    border-color: #ccc;
+    border-radius: 3;
+    border-style: solid;
+    border-width: 1;
+    color: black;
+    font-size: 18;
+    margin-bottom: 10;
+    margin-top: 10;
+    padding: 5;
+}
+
+.navigation-frame Page {
+    margin-top: 20; /* fix nested frame spacing */
+    background-color: white;
+}
+
+.tab {
+    /* padding: 10; */
+    border-top-color: #ddd;
+    border-top-width: 1;
+    background-color: #eeeeee;
+    color: #999;
+}
+
+.tab-selected {
+    color: #0a6fb0;
+}
+
+.android .tab-icon {
+    text-align: center;
+    font-size: 22;
+    font-family: fontawesome;
+    margin-bottom: 5;
+    margin-top: 5;
+}
+
+.ios .tab-icon {
+    text-align: center;
+    font-size: 22;
+    font-family: 'FontAwesome';
+    margin-bottom: 5;
+    margin-top: 5;
+}
+
+.tab-label {
+    text-align: center;
+    font-size: 10;
+    margin-bottom: 1;
+}
+
+.action-bar-title {
+    font-weight: bold;
+}
+
+.android .list-view-item {
+    font-size: 14;
+    margin-left: 10;
+    margin-right: 10;
+    min-height: 38;
+    padding-bottom: 5;
+    padding-top: 5;
+}
+
+.ios .list-view-item {
+    font-size: 16;
+    margin-left: 20;
+    margin-right: 20;
+    min-height: 44;
+    padding-bottom: 8;
+    padding-top: 8;
+}
+
+.rad-list-view-item {
+    border-bottom-color: #ddd;
+    border-bottom-width: 0.5;
+    /* color: #212121; */
+    font-size: 16;
+    margin-left: 20;
+    padding-right: 20;
+    min-height: 44;
+    padding-bottom: 8;
+    padding-top: 8;
+}
+
+.android .list-view-item-form {
+    border-bottom-color: #ddd;
+    border-bottom-width: 0.5;
+    font-size: 14;
+    margin-left: 10;
+    /* margin-right: 20; */
+    min-height: 38;
+    padding-bottom: 8;
+    padding-right: 10;
+    padding-top: 8;
+}
+
+.ios .list-view-item-form {
+    border-bottom-color: #ddd;
+    border-bottom-width: 0.5;
+    font-size: 16;
+    margin-left: 20;
+    /* margin-right: 20; */
+    min-height: 44;
+    padding-bottom: 8;
+    padding-right: 20;
+    padding-top: 8;
+}
+
+.android .list-view-item-form-bottom {
+    font-size: 14;
+    margin-left: 10;
+    min-height: 38;
+    padding-bottom: 8;
+    padding-right: 10;
+    padding-top: 8;
+}
+
+.ios .list-view-item-form-bottom {
+    font-size: 16;
+    margin-left: 20;
+    min-height: 44;
+    padding-bottom: 8;
+    padding-right: 20;
+    padding-top: 8;
+}
+
+.android .list-view-section-header {
+    background-color: #eee;
+    border-bottom-color: #ddd;
+    border-bottom-width: 0.5;
+    border-top-color: #ddd;
+    border-top-width: 0.5;
+    color: #666;
+    font-size: 10;
+    height: 30;
+    padding-bottom: 2;
+    padding-left: 10;
+    padding-right: 10;
+    padding-top: 0;
+}
+
+.ios .list-view-section-header {
+    background-color: #eee;
+    border-bottom-color: #ddd;
+    border-bottom-width: 0.5;
+    border-top-color: #ddd;
+    border-top-width: 0.5;
+    color: #666;
+    font-size: 12;
+    height: 35;
+    padding-bottom: 2;
+    padding-left: 20;
+    padding-right: 20;
+    padding-top: 0;
+}
+
+.android .list-view-section-header-no-border {
+    background-color: #eee;
+    border-top-color: #ddd;
+    border-top-width: 0.5;
+    color: #666;
+    font-size: 10;
+    height: 30;
+    padding-bottom: 2;
+    padding-left: 10;
+    padding-right: 10;
+    padding-top: 0;
+}
+
+.ios .list-view-section-header-no-border {
+    background-color: #eee;
+    border-top-color: #ddd;
+    border-top-width: 0.5;
+    color: #666;
+    font-size: 12;
+    height: 35;
+    padding-bottom: 2;
+    padding-left: 20;
+    padding-right: 20;
+    padding-top: 0;
+}
+
+.list-view-section-detail {
+    background-color: white;
+    border-top-color: #ddd;
+    border-top-width: 0.5;
+}
+
+.android .list-view-item-main-top {
+    color: black;
+    font-size: 14;
+}
+
+.ios .list-view-item-main-top {
+    font-size: 16;
+}
+
+.android .list-view-item-main {
+    font-size: 14;
+    margin-top: 3;
+}
+
+.ios .list-view-item-main {
+    font-size: 16;
+    margin-top: 3;
+}
+
+.android .list-view-item-picker {
+    color: black;
+    font-size: 14;
+    width: 100%;
+}
+
+.ios .list-view-item-picker {
+    color: black;
+    font-size: 16;
+    width: 100%;
+}
+
+.android .list-view-item-textview {
+    color: #666;
+    font-size: 14;
+}
+
+.ios .list-view-item-textview {
+    color: #666;
+    font-size: 16;
+}
+
+.android .list-view-item-left {
+    color: black;
+    font-size: 14;
+    text-align: left;
+}
+
+.ios .list-view-item-left {
+    font-size: 16;
+    text-align: left;
+}
+
+.android .list-view-item-right {
+    color: #666;
+    font-size: 14;
+    text-align: right;
+}
+
+.ios .list-view-item-right {
+    color: #666;
+    font-size: 16;
+    text-align: right;
+}
+
+.android .list-view-item-sub-email {
+    color: #0a6fb0;
+    font-size: 12;
+    margin-top: 3;
+    text-decoration: underline;
+}
+
+.ios .list-view-item-sub-email {
+    color: #0a6fb0;
+    font-size: 14;
+    margin-top: 3;
+    text-decoration: underline;
+}
+
+.android .list-view-item-sub-phone {
+    color: #0a6fb0;
+    font-size: 12;
+    margin-top: 5;
+}
+
+.ios .list-view-item-sub-phone {
+    color: #0a6fb0;
+    font-size: 14;
+    margin-top: 3;
+}
+
+.android .list-view-item-sub-title {
+    color: #666;
+    font-size: 12;
+    font-weight: bold;
+    margin-top: 3;
+}
+
+.ios .list-view-item-sub-title {
+    color: #666;
+    font-size: 14;
+    font-weight: bold;
+    margin-top: 3;
+}
+
+.android .list-view-item-sub {
+    color: #666;
+    font-size: 12;
+    margin-top: 3;
+}
+
+.ios .list-view-item-sub {
+    color: #666;
+    font-size: 14;
+    margin-top: 3;
+}
+
+.android .fn-list-view-item {
+    color: #ccc;
+    font-family: fontawesome;
+    font-size: 24;
+    margin-left: 10;
+}
+
+.ios .fn-list-view-item {
+    color: #ccc;
+    font-family: 'FontAwesome';
+    font-size: 26;
+    margin-left: 10;
+}
+
+.android .fn-list-view-item-small {
+    color: #0a6fb0;
+    font-family: fontawesome;
+    font-size: 14;
+    margin-left: 10;
+}
+
+.ios .fn-list-view-item-small {
+    color: #0a6fb0;
+    font-family: 'FontAwesome';
+    font-size: 16;
+    margin-left: 10;
+}
+
+.login-background {
+    background-color: #0a6fb0;
+}
+
+.android .scroll-view-item {
+    color: #666;
+    font-size: 14;
+    padding-left: 10;
+    padding-right: 10;
+}
+
+.ios .scroll-view-item {
+    color: #666;
+    font-size: 16;
+    padding-left: 15;
+    padding-right: 15;
+}
+
+.android .segmented-bar {
+    /* background-color: #ccc; */
+    color: #0a6fb0;
+    font-size: 10;
+    selected-background-color: #0a6fb0; /* NEEDED */
+}
+
+.ios .segmented-bar {
+    /* background-color: #ccc; */
+    color: #0a6fb0;
+    font-size: 14;
+    margin-bottom: 10;
+    margin-top: 10;
+    selected-background-color: #0a6fb0; /* NEEDED */
+}
+
+.swipe-icons {
+    color: #fff;
+    /* padding-left: 10;
+    padding-right: 10; */
+    width: 80;
+}
+
+.blue {
+    background-color: #0075be;
+}
+
+.orange {
+    background-color: #f68320;
+}
+
+.red {
+    background-color: #cc2d30;
+}
+
+/* .android .switch {
+    color: #cc2d30;
+} */
+
+.ios .switch {
+    background-color: #cc2d30;
+}
+
+/* Switch[checked=true] {
+    color: white ;
+    background-color: #0a6fb0;
+    transform: scale(1.25, 1.25);
+    transform: translate(-5, 0);
+  }
+  
+  Switch[checked=false] {
+    color: gray;
+    background-color: gray;
+  } */
+
+.view-title {
+    background-color: #0a6fb0;
+    color: white;
+    font-size: 20;
+    height: 44;
+    width: 100%;
+}
+
+/*
 In many cases you may want to use the NativeScript core theme instead
 of writing your own CSS rules. For a full list of class names in the theme
 refer to http://docs.nativescript.org/ui/theme.
 */
-@import '~nativescript-theme-core/css/core.light.css';
-
-/*
-For example, the following CSS rule changes the font size of all UI
-components that have the btn class name.
-*/
-.btn {
-    font-size: 18;
-}
+/*@import '~nativescript-theme-core/css/core.light.css';*/
