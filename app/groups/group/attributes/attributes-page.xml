@@ -1,0 +1,105 @@
+<Page navigatingTo="onNavigatingTo" class="page" xmlns="http://schemas.nativescript.org/tns.xsd" >
+    <ActionBar class="action-bar">
+        <android>
+            <NavigationButton android.systemIcon="ic_menu_back" tap="onBackTap" />
+        </android>
+    </ActionBar>
+
+    <ScrollView>
+        <GridLayout columns="*" rows="auto, *" width="100%">
+            <StackLayout row="0" col="0" verticalAlignment="center" horizontalAlignment="center" class="view-title">
+                <Label id="companyName" text="{{ companyName }}" horizontalAlignment="center" />
+            </StackLayout>
+            <StackLayout row="1" col="0">
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">
+                    <Label row="0" col="0" text="Status" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ status }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">
+                    <Label row="0" col="0" text="Joined PCI" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ companyFoundedDate }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">
+                    <Label row="0" col="0" text="Membership" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ membershipType }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">
+                    <Label row="0" col="0" text="AM Best #" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ numberedAmBest }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">
+                    <Label row="0" col="0" text="NAIC #" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ numberedNaic }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">
+                    <Label row="0" col="0" text="PCI #" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ numberedNaii }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">
+                    <Label row="0" col="0" text="State Domicile" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ domiciledState }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">
+                    <Label row="0" col="0" text="Country Domicile" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ domiciledCountry }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">
+                    <Label row="0" col="0" text="Marketing Type" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ marketingType }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">
+                    <Label row="0" col="0" text="Structure" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ structure }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form-bottom">
+                    <Label row="0" col="0" text="Affiliations" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ affiliations }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <StackLayout verticalAlignment="bottom" class="list-view-section-header">
+                    <Label text="WEB ACCESS INFORMATION" verticalAlignment="bottom" />
+                </StackLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">
+                    <Label row="0" col="0" text="Web Access" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ webAccess }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form-bottom">
+                    <Label row="0" col="0" text="Expiration Date" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ webAccessEndDate }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <StackLayout verticalAlignment="bottom" class="list-view-section-header">
+                    <Label text="PARENT/HOLDING COMPANY" verticalAlignment="bottom" />
+                </StackLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form-bottom">
+                    <Label row="0" col="0" text="Name" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ holdCompany }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <StackLayout verticalAlignment="bottom" class="list-view-section-header">
+                    <Label text="COMPANY MAPPING" verticalAlignment="bottom" />
+                </StackLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">
+                    <Label row="0" col="0" text="Name" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ mapCompany }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form-bottom">
+                    <Label row="0" col="0" text="Auto Selection" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ autoCoSelect }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <StackLayout verticalAlignment="bottom" class="list-view-section-header">
+                    <Label text="INCLUDE COMPANY IN PROFILE?" verticalAlignment="bottom" />
+                </StackLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">
+                    <Label row="0" col="0" text="Included" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ inclinProfile }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">
+                    <Label row="0" col="0" text="Date Removed" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ compRemovedDate }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form-bottom">
+                    <Label row="0" col="0" text="" class="list-view-item-left" />
+                    <Label row="0" col="1" text="" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+            </StackLayout>
+        </GridLayout>
+    </ScrollView>
+</Page>

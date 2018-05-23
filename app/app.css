@@ -17,6 +17,10 @@ Page {
     margin-top: -20; /* fix nested frame spacing */
 }
 
+.ios .page {
+    margin-top: 0;
+}
+
 .android TextField {
     font: 14;
 }

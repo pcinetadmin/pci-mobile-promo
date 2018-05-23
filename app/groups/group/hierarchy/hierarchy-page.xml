@@ -1,0 +1,29 @@
+<Page navigatingTo="onNavigatingTo" class="page" xmlns="http://schemas.nativescript.org/tns.xsd" >
+    <ActionBar class="action-bar">
+        <android>
+            <NavigationButton android.systemIcon="ic_menu_back" tap="onBackTap" />
+        </android>
+    </ActionBar>
+
+    <GridLayout columns="*" rows="auto, *" height="100%" width="100%">
+        <StackLayout row="0" col="0" verticalAlignment="center" horizontalAlignment="center" class="view-title">
+            <Label id="companyName" text="" verticalAlignment="center" horizontalAlignment="center" />
+        </StackLayout>
+        <StackLayout row="1" col="0" verticalAlignment="top">
+            <ListView items="{{ hierarchyList }}" height="100%">
+                <ListView.itemTemplate>
+                    <StackLayout>
+                        <GridLayout columns="*, auto" rows="*" class="list-view-item">
+                            <StackLayout row="0" col="0" verticalAlignment="middle">
+                                <Label text="{{ companyName }}" textWrap="true" style="{{ subGroupFlag === 'N' ? 'margin-left: 30;' : subGroupFlag === 'Y' ? 'margin-left: 15;' : 'margin-left: 0;' }}" class="list-view-item-main-top" />
+                                <Label text="{{ membershipType }}" style="{{ subGroupFlag === 'N' ? 'margin-left: 30;' : subGroupFlag === 'Y' ? 'margin-left: 15;' : 'margin-left: 0;' }}" class="list-view-item-sub" />
+                            </StackLayout>
+                            <Label row="0" col="1" text="&#xf105;" class="fn-list-view-item" verticalAlignment="middle" />
+                        </GridLayout>
+                    </StackLayout>
+                </ListView.itemTemplate>
+            </ListView>
+        </StackLayout>
+        <ActivityIndicator busy="{{ isLoading }}" android:height="25%" android:width="25%" ios.activityIndicatorViewStyle="whiteLarge" rowSpan="2" colSpan="1" />
+    </GridLayout>
+</Page>

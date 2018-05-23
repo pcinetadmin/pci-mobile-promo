@@ -32,7 +32,7 @@ function onNavigatingTo(args) {
     try {
         page = args.object;
         
-        page.actionBar.title = "Group";
+        page.actionBar.title = "Groups";
 
         if (groupsSearchText !== "") {
             var searchBar = page.getViewById("searchBar");

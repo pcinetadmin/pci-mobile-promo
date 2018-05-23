@@ -17,6 +17,21 @@ function GroupsViewModel(items) {
 
             data.forEach(function(group) {
                 if (group.CompanyId !== null && group.CompanyId !== 0) {
+                    var autoCoSelect;
+                    var inclinProfile;
+
+                    if (group.AutoCoSelect === "Y") {
+                        autoCoSelect = "Yes";
+                    } else {
+                        autoCoSelect = "No";
+                    }
+
+                    if (group.InclinProfile === "Y") {
+                        inclinProfile = "Yes";
+                    } else {
+                        inclinProfile = "No";
+                    }
+
                     viewModel.push({
                         companyId: group.CompanyId,
                         companyName: group.CompanyName,
@@ -27,11 +42,11 @@ function GroupsViewModel(items) {
                         holdCompany: group.HoldCompany,
                         mapCompanyId: group.MapCompanyId,
                         mapCompany: group.MapCompany,
-                        autoCoSelect: group.AutoCoSelect,
-                        inclinProfile: group.InclinProfile,
+                        autoCoSelect: autoCoSelect,
+                        inclinProfile: inclinProfile,
                         compRemovedDate: group.CompRemovedDate,
                         numberedAmBest: group.NumberedAmBest,
-                        numberedNaic: group.NumberedNaic,
+                        numberedNaic: group.NumberedNaic.toUpperCase(),
                         numberedNaii: group.NumberedNaii,
                         statusCode: group.StatusCode,
                         status: group.Status,

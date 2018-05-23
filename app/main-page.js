@@ -12,10 +12,10 @@ function onNavigatingTo(args) {
     page._tabs = [];
 
     page.tabItems = [
-        { path: "groups/groups-page", iconCode: "\uf0e8", label: "Group" },
-        { path: "companies/companies-page", iconCode: "\uf0b1", label: "Company" },
-        { path: "persons/persons-page", iconCode: "\uf007", label: "Person" },
-        { path: "committees/committees-page", iconCode: "\uf0c0", label: "Committee" }
+        { path: "groups/groups-page", iconCode: "\uf0e8", label: "Groups" },
+        { path: "companies/companies-page", iconCode: "\uf0b1", label: "Companies" },
+        { path: "persons/persons-page", iconCode: "\uf007", label: "People" },
+        { path: "committees/committees-page", iconCode: "\uf0c0", label: "Committees" }
     ];
 
     var numItems = page.tabItems.length;
