@@ -1,4 +1,4 @@
-const GroupsViewModel = require("./groups-view-model");
+const CompanyGroupsViewModel = require("./companygroups-view-model");
 const platform = require("platform");
 const ObservableModule = require("data/observable");
 var gestures = require("ui/gestures");
@@ -16,39 +16,61 @@ var isScrolling = false;
 var isSwiping = false;
 
 var page;
+var navigationContext;
 var searchBar;
-var groupsPageSize = 25;
-var groupsSearchText = "";
-var groupsSearchSubmitted = false;
+var companyGroupsPageSize = 25;
+var companyGroupsSearchText = "";
+var companyGroupsSearchSubmitted = false;
+var isGroup;
+var memberOnly = "Y";
 
-var groupsList = new GroupsViewModel([]);
+var companyGroupsList = new CompanyGroupsViewModel([]);
 
 var pageData = new ObservableModule.fromObject({
-    groupsList: groupsList,
+    companyGroupsList: companyGroupsList,
+    isGroup: isGroup,
     isLoading: false
 });
 
 function onNavigatingTo(args) {
     try {
         page = args.object;
-        
-        page.actionBar.title = "Groups";
+        navigationContext = page.navigationContext;
 
-        if (groupsSearchText !== "") {
+        isGroup = navigationContext.isGroup;
+        
+        if (isGroup === "Y") {
+            page.actionBar.title = "Groups";
+
+            companyGroupsSearchText = global.companyGroupsSearchText;
+        } else {
+            page.actionBar.title = "Companies";
+
+            companyGroupsSearchText = global.companyGroupsSearchTextCompany;
+        }
+        
+        if (companyGroupsSearchText !== "") {
             var searchBar = page.getViewById("searchBar");
 
-            searchBar.text = groupsSearchText;
+            searchBar.text = companyGroupsSearchText;
+
+            companyGroupsSearchSubmitted = true;
         }
         
-        if (groupsList.length === 0) {
-            pageData.set("isLoading", true);
+        pageData.isGroup = isGroup;
+        
+        // Since the Page contains a SegmentedBar,
+        // the selectedIndexChanged event will perform the initial load of the ListView.
 
-            groupsList.load(groupsSearchText, 1, groupsPageSize).then(function () {
-                pageData.set("isLoading", false);
-            });
-        }
+        // if (companyGroupsList.length === 0) {
+        //     pageData.set("isLoading", true);
 
-        page.bindingContext = pageData;
+        //     companyGroupsList.load(companyGroupsSearchText, 1, companyGroupsPageSize, isGroup, memberOnly).then(function () {
+        //         pageData.set("isLoading", false);
+        //     });
+        // }
+
+        // page.bindingContext = pageData;
     }
     catch(e)
     {
@@ -86,16 +108,22 @@ function onSubmit(args) {
     try {
         searchBar = args.object;
 
-        groupsSearchText = searchBar.text.trim();
+        if (isGroup === "Y") {
+            global.companyGroupsSearchText = searchBar.text.trim();
+        } else {
+            global.companyGroupsSearchTextCompany = searchBar.text.trim();
+        }
 
-        groupsList.empty();
+        companyGroupsSearchText = searchBar.text.trim();
+
+        companyGroupsList.empty();
         
         pageData.set("isLoading", true);
 
-        groupsList.load(groupsSearchText, 1, groupsPageSize).then(function (){
+        companyGroupsList.load(companyGroupsSearchText, 1, companyGroupsPageSize, isGroup, memberOnly).then(function (){
             pageData.set("isLoading", false);
 
-            groupsSearchSubmitted = true;
+            companyGroupsSearchSubmitted = true;
         
             searchBar.dismissSoftInput();
         });
@@ -113,21 +141,61 @@ function onSubmit(args) {
 function onClear(args) {
     try {
         searchBar.text = "";
-        groupsSearchText = "";
+        companyGroupsSearchText = "";
 
-        if (groupsSearchSubmitted) {
-            groupsList.empty();
+        if (isGroup === "Y") {
+            global.companyGroupsSearchText = "";
+        } else {
+            global.companyGroupsSearchTextCompany = "";
+        }
+
+        if (companyGroupsSearchSubmitted) {
+            companyGroupsList.empty();
             
             pageData.set("isLoading", true);
 
-            groupsList.load(groupsSearchText, 1, groupsPageSize).then(function (){
+            companyGroupsList.load(companyGroupsSearchText, 1, companyGroupsPageSize, isGroup, memberOnly).then(function (){
                 pageData.set("isLoading", false);
 
-                groupsSearchSubmitted = false;
+                companyGroupsSearchSubmitted = false;
             
                 searchBar.dismissSoftInput();
             });
         }
+    }
+    catch(e)
+    {
+        dialogs.alert({
+            title: "Error",
+            message: e.toString(),
+            okButtonText: "OK"
+        });
+    }
+}
+
+function onSelectedIndexChanged(args) {
+    try {
+        var selectedIndex = args.newIndex;
+
+        if (selectedIndex === 0) {
+            memberOnly = "Y";
+        } else {
+            memberOnly = "N";
+        }
+
+        companyGroupsList.empty();
+        
+        pageData.set("isLoading", true);
+
+        companyGroupsList.load(companyGroupsSearchText, 1, companyGroupsPageSize, isGroup, memberOnly).then(function (){
+            pageData.set("isLoading", false);
+
+            companyGroupsSearchSubmitted = true;
+        
+            searchBar.dismissSoftInput();
+        });
+
+        page.bindingContext = pageData;
     }
     catch(e)
     {
@@ -171,8 +239,10 @@ function onItemTap(args) {
                 var view = args.view;
                 var model = view.bindingContext;
 
+                model.isGroup = isGroup;
+
                 const navigationEntry = {
-                    moduleName: "groups/group/group-page",
+                    moduleName: "companygroups/companygroup/companygroup-page",
                     context: model,
                     clearHistory: false
                 };
@@ -193,18 +263,18 @@ function onItemTap(args) {
 
 function onLoadMoreItems(args) {
     try {
-        var groupsListCount = groupsList.length;
-        var groupsPageNumber = Math.ceil(groupsListCount / groupsPageSize) + 1;
-        var groupsRemainder = groupsListCount % groupsPageSize;
+        var companyGroupsListCount = companyGroupsList.length;
+        var companyGroupsPageNumber = Math.ceil(companyGroupsListCount / companyGroupsPageSize) + 1;
+        var companyGroupsRemainder = companyGroupsListCount % companyGroupsPageSize;
 
-        if (groupsRemainder !== 0 && groupsRemainder < groupsPageSize)
+        if (companyGroupsRemainder !== 0 && companyGroupsRemainder < companyGroupsPageSize)
         {
             return;
         }
 
         pageData.set("isLoading", true);
 
-        groupsList.load(groupsSearchText, groupsPageNumber, groupsPageSize).then(function (){
+        companyGroupsList.load(companyGroupsSearchText, companyGroupsPageNumber, companyGroupsPageSize, isGroup, memberOnly).then(function (){
             pageData.set("isLoading", false);
         });
     } catch(e) {
@@ -323,12 +393,12 @@ function onLayoutLoaded(args) {
                     isScrolling = false;
                 }
             } else if (isSwiping) {
-                var groupsListView = page.getViewById("groupsListView");
+                var companyGroupsListView = page.getViewById("companyGroupsListView");
 
                 if (platform.isAndroid) {
-                    groupsListView.nativeView.requestDisallowInterceptTouchEvent(true);
+                    companyGroupsListView.nativeView.requestDisallowInterceptTouchEvent(true);
                 } else if (platform.isIOS) {
-                    groupsListView.ios.scrollEnabled = false;
+                    companyGroupsListView.ios.scrollEnabled = false;
                 }
 
                 swipeOpen = true;
@@ -357,9 +427,9 @@ function onLayoutLoaded(args) {
                     });
 
                     if (platform.isAndroid) {
-                        groupsListView.nativeView.requestDisallowInterceptTouchEvent(false);
+                        companyGroupsListView.nativeView.requestDisallowInterceptTouchEvent(false);
                     } else if (platform.isIOS) {
-                        groupsListView.ios.scrollEnabled = true;
+                        companyGroupsListView.ios.scrollEnabled = true;
                     }
 
                     isSwiping = false;
@@ -379,6 +449,7 @@ exports.onNavigatingTo = onNavigatingTo;
 exports.onSearchBarLoaded = onSearchBarLoaded;
 exports.onSubmit = onSubmit;
 exports.onClear = onClear;
+exports.onSelectedIndexChanged = onSelectedIndexChanged;
 exports.onItemLoading = onItemLoading;
 exports.onItemTap = onItemTap;
 exports.onLoadMoreItems = onLoadMoreItems;

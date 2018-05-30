@@ -1,29 +1,30 @@
-const GroupViewModel = require("./group-view-model");
+const PersonViewModel = require("./person-view-model");
 const observableModule = require("data/observable");
 var frameModule = require("ui/frame");
 var dialogs = require("ui/dialogs");
 var page;
 var navigationContext;
+var isGroup;
 
-var groupList = new GroupViewModel([]);
+var personList = new PersonViewModel([]);
 
 var pageData = new observableModule.fromObject({
-    groupList: groupList,
+    personList: personList,
     isLoading: false
 });
 
 function onNavigatingTo(args) {
     page = args.object;
-
-    page.actionBar.title = "Group";
-
     navigationContext = page.navigationContext;
-    var companyName = page.getViewById("companyName");
-    
-    companyName.text = navigationContext.companyName;
 
-    groupList.empty();
-    groupList.load();
+    page.actionBar.title = "Person";
+    
+    var fullName = page.getViewById("fullName");
+    
+    fullName.text = navigationContext.fullName;
+
+    personList.empty();
+    personList.load();
 
     page.bindingContext = pageData;
 }
@@ -41,10 +42,8 @@ function onItemTap(args)
     try
     {
         var index = args.index;
-        var item = groupList.getItem(index);
-
-        navigationContext.referer = "group";
-
+        var item = personList.getItem(index);
+        
         const navigationEntry = {
             moduleName: item.navigateTo,
             context: navigationContext,

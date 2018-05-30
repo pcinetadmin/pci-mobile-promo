@@ -12,10 +12,10 @@ function onNavigatingTo(args) {
     page._tabs = [];
 
     page.tabItems = [
-        { path: "groups/groups-page", iconCode: "\uf0e8", label: "Groups" },
-        { path: "companies/companies-page", iconCode: "\uf0b1", label: "Companies" },
-        { path: "persons/persons-page", iconCode: "\uf007", label: "People" },
-        { path: "committees/committees-page", iconCode: "\uf0c0", label: "Committees" }
+        { path: "companygroups/companygroups-page", iconCode: "\uf0e8", label: "Groups", isGroup: "Y" },
+        { path: "companygroups/companygroups-page", iconCode: "\uf0b1", label: "Companies", isGroup: "N" },
+        { path: "people/people-page", iconCode: "\uf007", label: "People", isGroup: "N" },
+        { path: "committees/committees-page", iconCode: "\uf0c0", label: "Committees", isGroup: "N" }
     ];
 
     var numItems = page.tabItems.length;
@@ -107,7 +107,16 @@ function onNavigatingTo(args) {
     application.getResources().dateConverter = dateConverter;
     application.getResources().dateFormat = "MM/DD/YYYY";
 
-    page.navFrame.navigate(page.tabItems[0].path);
+    var navigationEntry = {
+        moduleName: page.tabItems[0].path,
+        context: {
+            reference: "tab",
+            isGroup: page.tabItems[0].isGroup
+        },
+        clearHistory: true
+    }
+
+    page.navFrame.navigate(navigationEntry);
 }
 
 function onTabSelected(args) {
@@ -116,7 +125,7 @@ function onTabSelected(args) {
 
     if (selectedTab.className.indexOf("tab-selected") > -1) {
         var currentFrame = page.getViewById("navigation-frame");
-        //dialogs.alert(currentFrame.currentPage.actionBar.title);
+        
         if (page.tabItems[index].label === currentFrame.currentPage.actionBar.title) {
             return;
         }
@@ -135,7 +144,8 @@ function showTab(tabItem) {
     var navigationEntry = {
         moduleName: tabItem.path,
         context: {
-            reference: "tab"
+            reference: "tab",
+            isGroup: tabItem.isGroup
         },
         clearHistory: true
     }

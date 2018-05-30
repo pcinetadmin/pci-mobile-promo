@@ -34,6 +34,11 @@ global.isProfileAccounting = false;
 global.isProfileMembership = false;
 global.isProfileUser = false;
 global.isExecutive = false;
+global.companyGroupsSearchText = "";
+global.companyGroupsSearchTextCompany = "";
+global.peopleSearchText = "";
+global.peopleSearchTextCompany = "";
+global.peopleSearchTextGroup = "";
 
 application.start({ moduleName: "login/login-page" });
 

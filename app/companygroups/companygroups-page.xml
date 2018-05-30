@@ -1,18 +1,26 @@
 <Page navigatingTo="onNavigatingTo" class="page" xmlns="http://schemas.nativescript.org/tns.xsd" >
     <ActionBar class="action-bar" />
     
-    <GridLayout columns="*" rows="auto, *" height="100%" width="100%">
+    <GridLayout columns="*" rows="auto, auto, *" height="100%" width="100%">
         <StackLayout row="0" col="0" verticalAlignment="center" horizontalAlignment="center" direction="horizontal">
             <SearchBar row="0" col="0" id="searchBar" hint="Search" text="" loaded="onSearchBarLoaded" submit="onSubmit" clear="onClear" />
         </StackLayout>
-        <StackLayout row="1" col="0" verticalAlignment="top">
-            <ListView id="groupsListView" items="{{ groupsList }}" itemLoading="onItemLoading" itemTap="onItemTap" loadMoreItems="onLoadMoreItems" height="100%">
+        <StackLayout row="1" col="0" verticalAlignment="center" horizontalAlignment="center" visibility="{{ isGroup === 'Y' ? 'collapse' : 'visible' }}">
+            <SegmentedBar class="segmented-bar" selectedIndexChanged="onSelectedIndexChanged">
+                <SegmentedBar.items>
+                    <SegmentedBarItem title="Member Companies" />
+                    <SegmentedBarItem title="All Companies" />
+                </SegmentedBar.items>
+            </SegmentedBar>
+        </StackLayout>
+        <StackLayout row="2" col="0" verticalAlignment="top">
+            <ListView id="companyGroupsListView" items="{{ companyGroupsList }}" itemLoading="onItemLoading" itemTap="onItemTap" loadMoreItems="onLoadMoreItems" height="100%">
                 <ListView.itemTemplate>
                     <AbsoluteLayout>
                         <!-- BACKGROUND: Swipe Actions -->
                         <GridLayout columns="*, 80" android:rows="48" ios:rows="55" width="100%">
                             <Label col="0" />
-                            <GridLayout col="1" columns="*" rows="*, auto, auto, *" tap="onRemarkClick" class="swipe-icons blue">
+                            <GridLayout col="1" columns="*" rows="*, auto, auto, *" tap="onRemarkClick" class="swipe-icons green">
                                 <Label row="0" col="0" text="" />
                                 <Label row="1" col="0" text="&#xf075;" class="tab-icon" />
                                 <Label row="2" col="0" text="Remark" class="tab-label" />
@@ -33,6 +41,6 @@
                 </ListView.itemTemplate>
             </ListView>
         </StackLayout>
-        <ActivityIndicator busy="{{ isLoading }}" android:height="25%" android:width="25%" ios.activityIndicatorViewStyle="whiteLarge" rowSpan="2" colSpan="1" />
+        <ActivityIndicator busy="{{ isLoading }}" android:height="25%" android:width="25%" ios.activityIndicatorViewStyle="whiteLarge" rowSpan="3" colSpan="1" />
     </GridLayout>
 </Page>

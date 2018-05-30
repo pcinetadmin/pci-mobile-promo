@@ -1,0 +1,54 @@
+<Page navigatingTo="onNavigatingTo" class="page" xmlns="http://schemas.nativescript.org/tns.xsd" >
+    <ActionBar class="action-bar" />
+    
+    <GridLayout columns="*" rows="auto, auto, *" height="100%" width="100%">
+        <StackLayout row="0" col="0" verticalAlignment="center" horizontalAlignment="center" direction="horizontal">
+            <SearchBar row="0" col="0" id="searchBar" hint="Search" text="" loaded="onSearchBarLoaded" submit="onSubmit" clear="onClear" />
+        </StackLayout>
+        <StackLayout row="1" col="0" verticalAlignment="center" horizontalAlignment="center" class="view-title" visibility="{{ companyId === 0 ? 'collapse' : 'visible' }}">
+            <Label id="companyName" text="" verticalAlignment="center" horizontalAlignment="center" />
+        </StackLayout>
+        <StackLayout row="2" col="0" verticalAlignment="top">
+            <ListView id="peopleListView" items="{{ peopleList }}" itemLoading="onItemLoading" itemTap="onItemTap" loadMoreItems="onLoadMoreItems" height="100%">
+                <ListView.itemTemplate>
+                    <AbsoluteLayout>
+                        <!-- BACKGROUND: Swipe Actions -->
+                        <GridLayout columns="80, 80, *, 80" rows="74" width="100%">
+                            <GridLayout col="0" columns="*" rows="*, auto, auto, *" tap="onPhoneClick" class="swipe-icons orange">
+                                <Label row="0" col="0" text="" />
+                                <Label row="1" col="0" text="&#xf095;" class="tab-icon" />
+                                <Label row="2" col="0" text="Phone" class="tab-label" />
+                                <Label row="3" col="0" text="" />
+                            </GridLayout>
+                            <GridLayout col="1" columns="*" rows="*, auto, auto, *" tap="onEmailClick" class="swipe-icons blue">
+                                <Label row="0" col="0" text="" />
+                                <Label row="1" col="0" text="&#xf0e0;" class="tab-icon" />
+                                <Label row="2" col="0" text="Email" class="tab-label" />
+                                <Label row="3" col="0" text="" />
+                            </GridLayout>
+                            <Label col="2" />
+                            <GridLayout col="3" columns="*" rows="*, auto, auto, *" tap="onRemarkClick" class="swipe-icons green">
+                                <Label row="0" col="0" text="" />
+                                <Label row="1" col="0" text="&#xf075;" class="tab-icon" />
+                                <Label row="2" col="0" text="Remark" class="tab-label" />
+                                <Label row="3" col="0" text="" />
+                            </GridLayout>
+                        </GridLayout>
+                        <!-- FOREGROUND: List View Item Details -->
+                        <StackLayout loaded="onLayoutLoaded" backgroundColor="white" width="100%">
+                            <GridLayout columns="*, auto" rows="*" class="list-view-item" height="74">
+                                <StackLayout row="0" col="0" verticalAlignment="middle">
+                                    <Label text="{{ fullName }}" class="list-view-item-main-top" />
+                                    <Label text="{{ title }}" textWrap="true" class="list-view-item-sub" />
+                                    <Label text="{{ companyName }}" textWrap="true" class="list-view-item-sub" />
+                                </StackLayout>
+                                <Label row="0" col="1" text="&#xf105;" class="fn-list-view-item" verticalAlignment="middle" />
+                            </GridLayout>
+                        </StackLayout>
+                    </AbsoluteLayout>
+                </ListView.itemTemplate>
+            </ListView>
+        </StackLayout>
+        <ActivityIndicator busy="{{ isLoading }}" android:height="25%" android:width="25%" ios.activityIndicatorViewStyle="whiteLarge" rowSpan="3" colSpan="1" />
+    </GridLayout>
+</Page>

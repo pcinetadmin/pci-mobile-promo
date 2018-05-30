@@ -7,10 +7,10 @@
 
     <GridLayout columns="*" rows="auto, *" height="100%" width="100%">
         <StackLayout row="0" col="0" verticalAlignment="center" horizontalAlignment="center" class="view-title">
-            <Label id="companyName" text="" verticalAlignment="center" horizontalAlignment="center" />
+            <Label id="fullName" text="" verticalAlignment="center" horizontalAlignment="center" />
         </StackLayout>
         <StackLayout row="1" col="0" verticalAlignment="top" width="100%">
-            <ListView items="{{ groupList }}" itemTap="onItemTap" height="100%">
+            <ListView items="{{ personList }}" itemTap="onItemTap" height="100%">
                 <ListView.itemTemplate>
                     <StackLayout>
                         <GridLayout columns="*, auto" rows="*" class="list-view-item">
