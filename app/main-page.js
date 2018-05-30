@@ -15,7 +15,7 @@ function onNavigatingTo(args) {
         { path: "companygroups/companygroups-page", iconCode: "\uf0e8", label: "Groups", isGroup: "Y" },
         { path: "companygroups/companygroups-page", iconCode: "\uf0b1", label: "Companies", isGroup: "N" },
         { path: "people/people-page", iconCode: "\uf007", label: "People", isGroup: "N" },
-        { path: "committees/committees-page", iconCode: "\uf0c0", label: "Committees", isGroup: "N" }
+        { path: "committeetypes/committeetypes-page", iconCode: "\uf0c0", label: "Committees", isGroup: "N" }
     ];
 
     var numItems = page.tabItems.length;

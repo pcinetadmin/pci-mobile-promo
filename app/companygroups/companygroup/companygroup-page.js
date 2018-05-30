@@ -2,6 +2,7 @@ const CompanyGroupViewModel = require("./companygroup-view-model");
 const observableModule = require("data/observable");
 var frameModule = require("ui/frame");
 var dialogs = require("ui/dialogs");
+
 var page;
 var navigationContext;
 var isGroup;
