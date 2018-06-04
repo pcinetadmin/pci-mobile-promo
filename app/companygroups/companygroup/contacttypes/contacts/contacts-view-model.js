@@ -15,7 +15,15 @@ function ContactsViewModel(items) {
             var result = response.content.toString();
             var data = JSON.parse(result);
 
+            var prevCompanyName = "";
+
             data.forEach(function(person) {
+                var showCompanyHeader = false;
+
+                if (prevCompanyName !== person.CompanyName) {
+                    showCompanyHeader = true;
+                }
+
                 viewModel.push({
                     personId: person.PersonId,
                     prefix: person.Prefix,
@@ -83,8 +91,12 @@ function ContactsViewModel(items) {
                     contactCode: person.ContactCode,
                     contactType: person.ContactType,
                     primaryRep: person.PrimaryRep,
-                    sortOrder: person.SortOrder
+                    sortOrder: person.SortOrder,
+                    isGroup: isGroup,
+                    showCompanyHeader: showCompanyHeader
                 });
+
+                prevCompanyName = person.CompanyName;
             });
         }, function (e) {
             dialogs.alert({

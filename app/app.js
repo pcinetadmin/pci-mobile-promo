@@ -39,6 +39,9 @@ global.companyGroupsSearchTextCompany = "";
 global.peopleSearchText = "";
 global.peopleSearchTextCompany = "";
 global.peopleSearchTextGroup = "";
+global.remarksSearchText = "";
+global.remarksSearchTextCompany = "";
+global.remarksSearchTextGroup = "";
 
 application.start({ moduleName: "login/login-page" });
 

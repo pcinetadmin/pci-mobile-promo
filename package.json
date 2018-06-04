@@ -1,4 +1,6 @@
 {
+  "name": "promo",
+  "version": "2.0.0",
   "description": "NativeScript Application",
   "license": "SEE LICENSE IN <your-license-filename>",
   "readme": "NativeScript Application",
@@ -6,7 +8,10 @@
   "nativescript": {
     "id": "net.pciaa.profile",
     "tns-ios": {
-      "version": "4.0.1"
+      "version": "3.4.1"
+    },
+    "tns-android": {
+      "version": "3.4.0"
     }
   },
   "dependencies": {

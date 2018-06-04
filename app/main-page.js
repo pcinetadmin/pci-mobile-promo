@@ -24,26 +24,27 @@ function onNavigatingTo(args) {
 
     newGrid.id = "tab-navigation";
 
-    var star = new gridLayout.ItemSpec(1, "star");
-    var auto = new gridLayout.ItemSpec(1, "auto");
-
     newGrid.addRow(new gridLayout.ItemSpec(1, "star"));
     newGrid.addRow(new gridLayout.ItemSpec(1, "auto"));
     
     for (var i = 0; i < numItems; i++) {
         newGrid.addColumn(new gridLayout.ItemSpec(1, "star"));
     }
+
+    var frameHolder = new stackLayout.StackLayout();
     
     page.navFrame = new frame.Frame();
 
     page.navFrame.id = "navigation-frame";
     page.navFrame.className = "navigation-frame";
 
-    newGrid.addChild(page.navFrame);
+    frameHolder.addChild(page.navFrame);
 
-    gridLayout.GridLayout.setColumn(page.navFrame, 0);
-    gridLayout.GridLayout.setRow(page.navFrame, 0);
-    gridLayout.GridLayout.setColumnSpan(page.navFrame, numItems);
+    newGrid.addChild(frameHolder);
+
+    gridLayout.GridLayout.setColumn(frameHolder, 0);
+    gridLayout.GridLayout.setRow(frameHolder, 0);
+    gridLayout.GridLayout.setColumnSpan(frameHolder, numItems);
 
     for (var i = 0; i < numItems; i++) {
         var currentItem = page.tabItems[i];
@@ -85,8 +86,6 @@ function onNavigatingTo(args) {
     }
 
     page.content = newGrid;
-
-    // page.navFrame.navigate(page.tabItems[0].path);
 
     const dateConverter = (value, format) => {
         let result = format;

@@ -20,17 +20,17 @@ function onNavigatingTo(args) {
         page = args.object;
         navigationContext = page.navigationContext;
 
+        isGroup = navigationContext.isGroup;
+
+        page.actionBar.title = navigationContext.contactType;
+    
+        var companyName = page.getViewById("companyName");
+        
+        companyName.text = navigationContext.companyName;
+
         if (args.isBackNavigation) {
             // Do Nothing on Back Navigation
         } else {
-            isGroup = navigationContext.isGroup;
-
-            page.actionBar.title = navigationContext.contactType;
-        
-            var companyName = page.getViewById("companyName");
-            
-            companyName.text = navigationContext.companyName;
-            
             contactsList.empty();
 
             pageData.set("isLoading", true);

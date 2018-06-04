@@ -10,16 +10,23 @@
             <Label id="companyName" text="" verticalAlignment="center" horizontalAlignment="center" />
         </StackLayout>
         <StackLayout row="1" col="0" verticalAlignment="top">
-            <ListView items="{{ contactsList }}" itemTap="onItemTap" height="100%">
+            <ListView items="{{ contactsList }}" itemTap="onItemTap" height="100%" separatorColor="transparent">
                 <ListView.itemTemplate>
                     <StackLayout backgroundColor="white" width="100%">
+                        <StackLayout class="list-view-item-header" visibility="{{ isGroup === 'Y' && showCompanyHeader ? 'visible' : 'collapse' }}">
+                            <Label text="{{ companyName }}" textWrap="true" />
+                        </StackLayout>
+                        <StackLayout class="list-view-item-header-separator" visibility="{{ showCompanyHeader ? 'collapse' : 'visible' }}"></StackLayout>
                         <GridLayout columns="*, auto" rows="*" class="list-view-item">
                             <StackLayout row="0" col="0" verticalAlignment="middle">
-                                <Label text="{{ fullName }}" textWrap="true" class="list-view-item-main-top" />
+                                <StackLayout orientation="horizontal">
+                                    <Label text="{{ fullName }}" textWrap="true" class="list-view-item-main-top" />
+                                    <Label text="&#xf005;" class="fn-list-view-item-small" verticalAlignment="middle" visibility="{{ primaryRep === '1' ? 'visible' : 'collapse' }}" />
+                                </StackLayout>
                                 <Label text="{{ title }}" textWrap="true" class="list-view-item-sub" />
-                                <Label text="{{ personCompany }}" textWrap="true" class="list-view-item-sub" />
-                                <Label text="{{ workPhone }}" class="list-view-item-sub" />
-                                <Label text="{{ emailAddress }}" class="list-view-item-sub" />
+                                <Label text="{{ personCompany }}" textWrap="true" class="list-view-item-sub" visibility="{{ personCompany !== companyName ? 'visible' : 'collapse' }}" />
+                                <Label text="{{ workPhone }}" class="list-view-item-sub" visibility="{{ workPhone.length === 0 ? 'collapse' : 'visible' }}" />
+                                <Label text="{{ emailAddress }}" class="list-view-item-sub" visibility="{{ emailAddress.length === 0 ? 'collapse' : 'visible' }}" />
                             </StackLayout>
                             <Label row="0" col="1" text="&#xf105;" class="fn-list-view-item" verticalAlignment="middle" />
                         </GridLayout>

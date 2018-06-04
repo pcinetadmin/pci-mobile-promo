@@ -1,4 +1,4 @@
-const CommitteesViewModel = require("./committees-view-model");
+const RemarkTypesViewModel = require("./remarktypes-view-model");
 const platform = require("platform");
 const ObservableModule = require("data/observable");
 var frameModule = require("ui/frame");
@@ -6,11 +6,12 @@ var dialogs = require("ui/dialogs");
 
 var page;
 var navigationContext;
+var isGroup;
 
-var committeesList = new CommitteesViewModel([]);
+var remarkTypesList = new RemarkTypesViewModel([]);
 
 var pageData = new ObservableModule.fromObject({
-    committeesList: committeesList,
+    remarkTypesList: remarkTypesList,
     isLoading: false
 });
 
@@ -19,25 +20,27 @@ function onNavigatingTo(args) {
         page = args.object;
         navigationContext = page.navigationContext;
 
-        page.actionBar.title = "Committees";
-    
-        var committeeType = page.getViewById("committeeType");
-        
-        committeeType.text = navigationContext.committeeType;
-        
-        if (args.isBackNavigation) {
-            // Do Nothing on Back Navigation
+        isGroup = navigationContext.isGroup;
+            
+        if (isGroup === "Y") {
+            page.actionBar.title = "Group Remarks";
         } else {
-            committeesList.empty();
-
-            pageData.set("isLoading", true);
-
-            committeesList.load(navigationContext.committeeListCode, navigationContext.committeeTypeCode).then(function () {
-                pageData.set("isLoading", false);
-            });
-
-            page.bindingContext = pageData;
+            page.actionBar.title = "Company Remarks";
         }
+    
+        var companyName = page.getViewById("companyName");
+        
+        companyName.text = navigationContext.companyName;
+
+        remarkTypesList.empty();
+
+        pageData.set("isLoading", true);
+
+        remarkTypesList.load(navigationContext.companyId, isGroup).then(function () {
+            pageData.set("isLoading", false);
+        });
+
+        page.bindingContext = pageData;
     }
     catch(e)
     {
@@ -62,8 +65,10 @@ function onItemTap(args) {
         var view = args.view;
         var model = view.bindingContext;
 
+        model.isGroup = isGroup;
+        
         const navigationEntry = {
-            moduleName: "committeetypes/committees/committee/committee-page",
+            moduleName: "companygroups/companygroup/remarktypes/remarks/remarks-page",
             context: model,
             clearHistory: false
         };

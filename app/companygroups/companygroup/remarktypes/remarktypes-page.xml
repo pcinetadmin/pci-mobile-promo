@@ -10,11 +10,11 @@
             <Label id="companyName" text="" verticalAlignment="center" horizontalAlignment="center" />
         </StackLayout>
         <StackLayout row="1" col="0" verticalAlignment="top">
-            <ListView items="{{ contactTypesList }}" itemTap="onItemTap" height="100%">
+            <ListView items="{{ remarkTypesList }}" itemTap="onItemTap" height="100%">
                 <ListView.itemTemplate>
                     <StackLayout backgroundColor="white" width="100%">
                         <GridLayout columns="*, auto" rows="*" class="list-view-item">
-                            <Label row="0" col="0" text="{{ contactType }}" class="list-view-item-main-top" />
+                            <Label row="0" col="0" text="{{ remarkType }}" class="list-view-item-main-top" />
                             <Label row="0" col="1" text="&#xf105;" class="fn-list-view-item" verticalAlignment="middle" />
                         </GridLayout>
                     </StackLayout>

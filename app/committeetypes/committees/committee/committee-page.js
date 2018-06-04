@@ -24,16 +24,20 @@ function onNavigatingTo(args) {
         var committeeName = page.getViewById("committeeName");
         
         committeeName.text = navigationContext.committeeName;
-        
-        committeeList.empty();
 
-        pageData.set("isLoading", true);
+        if (args.isBackNavigation) {
+            // Do Nothing on Back Navigation
+        } else {
+            committeeList.empty();
 
-        committeeList.load(navigationContext.committeeCode).then(function () {
-            pageData.set("isLoading", false);
-        });
+            pageData.set("isLoading", true);
 
-        page.bindingContext = pageData;
+            committeeList.load(navigationContext.committeeCode).then(function () {
+                pageData.set("isLoading", false);
+            });
+
+            page.bindingContext = pageData;
+        }
     }
     catch(e)
     {

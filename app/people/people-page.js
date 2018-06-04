@@ -72,15 +72,19 @@ function onNavigatingTo(args) {
             peopleSearchSubmitted = true;
         }
         
-        peopleList.empty();
+        if (args.isBackNavigation) {
+            // Do Nothing on Back Navigation
+        } else {
+            peopleList.empty();
 
-        pageData.set("isLoading", true);
+            pageData.set("isLoading", true);
 
-        peopleList.load(peopleSearchText, isGroup, 1, peoplePageSize, companyId).then(function () {
-            pageData.set("isLoading", false);
-        });
+            peopleList.load(peopleSearchText, isGroup, 1, peoplePageSize, companyId).then(function () {
+                pageData.set("isLoading", false);
+            });
 
-        page.bindingContext = pageData;
+            page.bindingContext = pageData;
+        }
     }
     catch(e)
     {

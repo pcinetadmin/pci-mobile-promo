@@ -22,15 +22,19 @@ function onNavigatingTo(args) {
     
         companyName.text = navigationContext.companyName;
     
-        hierarchyList.empty();
-    
-        pageData.set("isLoading", true);
-    
-        hierarchyList.load(navigationContext.companyId).then(function () {
-            pageData.set("isLoading", false);
-        });
-    
-        page.bindingContext = pageData;
+        if (args.isBackNavigation) {
+            // Do Nothing on Back Navigation
+        } else {
+            hierarchyList.empty();
+        
+            pageData.set("isLoading", true);
+        
+            hierarchyList.load(navigationContext.companyId).then(function () {
+                pageData.set("isLoading", false);
+            });
+        
+            page.bindingContext = pageData;
+        }
     }
     catch(e)
     {

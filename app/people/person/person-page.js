@@ -23,10 +23,14 @@ function onNavigatingTo(args) {
     
     fullName.text = navigationContext.fullName;
 
-    personList.empty();
-    personList.load();
+    if (args.isBackNavigation) {
+        // Do Nothing on Back Navigation
+    } else {
+        personList.empty();
+        personList.load();
 
-    page.bindingContext = pageData;
+        page.bindingContext = pageData;
+    }
 }
 
 function onBackTap(args) {

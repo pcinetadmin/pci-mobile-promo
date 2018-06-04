@@ -30,10 +30,14 @@ function onNavigatingTo(args) {
     
     companyName.text = navigationContext.companyName;
 
-    companyGroupList.empty();
-    companyGroupList.load();
+    if (args.isBackNavigation) {
+        // Do Nothing on Back Navigation
+    } else {
+        companyGroupList.empty();
+        companyGroupList.load();
 
-    page.bindingContext = pageData;
+        page.bindingContext = pageData;
+    }
 }
 
 function onBackTap(args) {
