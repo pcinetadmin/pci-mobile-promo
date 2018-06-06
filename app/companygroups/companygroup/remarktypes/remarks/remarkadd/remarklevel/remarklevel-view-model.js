@@ -23,8 +23,8 @@ function RemarkLevelViewModel() {
                 );
 
                 viewModel.List.push({
-                    remarkLevelDescriptionId: remarkLevel.RemarkLevelDescription,
-                    remarkLevelDescription: remarkLevel.remarkLevelDescription
+                    remarkLevelCode: remarkLevel.RemarkLevelDescription,
+                    remarkLevel: remarkLevel.RemarkLevelDescription
                 });
             });
         }, function (e) {

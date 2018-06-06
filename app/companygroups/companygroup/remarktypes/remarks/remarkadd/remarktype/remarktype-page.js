@@ -35,11 +35,11 @@ function onNavigatingTo(args) {
 
                 remarkTypeIndex = 0;
 
-                if (pageData.boundData.remarkTypeId !== null && pageData.boundData.remarkTypeId.toString().length > 0) {
+                if (pageData.boundData.remarkTypeCode !== null && pageData.boundData.remarkTypeCode.toString().length > 0) {
                     var i;
 
                     for (i = 0; i < pageData.remarkTypeList.List.length; i++) {
-                        if (pageData.remarkTypeList.List.getItem(i).remarkTypeId === pageData.boundData.remarkTypeId) {
+                        if (pageData.remarkTypeList.List.getItem(i).remarkTypeCode === pageData.boundData.remarkTypeCode) {
                             remarkTypeIndex = i;
                         }
                     }
@@ -56,11 +56,11 @@ function onNavigatingTo(args) {
             
             remarkTypeIndex = 0;
 
-            if (pageData.boundData.remarkTypeId !== null && pageData.boundData.remarkTypeId.toString().length > 0) {
+            if (pageData.boundData.remarkTypeCode !== null && pageData.boundData.remarkTypeCode.toString().length > 0) {
                 var i;
 
                 for (i = 0; i < pageData.remarkTypeList.List.length; i++) {
-                    if (pageData.remarkTypeList.List.getItem(i).remarkTypeId === pageData.boundData.remarkTypeId) {
+                    if (pageData.remarkTypeList.List.getItem(i).remarkTypeCode === pageData.boundData.remarkTypeCode) {
                         remarkTypeIndex = i;
                     }
                 }
@@ -85,9 +85,9 @@ function onLoaded(args) {
         
         remarkTypeListPicker.on("selectedIndexChange", function(args) {
             var remarkTypeItem = pageData.remarkTypeList.List.getItem(args.object.selectedIndex);
-            //dialogs.alert(remarkTypeItem.remarkTypeId + ": " + remarkTypeItem.remarkType);
-            pageData.boundData.remarkTypeId = remarkTypeItem.remarkTypeId;
-            pageData.boundData.location = remarkTypeItem.remarkType;
+            //dialogs.alert(remarkTypeItem.remarkTypeCode + ": " + remarkTypeItem.remarkType);
+            pageData.boundData.remarkTypeCode = remarkTypeItem.remarkTypeCode;
+            pageData.boundData.remarkType = remarkTypeItem.remarkType;
         });
 
     } catch(e) {

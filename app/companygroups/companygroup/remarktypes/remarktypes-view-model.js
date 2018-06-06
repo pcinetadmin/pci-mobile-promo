@@ -6,9 +6,9 @@ var dialogs = require("ui/dialogs");
 function RemarkTypesViewModel(items) {
     const viewModel = new ObservableArray(items);
     
-    viewModel.load = function(companyId, isGroup, isExecutive) {
+    viewModel.load = function(companyId, isGroup, isExecutive, creatorId) {
         return http.request({
-            url: global.apiBaseServiceUrl + "company/companyremarktypes?companyId=" + companyId + "&isGroup=" + isGroup + "&isExecutive=" + isExecutive,
+            url: global.apiBaseServiceUrl + "company/companyremarktypes?companyId=" + companyId + "&isGroup=" + isGroup + "&isExecutive=" + isExecutive + "&creatorId=" + creatorId,
             method: "GET",
             headers: { "Content-Type": "application/json", "Authorization": global.token }
         }).then(function (response) {

@@ -1,6 +1,7 @@
 const RemarksViewModel = require("./remarks-view-model");
 const platform = require("platform");
 const ObservableModule = require("data/observable");
+var http = require("http");
 var frameModule = require("ui/frame");
 var dialogs = require("ui/dialogs");
 
@@ -51,10 +52,22 @@ function onNavigatingTo(args) {
 
             remarksSearchSubmitted = true;
         }
-        
+
         if (args.isBackNavigation) {
-            // Do Nothing on Back Navigation
+            if (global.refreshRemarks) {
+                remarksList.empty();
+
+                pageData.set("isLoading", true);
+
+                remarksList.load(remarksSearchText, companyId, isGroup, global.isExecutive, 1, remarksPageSize, remarkTypeCode, global.personId).then(function () {
+                    pageData.set("isLoading", false);
+                });
+
+                page.bindingContext = pageData;
+            }
         } else {
+            global.refreshRemarks = false;
+
             remarksList.empty();
 
             pageData.set("isLoading", true);
@@ -81,6 +94,44 @@ function onBackTap(args) {
         frameModule.topmost().goBack();
     } catch(e) {
         dialogs.alert(e);
+    }
+}
+
+function onAddTap(args) {
+    try
+    {
+        if (global.logonId === null) {
+            return http.request({
+                url: global.apiBaseServiceUrl + "person/personinfo?personId=" + global.personId,
+                method: "GET",
+                headers: { "Content-Type": "application/json", "Authorization": global.token }
+            }).then(function (response) {
+                var result = response.content.toString();
+                var data = JSON.parse(result);
+    
+                data.forEach(function(person) {
+                    global.logonId = person.LogonId
+                });
+
+                addRemark();
+            }, function (e) {
+                dialogs.alert({
+                    title: "Error",
+                    message: e.toString(),
+                    okButtonText: "OK"
+                });
+            });
+        } else {
+            addRemark();
+        }
+    }
+    catch(e)
+    {
+        dialogs.alert({
+            title: "Error",
+            message: e.toString(),
+            okButtonText: "OK"
+        });
     }
 }
 
@@ -193,8 +244,43 @@ function onLoadMoreItems(args) {
     }
 }
 
+function addRemark() {
+    var completionDate = null;
+
+    if (navigationContext.remarkTypeCode !== "8") {
+        completionDate = new Date();
+    }
+
+    var model = {
+        remarksId: 0,
+        companyId: navigationContext.companyId,
+        companyName: navigationContext.companyName,
+        companyId0: null,
+        groupId: null,
+        groupName: null,
+        publicPrivate: "Public",
+        remarkTypeCode: navigationContext.remarkTypeCode,
+        remarkType: navigationContext.remarkType,
+        creationDate: new Date(),
+        completionDate: completionDate,
+        visitDate: null,
+        userName: global.logonId,
+        commentAbbreviated: null,
+        comment: null
+    }
+
+    const navigationEntry = {
+        moduleName: "companygroups/companygroup/remarktypes/remarks/remarkadd/remarkadd-page",
+        context: model,
+        clearHistory: false
+    };
+
+    frameModule.topmost().navigate(navigationEntry);
+}
+
 exports.onNavigatingTo = onNavigatingTo;
 exports.onBackTap = onBackTap;
+exports.onAddTap = onAddTap;
 exports.onSearchBarLoaded = onSearchBarLoaded;
 exports.onSubmit = onSubmit;
 exports.onClear = onClear;

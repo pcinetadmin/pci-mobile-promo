@@ -3,6 +3,7 @@
         <android>
             <NavigationButton android.systemIcon="ic_menu_back" tap="onBackTap" />
         </android>
+        <ActionItem tap="onAddTap" ios.systemIcon="4" android.systemIcon="ic_menu_add" ios.position="right" />
     </ActionBar>
     
     <GridLayout columns="*" rows="auto, auto, *" height="100%" width="100%">

@@ -35,11 +35,11 @@ function onNavigatingTo(args) {
 
                 remarkLevelIndex = 0;
 
-                if (pageData.boundData.remarkLevelId !== null && pageData.boundData.remarkLevelId.toString().length > 0) {
+                if (pageData.boundData.publicPrivate !== null && pageData.boundData.publicPrivate.toString().length > 0) {
                     var i;
 
                     for (i = 0; i < pageData.remarkLevelList.List.length; i++) {
-                        if (pageData.remarkLevelList.List.getItem(i).remarkLevelId === pageData.boundData.remarkLevelId) {
+                        if (pageData.remarkLevelList.List.getItem(i).remarkLevelCode === pageData.boundData.publicPrivate) {
                             remarkLevelIndex = i;
                         }
                     }
@@ -56,11 +56,11 @@ function onNavigatingTo(args) {
             
             remarkLevelIndex = 0;
 
-            if (pageData.boundData.remarkLevelId !== null && pageData.boundData.remarkLevelId.toString().length > 0) {
+            if (pageData.boundData.publicPrivate !== null && pageData.boundData.publicPrivate.toString().length > 0) {
                 var i;
 
                 for (i = 0; i < pageData.remarkLevelList.List.length; i++) {
-                    if (pageData.remarkLevelList.List.getItem(i).remarkLevelId === pageData.boundData.remarkLevelId) {
+                    if (pageData.remarkLevelList.List.getItem(i).remarkLevelCode === pageData.boundData.publicPrivate) {
                         remarkLevelIndex = i;
                     }
                 }
@@ -85,9 +85,8 @@ function onLoaded(args) {
         
         remarkLevelListPicker.on("selectedIndexChange", function(args) {
             var remarkLevelItem = pageData.remarkLevelList.List.getItem(args.object.selectedIndex);
-            //dialogs.alert(remarkLevelItem.remarkLevelId + ": " + remarkLevelItem.remarkLevel);
-            pageData.boundData.remarkLevelId = remarkLevelItem.remarkLevelId;
-            pageData.boundData.location = remarkLevelItem.remarkLevel;
+            //dialogs.alert(remarkLevelItem.remarkLevelCode + ": " + remarkLevelItem.remarkLevel);
+            pageData.boundData.publicPrivate = remarkLevelItem.remarkLevel;
         });
 
     } catch(e) {

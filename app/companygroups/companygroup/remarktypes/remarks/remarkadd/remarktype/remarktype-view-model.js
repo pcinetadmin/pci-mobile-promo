@@ -24,7 +24,7 @@ function RemarkTypeViewModel() {
 
                 viewModel.List.push({
                     remarkTypeCode: remarkType.RemarkTypeCode,
-                    remarkTypeDescription: remarkType.RemarkTypeDescription
+                    remarkType: remarkType.RemarkTypeDescription
                 });
             });
         }, function (e) {

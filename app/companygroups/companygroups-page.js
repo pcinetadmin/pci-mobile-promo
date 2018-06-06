@@ -1,6 +1,7 @@
 const CompanyGroupsViewModel = require("./companygroups-view-model");
 const platform = require("platform");
 const ObservableModule = require("data/observable");
+var http = require("http");
 var gestures = require("ui/gestures");
 var frameModule = require("ui/frame");
 var dialogs = require("ui/dialogs");
@@ -288,21 +289,6 @@ function onLoadMoreItems(args) {
 
 function onRemarkClick(args) {
     try {
-        var view = args.object;
-        var model = view.bindingContext;
-
-        model.reference = "nav";
-        model.relationalType = "group";
-        model.relationalId = view.bindingContext.groupId;
-
-        const navigationEntry = {
-            moduleName: "meetings/meetings-page",
-            context: model,
-            clearHistory: false
-        };
-
-        frameModule.topmost().navigate(navigationEntry);
-
         if (swipeOpen) {
             swipedItem.animate({
                 translate: { x: 0, y: 0 },
@@ -310,6 +296,34 @@ function onRemarkClick(args) {
             });
 
             swipeOpen = false;
+        }
+
+        var view = args.view;
+        var bindingContext = view.bindingContext;
+
+        if (global.logonId === null) {
+            return http.request({
+                url: global.apiBaseServiceUrl + "person/personinfo?personId=" + global.personId,
+                method: "GET",
+                headers: { "Content-Type": "application/json", "Authorization": global.token }
+            }).then(function (response) {
+                var result = response.content.toString();
+                var data = JSON.parse(result);
+    
+                data.forEach(function(person) {
+                    global.logonId = person.LogonId
+                });
+
+                addRemark(bindingContext);
+            }, function (e) {
+                dialogs.alert({
+                    title: "Error",
+                    message: e.toString(),
+                    okButtonText: "OK"
+                });
+            });
+        } else {
+            addRemark(bindingContext);
         }
     }
     catch(e)
@@ -443,6 +457,34 @@ function onLayoutLoaded(args) {
             });
         }
     });
+}
+
+function addRemark(bindingContext) {
+    var model = {
+        remarksId: 0,
+        companyId: bindingContext.companyId,
+        companyName: bindingContext.companyName,
+        companyId0: null,
+        groupId: null,
+        groupName: null,
+        publicPrivate: "Public",
+        remarkTypeCode: "8",
+        remarkType: "System Update",
+        creationDate: new Date(),
+        completionDate: null,
+        visitDate: null,
+        userName: global.logonId,
+        commentAbbreviated: null,
+        comment: null
+    }
+
+    const navigationEntry = {
+        moduleName: "companygroups/companygroup/remarktypes/remarks/remarkadd/remarkadd-page",
+        context: model,
+        clearHistory: false
+    };
+
+    frameModule.topmost().navigate(navigationEntry);
 }
 
 exports.onNavigatingTo = onNavigatingTo;

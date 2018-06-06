@@ -45,7 +45,7 @@ function LoginViewModel() {
                     if (profileExecutivePosition > 0)
                     {
                         global.isProfileExecutive = true;
-                        global.isExecutive = 'Y';
+                        global.isExecutive = "Y";
                     }
 
                     var profileManagerPosition = global.token.toLowerCase().indexOf("profile+manager");
@@ -53,7 +53,7 @@ function LoginViewModel() {
                     if (profileManagerPosition > 0)
                     {
                         global.isProfileManager = true;
-                        global.isExecutive = 'Y';
+                        global.isExecutive = "Y";
                     }
 
                     var profileAccountingPosition = global.token.toLowerCase().indexOf("profile+accounting");
@@ -97,7 +97,7 @@ function LoginViewModel() {
                         global.currentUser = decodeURIComponent(token.slice(fullNamePosition, streetAddress1Position)).replace("+", " ");
 
                         const navigationEntry = {
-                            moduleName: "main-page", // "home/home-page",
+                            moduleName: "main-page",
                             clearHistory: true
                         };
 

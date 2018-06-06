@@ -26,7 +26,7 @@
                 <Label row="0" col="0" text="Completion Date" class="list-view-item-left" />
                 <Label row="0" col="1" text="{{ completionDate }}" horizontalAlignment="right"  class="list-view-item-right" />
             </GridLayout>
-            <GridLayout columns="*, auto" rows="auto" class="list-view-item-form" visibility="{{ isProfileMembership ? 'visible' : 'collapse' }}">
+            <GridLayout columns="*, auto" rows="auto" class="list-view-item-form" visibility="{{ visitDate.length === 0 ? 'collapse' : isProfileMembership ? 'visible' : 'collapse' }}">
                 <Label row="0" col="0" text="Visit Date" class="list-view-item-left" />
                 <Label row="0" col="1" text="{{ visitDate }}" horizontalAlignment="right"  class="list-view-item-right" />
             </GridLayout>
@@ -34,9 +34,9 @@
                 <Label row="0" col="0" text="Created By" class="list-view-item-left" />
                 <Label row="0" col="1" text="{{ userName }}" horizontalAlignment="right"  class="list-view-item-right" />
             </GridLayout>
-            <GridLayout columns="*" rows="auto" class="list-view-item-form">
+            <!-- <GridLayout columns="*" rows="auto" class="list-view-item-form">
                 <Label row="0" col="0" text="Comment" class="list-view-item-left" />
-            </GridLayout>
+            </GridLayout> -->
         </StackLayout>
         <StackLayout row="2" col="0">
             <GridLayout columns="*" rows="*">

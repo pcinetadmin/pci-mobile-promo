@@ -36,7 +36,7 @@ function onNavigatingTo(args) {
 
         pageData.set("isLoading", true);
 
-        remarkTypesList.load(navigationContext.companyId, isGroup).then(function () {
+        remarkTypesList.load(navigationContext.companyId, isGroup, global.isExecutive, global.personId).then(function () {
             pageData.set("isLoading", false);
         });
 
