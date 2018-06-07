@@ -539,6 +539,16 @@ Page {
     width: 100%;
 }
 
+.view-subtitle {
+    background-color: #eee;
+    border-bottom-color: #999;
+    border-bottom-width: 0.5;
+    color: #666;
+    font-size: 18;
+    height: 40;
+    width: 100%;
+}
+
 /*
 In many cases you may want to use the NativeScript core theme instead
 of writing your own CSS rules. For a full list of class names in the theme

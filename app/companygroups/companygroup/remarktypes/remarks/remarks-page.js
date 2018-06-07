@@ -201,6 +201,8 @@ function onItemTap(args) {
         var view = args.view;
         var model = view.bindingContext;
 
+        model.isGroup = isGroup;
+
         const navigationEntry = {
             moduleName: "companygroups/companygroup/remarktypes/remarks/remark/remark-page",
             context: model,

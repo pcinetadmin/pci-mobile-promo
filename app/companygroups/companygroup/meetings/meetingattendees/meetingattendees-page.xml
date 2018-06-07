@@ -1,0 +1,33 @@
+<Page navigatingTo="onNavigatingTo" class="page" xmlns="http://schemas.nativescript.org/tns.xsd" >
+    <ActionBar class="action-bar">
+        <android>
+            <NavigationButton android.systemIcon="ic_menu_back" tap="onBackTap" />
+        </android>
+    </ActionBar>
+    
+    <GridLayout columns="*" rows="auto, auto, *" height="100%" width="100%">
+        <StackLayout row="0" col="0" verticalAlignment="center" horizontalAlignment="center" class="view-title">
+            <Label id="companyName" text="" verticalAlignment="center" horizontalAlignment="center" />
+        </StackLayout>
+        <StackLayout row="1" col="0" verticalAlignment="center" horizontalAlignment="center" class="view-subtitle">
+            <Label id="meeting" text="" verticalAlignment="center" horizontalAlignment="center" />
+        </StackLayout>
+        <StackLayout row="2" col="0" verticalAlignment="top">
+            <ListView items="{{ meetingAttendeesList }}" itemTap="onItemTap" height="100%">
+                <ListView.itemTemplate>
+                    <StackLayout>
+                        <GridLayout columns="*, auto" rows="*" class="list-view-item">
+                            <StackLayout row="0" col="0" verticalAlignment="middle">
+                                <Label text="{{ fullName }}" textWrap="true" class="list-view-item-main-top" />
+                                <Label text="{{ title }}" textWrap="true" class="list-view-item-sub" />
+                                <Label text="{{ personCompany }}" textWrap="true" class="list-view-item-sub" visibility="{{ personCompany !== companyName ? 'visible' : 'collapse' }}" />
+                            </StackLayout>
+                            <Label row="0" col="1" text="&#xf105;" class="fn-list-view-item" verticalAlignment="middle" visibility="{{ isDeleted ? 'collapse' : 'visible' }}" />
+                        </GridLayout>
+                    </StackLayout>
+                </ListView.itemTemplate>
+            </ListView>
+        </StackLayout>
+        <ActivityIndicator busy="{{ isLoading }}" android:height="25%" android:width="25%" ios.activityIndicatorViewStyle="whiteLarge" rowSpan="3" colSpan="1" />
+    </GridLayout>
+</Page>

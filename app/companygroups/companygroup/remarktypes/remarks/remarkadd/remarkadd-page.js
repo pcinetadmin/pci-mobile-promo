@@ -213,7 +213,31 @@ function onTextViewFocus(args) {
 
 function onCancelTap(args) {
     try {
-        frameModule.topmost().goBack();
+        if (platform.isAndroid) {
+            dialogs.confirm({
+                title: "Save",
+                message: "Would you like to save the remark?",
+                okButtonText: "Yes",
+                cancelButtonText: "No"
+            }).then(function (result) {
+                if (result) {
+                    saveRemark();
+                } else {
+                    frameModule.topmost().goBack();
+                }
+            });
+        } else if (platform.isIOS) {
+            dialogs.action({
+                cancelButtonText: "Cancel",
+                actions: ["Save Remark"]
+            }).then(function (result) {
+                if (result === "Save Remark") {
+                    saveRemark();
+                } else {
+                    frameModule.topmost().goBack();
+                }
+            });
+        }
     } catch(e) {
         dialogs.alert(e);
     }
@@ -245,9 +269,6 @@ function saveRemark() {
     if (pageData.visitDate !== null) {
         pageData.visitDate = dateConverter(pageData.visitDate, "MM/DD/YYYY");
     }
-
-    //dialogs.alert(pageData.companyId + " : " + pageData.creationDate + " : " + pageData.completionDate + " : " + pageData.remarkTypeCode + " : " + 
-        //pageData.comment + " : " + pageData.userName + " : " + pageData.publicPrivate + " : " + pageData.visitDate);
 
     http.request({
         url: global.apiBaseServiceUrl + "company/insertcompanyremark",

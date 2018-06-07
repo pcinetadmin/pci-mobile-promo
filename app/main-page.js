@@ -90,7 +90,7 @@ function onNavigatingTo(args) {
     const dateConverter = (value, format) => {
         let result = format;
 
-        if (value === null) {
+        if (value === undefined || value === null) {
             //result = "";
         } else {
             const day = value.getDate();
