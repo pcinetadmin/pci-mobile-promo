@@ -1,0 +1,55 @@
+<Page navigatingTo="onNavigatingTo" loaded="onLoaded" class="page" xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:chart="nativescript-ui-chart">
+    <ActionBar class="action-bar">
+        <android>
+            <NavigationButton android.systemIcon="ic_menu_back" tap="onBackTap" />
+        </android>
+    </ActionBar>
+
+    <GridLayout columns="*" rows="auto, *" height="100%" width="100%">
+        <StackLayout row="0" col="0" verticalAlignment="center" horizontalAlignment="center" class="view-title">
+            <Label id="companyName" text="" verticalAlignment="center" horizontalAlignment="center" />
+        </StackLayout>
+        <StackLayout row="1" col="0" verticalAlignment="top" height="100%">
+            <chart:RadCartesianChart height="100%" width="100%">
+                <chart:RadCartesianChart.series>
+                    <chart:BarSeries legendTitle="Distinct Meetings" showLabels="true" seriesName="Bar" valueProperty="meetingCount" categoryProperty="year" items="{{ meetingAttendanceList }}">
+                        <chart:BarSeries.labelStyle>
+                            <chart:PointLabelStyle margin="7" fontStyle="Bold" fillColor="transparent" textSize="10" textColor="white" />
+                        </chart:BarSeries.labelStyle>
+                    </chart:BarSeries>
+                    <chart:BarSeries legendTitle="Distinct Attendees" showLabels="true" seriesName="Bar" valueProperty="attendeeCount" categoryProperty="year" items="{{ meetingAttendanceList }}">
+                        <chart:BarSeries.labelStyle>
+                            <chart:PointLabelStyle margin="7" fontStyle="Bold" fillColor="transparent" textSize="10" textColor="white" />
+                        </chart:BarSeries.labelStyle>
+                    </chart:BarSeries>
+                </chart:RadCartesianChart.series>
+                <chart:BarSeries.horizontalAxis>
+                    <chart:CategoricalAxis />
+                </chart:BarSeries.horizontalAxis>
+                <chart:BarSeries.verticalAxis>
+                    <chart:LinearAxis majorStep="5" />
+                </chart:BarSeries.verticalAxis>
+                <chart:RadCartesianChart.legend>
+                    <chart:RadLegendView position="Bottom" height="150"/>
+                </chart:RadCartesianChart.legend>
+                <chart:RadCartesianChart.palettes>
+                    <chart:Palette seriesName="Bar">
+                        <chart:Palette.entries>
+                            <chart:PaletteEntry fillColor="#cc2d30" strokeColor="#666"/>
+                            <chart:PaletteEntry fillColor="#44c8f5" strokeColor="#666"/>
+                            <chart:PaletteEntry fillColor="#35c4af" strokeColor="#666"/>
+                            <chart:PaletteEntry fillColor="#f68320" strokeColor="#666"/>
+                            <chart:PaletteEntry fillColor="#0a6fb0" strokeColor="#666"/>
+                        </chart:Palette.entries>
+                    </chart:Palette>
+                    <chart:Palette seriesName="Line">
+                        <chart:Palette.entries>
+                            <chart:PaletteEntry strokeColor="#FFCF40" strokeWidth="3"/>
+                        </chart:Palette.entries>
+                    </chart:Palette>
+                </chart:RadCartesianChart.palettes>
+            </chart:RadCartesianChart>
+        </StackLayout>
+        <ActivityIndicator busy="{{ isLoading }}" android:height="25%" android:width="25%" ios.activityIndicatorViewStyle="whiteLarge" rowSpan="2" colSpan="1" />
+    </GridLayout>
+</Page>

@@ -5,43 +5,46 @@ var dialogs = require("ui/dialogs");
 function CompanyGroupViewModel(items) {
     const viewModel = new ObservableArray(items);
 
-    viewModel.load = function() {
+    viewModel.load = function(isGroup) {
         var data;
 
+        var premiumsTitle;
+        var pacAuthorizationNavigateTo;
+        var addressesNavigateTo;
+
         if (global.isProfileAccounting) {
-            data = [
-                {"title": "Attributes", "navigateTo": "companygroups/companygroup/attributes/attributes-page"},
-                {"title": "Group Membership", "navigateTo": "companygroups/companygroup/hierarchy/hierarchy-page"},
-                {"title": "People", "navigateTo": "people/people-page"},
-                {"title": "Contacts", "navigateTo": "companygroups/companygroup/contacttypes/contacttypes-page"},
-                {"title": "Remarks", "navigateTo": "companygroups/companygroup/remarktypes/remarktypes-page"},
-                {"title": "Premiums & Assessments", "navigateTo": "companygroups/companygroup/premiums/premiums-page"},
-                {"title": "Committees / Contact Lists", "navigateTo": "companygroups/companygroup/committees/committees-page"},
-                {"title": "Meetings", "navigateTo": "companygroups/companygroup/meetings/meetings-page"},
-                {"title": "Metrics", "navigateTo": "companygroups/companygroup/metrics/metrics-page"},
-                {"title": "PAC Eligibility", "navigateTo": "companygroups/companygroup/paceligibility/paceligibility-page"},
-                {"title": "Addresses", "navigateTo": "companygroups/companygroup/addresses/addresses-page"}
-            ];
+            premiumsTitle = "Premiums & Assessments";
         } else {
-            data = [
-                {"title": "Attributes", "navigateTo": "companygroups/companygroup/attributes/attributes-page"},
-                {"title": "Group Membership", "navigateTo": "companygroups/companygroup/hierarchy/hierarchy-page"},
-                {"title": "People", "navigateTo": "people/people-page"},
-                {"title": "Contacts", "navigateTo": "companygroups/companygroup/contacttypes/contacttypes-page"},
-                {"title": "Remarks", "navigateTo": "companygroups/companygroup/remarktypes/remarktypes-page"},
-                {"title": "Premiums", "navigateTo": "companygroups/companygroup/premiums/premiums-page"},
-                {"title": "Committees / Contact Lists", "navigateTo": "companygroups/companygroup/committees/committees-page"},
-                {"title": "Meetings", "navigateTo": "companygroups/companygroup/meetings/meetings-page"},
-                {"title": "Metrics", "navigateTo": "companygroups/companygroup/metrics/metrics-page"},
-                {"title": "PAC Eligibility", "navigateTo": "companygroups/companygroup/paceligibility/paceligibility-page"},
-                {"title": "Addresses", "navigateTo": "companygroups/companygroup/addresses/addresses-page"}
-            ];
+            premiumsTitle = "Premiums";
         }
+
+        if (isGroup === "Y") {
+            pacAuthorizationNavigateTo = "companygroups/companygroup/companies/companies-page";
+            addressesNavigateTo = "companygroups/companygroup/companies/companies-page"; 
+        } else {
+            pacAuthorizationNavigateTo = "companygroups/companygroup/companies/pacauthorization/pacauthorization-page";
+            addressesNavigateTo = "companygroups/companygroup/companies/addresses/addresses-page";
+        }
+
+        data = [
+            {"title": "Attributes", "navigateTo": "companygroups/companygroup/attributes/attributes-page", "loadData" : ""},
+            {"title": "Group Membership", "navigateTo": "companygroups/companygroup/hierarchy/hierarchy-page", "loadData" : ""},
+            {"title": "People", "navigateTo": "people/people-page", "loadData" : ""},
+            {"title": "Contacts", "navigateTo": "companygroups/companygroup/contacttypes/contacttypes-page", "loadData" : ""},
+            {"title": "Remarks", "navigateTo": "companygroups/companygroup/remarktypes/remarktypes-page", "loadData" : ""},
+            {"title": premiumsTitle, "navigateTo": "companygroups/companygroup/premiums/premiums-page", "loadData" : ""},
+            {"title": "Committees / Contact Lists", "navigateTo": "companygroups/companygroup/committees/committees-page", "loadData" : ""},
+            {"title": "Meetings", "navigateTo": "companygroups/companygroup/meetings/meetings-page", "loadData" : ""},
+            {"title": "Metrics", "navigateTo": "companygroups/companygroup/metrics/metrics-page", "loadData" : ""},
+            {"title": "PAC Authorization", "navigateTo": pacAuthorizationNavigateTo, "loadData" : "pacauthorization"},
+            {"title": "Addresses", "navigateTo": addressesNavigateTo, "loadData" : "addresses"}
+        ];
 
         data.forEach(function(dataItem) {
             viewModel.push({
                 title: dataItem.title,
-                navigateTo: dataItem.navigateTo
+                navigateTo: dataItem.navigateTo,
+                loadData: dataItem.loadData
             });
         });
     };

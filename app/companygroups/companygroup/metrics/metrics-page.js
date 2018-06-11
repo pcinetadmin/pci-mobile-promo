@@ -1,4 +1,4 @@
-const CompanyGroupViewModel = require("./companygroup-view-model");
+const MetricsViewModel = require("./metrics-view-model");
 const observableModule = require("data/observable");
 var frameModule = require("ui/frame");
 var dialogs = require("ui/dialogs");
@@ -7,10 +7,10 @@ var page;
 var navigationContext;
 var isGroup;
 
-var companyGroupList = new CompanyGroupViewModel([]);
+var metricsList = new MetricsViewModel([]);
 
 var pageData = new observableModule.fromObject({
-    companyGroupList: companyGroupList,
+    metricsList: metricsList,
     isLoading: false
 });
 
@@ -21,9 +21,9 @@ function onNavigatingTo(args) {
     isGroup = navigationContext.isGroup;
         
     if (isGroup === "Y") {
-        page.actionBar.title = "Group";
+        page.actionBar.title = "Group Metrics";
     } else {
-        page.actionBar.title = "Company";
+        page.actionBar.title = "Company Metrics";
     }
     
     var companyName = page.getViewById("companyName");
@@ -33,9 +33,9 @@ function onNavigatingTo(args) {
     if (args.isBackNavigation) {
         // Do Nothing on Back Navigation
     } else {
-        companyGroupList.empty();
+        metricsList.empty();
 
-        companyGroupList.load(isGroup);
+        metricsList.load();
 
         page.bindingContext = pageData;
     }
@@ -54,10 +54,9 @@ function onItemTap(args)
     try
     {
         var index = args.index;
-        var item = companyGroupList.getItem(index);
+        var item = metricsList.getItem(index);
 
         navigationContext.isGroup = isGroup;
-        navigationContext.loadData = item.loadData;
         
         const navigationEntry = {
             moduleName: item.navigateTo,
