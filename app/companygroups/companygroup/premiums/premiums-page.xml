@@ -1,0 +1,68 @@
+<Page navigatingTo="onNavigatingTo" class="page" xmlns="http://schemas.nativescript.org/tns.xsd" >
+    <ActionBar class="action-bar">
+        <android>
+            <NavigationButton android.systemIcon="ic_menu_back" tap="onBackTap" />
+        </android>
+    </ActionBar>
+
+    <GridLayout columns="*" rows="auto, *" width="100%">
+        <StackLayout row="0" col="0" verticalAlignment="center" horizontalAlignment="center" class="view-title">
+            <Label id="companyName" text="" horizontalAlignment="center" />
+        </StackLayout>
+        <StackLayout row="1" col="0">
+            <GridLayout columns="*" rows="auto, auto, auto, auto, *, auto, auto, auto, auto, auto, auto" height="100%" width="100%">
+                <StackLayout row="0" col="0" verticalAlignment="bottom" class="list-view-section-header">
+                    <Label text="DIRECT WRITTEN PREMIUMS" verticalAlignment="bottom" />
+                </StackLayout>
+                <GridLayout row="1" col="0" columns="*, auto" rows="auto" class="list-view-item-form">
+                    <Label row="0" col="0" text="{{ premiums.dwpYear + ' Total DWP' }}" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ premiums.totalDwp | currencyConverter() }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout row="2" col="0" columns="*, auto" rows="auto" class="list-view-item-form-bottom">
+                    <Label row="0" col="0" text="{{ premiums.dwpYear + ' Assessed DWP' }}" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ premiums.assessedDwp | currencyConverter() }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <StackLayout row="3" col="0" verticalAlignment="bottom" class="list-view-section-header" visibility="{{ isProfileAccounting ? 'visible' : 'collapse' }}">
+                    <Label text="SEMI-ANNUAL ASSESSMENTS BY LEAD COMPANY" verticalAlignment="bottom" />
+                </StackLayout>
+                <StackLayout row="4" col="0" verticalAlignment="top" width="100%" visibility="{{ isProfileAccounting ? 'visible' : 'collapse' }}">
+                    <ListView items="{{ invoicesList }}" itemTap="onItemTap" height="100%">
+                        <ListView.itemTemplate>
+                            <StackLayout>
+                                <GridLayout columns="*, auto, auto, auto" rows="*" class="list-view-item">
+                                    <Label row="0" col="0" text="{{ leadCompanyName }}" textWrap="true" verticalAlignment="middle" class="list-view-item-main-top" />
+                                    <Label row="0" col="1" text="&nbsp;&nbsp;" class="list-view-item-main-top" />
+                                    <Label row="0" col="2" text="{{ finalAssessment | currencyConverter() }}" verticalAlignment="middle" class="list-view-item-right" />
+                                    <Label row="0" col="3" text="&#xf105;" verticalAlignment="middle" class="fn-list-view-item" />
+                                </GridLayout>
+                            </StackLayout>
+                        </ListView.itemTemplate>
+                    </ListView>
+                </StackLayout>
+                <StackLayout row="5" col="0" verticalAlignment="bottom" class="list-view-section-header">
+                    <Label text="STATES" verticalAlignment="bottom" />
+                </StackLayout>
+                <GridLayout row="6" col="0" columns="*, auto" rows="auto" class="list-view-item-form">
+                    <Label row="0" col="0" text="State Count" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ premiums.stateCount }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout row="7" col="0" columns="*, auto" rows="auto" tap="onStatesTap" class="list-view-item-form-bottom">
+                    <Label row="0" col="0" text="States Written" class="list-view-item-left" />
+                    <Label row="0" col="1" text="&#xf105;" class="fn-list-view-item" verticalAlignment="middle" />
+                </GridLayout>
+                <StackLayout row="8" col="0" verticalAlignment="bottom" class="list-view-section-header">
+                    <Label text="LINES OF BUSINESS" verticalAlignment="bottom" />
+                </StackLayout>
+                <GridLayout row="9" col="0" columns="*, auto" rows="auto" class="list-view-item-form">
+                    <Label row="0" col="0" text="Line Count" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ premiums.lineCount }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout row="10" col="0" columns="*, auto" rows="auto" tap="onLinesTap" class="list-view-item-form-bottom">
+                    <Label row="0" col="0" text="Lines Written" class="list-view-item-left" />
+                    <Label row="0" col="1" text="&#xf105;" class="fn-list-view-item" verticalAlignment="middle" />
+                </GridLayout>
+            </GridLayout>
+        </StackLayout>
+        <ActivityIndicator busy="{{ isLoading }}" android:height="25%" android:width="25%" ios.activityIndicatorViewStyle="whiteLarge" rowSpan="2" colSpan="1" />
+    </GridLayout>
+</Page>

@@ -106,6 +106,20 @@ function onNavigatingTo(args) {
     application.getResources().dateConverter = dateConverter;
     application.getResources().dateFormat = "MM/DD/YYYY";
 
+    const currencyConverter = (value) => {
+        var result;
+
+        if (value === undefined || value === null) {
+            result = null;
+        } else {
+            result = '$' + value.toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,');
+        }
+
+        return result;
+    }
+
+    application.getResources().currencyConverter = currencyConverter;
+
     var navigationEntry = {
         moduleName: page.tabItems[0].path,
         context: {

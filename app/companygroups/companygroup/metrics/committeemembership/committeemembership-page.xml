@@ -23,12 +23,12 @@
                         </chart:BarSeries.labelStyle>
                     </chart:BarSeries>
                 </chart:RadCartesianChart.series>
-                <chart:BarSeries.horizontalAxis>
+                <chart:RadCartesianChart.horizontalAxis>
                     <chart:CategoricalAxis />
-                </chart:BarSeries.horizontalAxis>
-                <chart:BarSeries.verticalAxis>
+                </chart:RadCartesianChart.horizontalAxis>
+                <chart:RadCartesianChart.verticalAxis>
                     <chart:LinearAxis majorStep="5" />
-                </chart:BarSeries.verticalAxis>
+                </chart:RadCartesianChart.verticalAxis>
                 <chart:RadCartesianChart.legend>
                     <chart:RadLegendView position="Bottom" height="150"/>
                 </chart:RadCartesianChart.legend>
@@ -40,11 +40,6 @@
                             <chart:PaletteEntry fillColor="#35c4af" strokeColor="#666"/>
                             <chart:PaletteEntry fillColor="#f68320" strokeColor="#666"/>
                             <chart:PaletteEntry fillColor="#0a6fb0" strokeColor="#666"/>
-                        </chart:Palette.entries>
-                    </chart:Palette>
-                    <chart:Palette seriesName="Line">
-                        <chart:Palette.entries>
-                            <chart:PaletteEntry strokeColor="#FFCF40" strokeWidth="3"/>
                         </chart:Palette.entries>
                     </chart:Palette>
                 </chart:RadCartesianChart.palettes>
