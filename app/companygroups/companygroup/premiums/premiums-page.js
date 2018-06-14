@@ -2,6 +2,7 @@ const PremiumsViewModel = require("./premiums-view-model");
 const InvoicesViewModel = require("./invoices-view-model");
 const ObservableModule = require("data/observable");
 var frameModule = require("ui/frame");
+var dialogs = require("ui/dialogs");
 
 var page;
 var navigationContext;
@@ -84,7 +85,16 @@ function onBackTap(args) {
 
 function onItemTap(args) {
     try {
-        
+        var view = args.view;
+        var model = view.bindingContext;
+
+        const navigationEntry = {
+            moduleName: "companygroups/companygroup/premiums/invoice/invoice-page",
+            context: model,
+            clearHistory: false
+        };
+
+        frameModule.topmost().navigate(navigationEntry);
     } catch(e) {
         dialogs.alert(e);
     }

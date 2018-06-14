@@ -1,4 +1,4 @@
-<Page navigatingTo="onNavigatingTo" loaded="onLoaded" class="page" xmlns="http://schemas.nativescript.org/tns.xsd" >
+<Page navigatingTo="onNavigatingTo" class="page" xmlns="http://schemas.nativescript.org/tns.xsd" >
     <ActionBar class="action-bar">
         <android>
             <NavigationButton android.systemIcon="ic_menu_back" tap="onBackTap" />

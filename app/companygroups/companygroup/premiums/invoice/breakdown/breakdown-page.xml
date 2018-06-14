@@ -1,0 +1,34 @@
+<Page navigatingTo="onNavigatingTo" class="page" xmlns="http://schemas.nativescript.org/tns.xsd" >
+    <ActionBar class="action-bar">
+        <android>
+            <NavigationButton android.systemIcon="ic_menu_back" tap="onBackTap" />
+        </android>
+    </ActionBar>
+    
+    <GridLayout columns="*" rows="auto, *" height="100%" width="100%">
+        <StackLayout row="0" col="0" verticalAlignment="center" horizontalAlignment="center" class="view-title">
+            <Label id="companyName" text="" verticalAlignment="center" horizontalAlignment="center" />
+        </StackLayout>
+        <StackLayout row="1" col="0" verticalAlignment="top">
+            <ListView items="{{ breakdownList }}" height="100%">
+                <ListView.itemTemplate>
+                    <StackLayout>
+                        <GridLayout columns="*, auto, auto" rows="*" class="list-view-item-small">
+                            <StackLayout row="0" col="0" orientation="horizontal">
+                                <Label text="{{ lowerLimitPremVol | currencyConverter() }}" textWrap="true" class="list-view-item-mail-top-small" />
+                                <Label text="-" textWrap="true" class="list-view-item-mail-top-small" />
+                                <Label text="{{ upperLimitPremVol | currencyConverter() }}" textWrap="true" class="list-view-item-mail-top-small" />
+                                <Label text="@" textWrap="true" class="list-view-item-mail-top-small" />
+                                <Label text="{{ ratePerPremVol }}" textWrap="true" class="list-view-item-mail-top-small" />
+                                <Label text="/MM" textWrap="true" class="list-view-item-mail-top-small" />
+                            </StackLayout>
+                            <Label row="0" col="1" text="&nbsp;&nbsp;" class="list-view-item-mail-top-small" />
+                            <Label row="0" col="2" text="{{ assessmentPremVol | currencyConverter }}" verticalAlignment="bottom" class="list-view-item-mail-top-small" />
+                        </GridLayout>
+                    </StackLayout>
+                </ListView.itemTemplate>
+            </ListView>
+        </StackLayout>
+        <ActivityIndicator busy="{{ isLoading }}" android:height="25%" android:width="25%" ios.activityIndicatorViewStyle="whiteLarge" rowSpan="2" colSpan="1" />
+    </GridLayout>
+</Page>

@@ -1,0 +1,132 @@
+<Page navigatingTo="onNavigatingTo" class="page" xmlns="http://schemas.nativescript.org/tns.xsd" >
+    <ActionBar class="action-bar">
+        <android>
+            <NavigationButton android.systemIcon="ic_menu_back" tap="onBackTap" />
+        </android>
+    </ActionBar>
+
+    <ScrollView>
+        <GridLayout columns="*" rows="auto, *" width="100%">
+            <StackLayout row="0" col="0" verticalAlignment="center" horizontalAlignment="center" class="view-title">
+                <Label id="companyName" text="{{ leadCompanyName }}" horizontalAlignment="center" />
+            </StackLayout>
+            <StackLayout row="1" col="0">
+                <StackLayout verticalAlignment="bottom" class="list-view-section-header-no-height">
+                    <GridLayout columns="*, auto" rows="auto" style="margin-bottom: 10;">
+                        <Label row="0" col="0" text="{{ 'PCI COMPANY #' + companyNumber }}" />
+                        <Label row="0" col="1" text="{{ 'INVOICE ' + invoiceId }}" horizontalAlignment="right" style="font-weight: bold;" />
+                    </GridLayout>
+                    <GridLayout columns="*" rows="auto">
+                        <Label row="0" col="0" text="{{ invoiceDate }}" />
+                    </GridLayout>
+                </StackLayout>
+                <GridLayout columns="*" rows="auto" class="list-view-item-form-bottom">
+                    <StackLayout row="0" col="0">
+                        <Label text="PCI SEMI-ANNUAL ASSESSMENT" horizontalAlignment="center" style="padding-bottom: 5;" />
+                        <Label text="{{ assessmentPeriod }}" horizontalAlignment="center" />
+                    </StackLayout>
+                </GridLayout>
+                <StackLayout verticalAlignment="bottom" class="list-view-section-header">
+                    <Label text="INVOICE SUMMARY" verticalAlignment="bottom" />
+                </StackLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form-bottom-short">
+                    <Label row="0" col="0" text="Semi-Annual Assessment" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ finalAssessment | currencyConverter() }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form-bottom-short">
+                    <Label row="0" col="0" text="Payments Received" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ totalPayments | currencyConverter() }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form-bottom-short">
+                    <Label row="0" col="0" text="Previous Balance" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ previousBalance | currencyConverter() }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout columns="auto, *, auto" rows="auto" class="list-view-item-form-bottom-short">
+                    <Label row="0" col="0" text="Total Balance Due" class="list-view-item-bordered" style="font-weight: bold;" />
+                    <Label row="0" col="1" text="&nbsp;" class="list-view-item-left" />
+                    <Label row="0" col="2" text="{{ balanceDue | currencyConverter() }}" horizontalAlignment="right" class="list-view-item-total" style="font-weight: bold; padding-bottom: 3; padding-top: 3;" />
+                </GridLayout>
+                <StackLayout verticalAlignment="bottom" class="list-view-section-header">
+                    <Label text="INVOICE DETAILS" verticalAlignment="bottom" />
+                </StackLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form-bottom-short" visibility="{{ fixedAssessment === 'Y' ? 'collapse' : reinsurerCalcTypeId === '2' ? 'visible' : 'collapse' }}">
+                    <Label row="0" col="0" text="R/I Assumed Premium" class="list-view-item-left-bold" />
+                    <Label row="0" col="1" text="{{ adjustedDwp | currencyConverter() }}" horizontalAlignment="right" class="list-view-item-right-bold" />
+                </GridLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form-bottom-short" visibility="{{ fixedAssessment === 'Y' ? 'collapse' : reinsurerCalcTypeId === '2' ? 'collapse' : 'visible' }}">
+                    <StackLayout row="0" col="0">
+                        <Label text="Total Direct Written Premium" class="list-view-item-left-bold" />
+                        <Label text="(per statutory page 14)" class="list-view-item-left-small" />
+                    </StackLayout>
+                    <Label row="0" col="1" text="{{ adjustedDwp | currencyConverter() }}" horizontalAlignment="right" verticalAlignment="top" class="list-view-item-right-bold" />
+                </GridLayout>
+                <GridLayout columns="*" rows="auto" class="list-view-item-form-bottom-short" visibility="{{ fixedAssessment === 'Y' ? 'visible' : 'collapse' }}">
+                    <Label row="0" col="0" text="Fixed Assessment Per Customer Agreement" textWrap="true" class="list-view-item-left-bold" />
+                </GridLayout>
+                <GridLayout columns="auto, auto, *" rows="auto" tap="onBreakdownTap" class="list-view-item-form-bottom-short" visibility="{{ fixedAssessment === 'Y' ? 'collapse' : reinsurerCalcTypeId === '2' ? 'visible' : 'collapse' }}">
+                    <Label row="0" col="0" text="R/I Assessment Breakdown" class="list-view-item-left-bold" />
+                    <Label row="0" col="1" text="&#xf105;" class="fn-list-view-item" verticalAlignment="middle" visibility="{{ totalBreakdowns === 0 ? 'collapse' : 'visible' }}" />
+                    <Label row="0" col="2" text="{{ totalBreakdowns | currencyConverter() }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout columns="auto, auto, *" rows="auto" tap="onBreakdownTap" class="list-view-item-form-bottom-short" visibility="{{ fixedAssessment === 'Y' ? 'collapse' : reinsurerCalcTypeId === '2' ? 'collapse' : 'visible' }}">
+                    <Label row="0" col="0" text="Total Assessment Breakdown" class="list-view-item-left-bold" />
+                    <Label row="0" col="1" text="&#xf105;" class="fn-list-view-item" verticalAlignment="middle" visibility="{{ totalBreakdowns === 0 ? 'collapse' : 'visible' }}" />
+                    <Label row="0" col="2" text="{{ totalBreakdowns | currencyConverter() }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form-bottom-short" visibility="{{ fixedAssessment === 'Y' || reinsurerCalcTypeId === '2' ? 'collapse' : 'visible' }}">
+                    <StackLayout row="0" col="0" orientation="horizontal">
+                        <Label text="States Charged ( " class="list-view-item-left-bold" />
+                        <Label text="{{ stateCount }}" class="list-view-item-left-small" />
+                        <Label text=" @ " class="list-view-item-left-small" />
+                        <Label text="{{ stateCountRate | currencyConverter() }}" class="list-view-item-left-small" />
+                        <Label text=" / State" class="list-view-item-left-small" />
+                        <Label text=" )" class="list-view-item-left-bold" />
+                    </StackLayout>
+                    <Label row="0" col="1" text="{{ stateAssessment | currencyConverter() }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form-bottom-short" visibility="{{ fixedAssessment === 'Y' || reinsurerCalcTypeId === '2' ? 'collapse' : 'visible' }}">
+                    <StackLayout row="0" col="0">
+                        <Label text="Annual Assessment" class="list-view-item-left-bold" />
+                        <Label text="(Breakdown + States)" class="list-view-item-left-small" />
+                    </StackLayout>
+                    <Label row="0" col="1" text="{{ annualAssessment | currencyConverter() }}" horizontalAlignment="right" 
+                        verticalAlignment="top" class="list-view-item-right" style="border-top-color: black; border-top-width: 1; padding-top: 3;" />
+                </GridLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form-bottom-short" visibility="{{ fixedAssessment === 'Y' ? 'collapse' : 'visible' }}">
+                    <Label row="0" col="0" text="Semi-Annual Base Assessment" class="list-view-item-left-bold" />
+                    <Label row="0" col="1" text="{{ semiAnnualAssessment | currencyConverter() }}" horizontalAlignment="right" 
+                        class="list-view-item-right" style="border-top-color: black; border-top-width: 2; padding-top: 3;" />
+                </GridLayout>
+                <GridLayout columns="auto, auto, *" rows="auto" class="list-view-item-form-bottom-short" visibility="{{ fixedAssessment === 'Y' ? 'collapse' : 'visible' }}">
+                    <Label row="0" col="0" text="Total Adjustments" class="list-view-item-left-bold" />
+                    <Label row="0" col="1" text="&#xf105;" class="fn-list-view-item" verticalAlignment="middle" visibility="{{ totalAdjustments === 0 ? 'collapse' : 'visible' }}" />
+                    <Label row="0" col="2" text="{{ totalAdjustments | currencyConverter() }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form-bottom-short" visibility="{{ fixedAssessment === 'Y' ? 'collapse' : 'visible' }}">
+                    <StackLayout row="0" col="0">
+                        <Label text="Subtotal" class="list-view-item-left-bold" />
+                        <Label text="(Semi-Annual Base - Adjustments)" class="list-view-item-left-small" />
+                    </StackLayout>
+                    <Label row="0" col="1" text="{{ semiAnnualAdjustedAssessment | currencyConverter() }}" horizontalAlignment="right" 
+                        verticalAlignment="top" class="list-view-item-right" style="border-top-color: black; border-top-width: 1; padding-top: 3;" />
+                </GridLayout>
+                <GridLayout columns="auto, auto, *" rows="auto" class="list-view-item-form-bottom-short" visibility="{{ fixedAssessment === 'Y' ? 'collapse' : 'visible' }}">
+                    <Label row="0" col="0" text="Total Other Adjustments" class="list-view-item-left-bold" />
+                    <Label row="0" col="1" text="&#xf105;" class="fn-list-view-item" verticalAlignment="middle" visibility="{{ totalManualAdjustments === 0 ? 'collapse' : 'visible' }}" />
+                    <Label row="0" col="2" text="{{ totalManualAdjustments | currencyConverter() }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form-bottom-short">
+                    <Label row="0" col="0" text="Total Semi-Annual Assessment" class="list-view-item-left-bold" />
+                    <Label row="0" col="1" text="{{ finalAssessment | currencyConverter() }}" horizontalAlignment="right" verticalAlignment="top" class="list-view-item-right-bordered" />
+                </GridLayout>
+                <StackLayout verticalAlignment="bottom" class="list-view-section-header">
+                    <Label text="COMPANIES INCLUDED" verticalAlignment="bottom" />
+                </StackLayout>
+                <GridLayout columns="*, auto" rows="auto" tap="onAffiliatesTap" class="list-view-item-form-bottom">
+                    <Label row="0" col="0" text="View Companies Included" class="list-view-item-left" style="font-style: italic;" />
+                    <Label row="0" col="1" text="&#xf105;" class="fn-list-view-item" verticalAlignment="middle" />
+                </GridLayout>
+            </StackLayout>
+        </GridLayout>
+    </ScrollView>
+</Page>

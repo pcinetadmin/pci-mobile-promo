@@ -15,10 +15,24 @@ function InvoicesViewModel(items) {
             var result = response.content.toString();
             var data = JSON.parse(result);
 
+            const monthList = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
             data.forEach(function(invoice) {
+                var invoiceDateText = invoice.InvoiceDate;
+                var invoiceDate;
+                var invoiceDateFormatted;
+
+                if (invoiceDateText.indexOf(" ") > 0) {
+                    invoiceDateText = invoiceDateText.substring(0, invoiceDateText.indexOf(" "))
+                }
+
+                invoiceDate = new Date(invoiceDateText);
+
+                invoiceDateFormatted = monthList[invoiceDate.getMonth()] + ' ' + invoiceDate.getDate() + ', ' + invoiceDate.getFullYear();
+                
                 viewModel.push({
                     invoiceId: invoice.InvoiceId,
-                    invoiceDate: invoice.InvoiceDate,
+                    invoiceDate: invoiceDateFormatted,
                     leadCompanyId: invoice.LeadCompanyId,
                     leadCompanyName: invoice.LeadCompanyName,
                     companyNumber: invoice.CompanyNumber,
@@ -26,7 +40,7 @@ function InvoicesViewModel(items) {
                     assessmentPeriod: invoice.AssessmentPeriod,
                     finalAssessment: invoice.FinalAssessment,
                     fixedAssessment: invoice.FixedAssessment,
-                    totalPayments: invoice.TotalPayments,
+                    totalPayments: -1 * Number(invoice.TotalPayments),
                     previousBalance: invoice.PreviousBalance,
                     balanceDue: invoice.BalanceDue,
                     reinsurerCalcTypeId: invoice.ReinsurerCalcTypeId,

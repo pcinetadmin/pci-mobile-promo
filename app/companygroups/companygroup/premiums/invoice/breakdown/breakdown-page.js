@@ -1,4 +1,4 @@
-const WrittenViewModel = require("./written-view-model");
+const BreakdownViewModel = require("./breakdown-view-model");
 const platform = require("platform");
 const ObservableModule = require("data/observable");
 var frameModule = require("ui/frame");
@@ -8,10 +8,10 @@ var page;
 var navigationContext;
 var isGroup;
 
-var writtenList = new WrittenViewModel([]);
+var breakdownList = new BreakdownViewModel([]);
 
 var pageData = new ObservableModule.fromObject({
-    writtenList: writtenList,
+    breakdownList: breakdownList,
     isLoading: false
 });
 
@@ -20,28 +20,20 @@ function onNavigatingTo(args) {
         page = args.object;
         navigationContext = page.navigationContext;
 
-        isGroup = navigationContext.isGroup;
-
-        if (isGroup === "Y") {
-            page.actionBar.title = "Group Line";
-        } else {
-            page.actionBar.title = "Company Line";
-        }
+        page.actionBar.title = "Assessment Breakdown";
     
         var companyName = page.getViewById("companyName");
-        var lineOfBusiness = page.getViewById("lineOfBusiness");
         
-        companyName.text = navigationContext.companyName;
-        lineOfBusiness.text = navigationContext.lineOfBusiness;
+        companyName.text = navigationContext.leadCompanyName;
 
         if (args.isBackNavigation) {
             // Do Nothing on Back Navigation
         } else {
-            writtenList.empty();
+            breakdownList.empty();
 
             pageData.set("isLoading", true);
 
-            writtenList.load(navigationContext.companyId, isGroup, navigationContext.lineOfBusinessId).then(function () {
+            breakdownList.load(navigationContext.invoiceId, navigationContext.isReinsurer).then(function () {
                 pageData.set("isLoading", false);
             });
 
