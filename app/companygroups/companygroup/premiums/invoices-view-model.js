@@ -32,7 +32,7 @@ function InvoicesViewModel(items) {
                 
                 viewModel.push({
                     invoiceId: invoice.InvoiceId,
-                    invoiceDate: invoiceDateFormatted,
+                    invoiceDate: invoiceDateFormatted.toUpperCase(),
                     leadCompanyId: invoice.LeadCompanyId,
                     leadCompanyName: invoice.LeadCompanyName,
                     companyNumber: invoice.CompanyNumber,

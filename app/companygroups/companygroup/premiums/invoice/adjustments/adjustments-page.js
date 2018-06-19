@@ -1,4 +1,4 @@
-const BreakdownViewModel = require("./breakdown-view-model");
+const AdjustmentsViewModel = require("./adjustments-view-model");
 const platform = require("platform");
 const ObservableModule = require("data/observable");
 var frameModule = require("ui/frame");
@@ -8,10 +8,10 @@ var page;
 var navigationContext;
 var isGroup;
 
-var breakdownList = new BreakdownViewModel([]);
+var adjustmentsList = new AdjustmentsViewModel([]);
 
 var pageData = new ObservableModule.fromObject({
-    breakdownList: breakdownList,
+    adjustmentsList: adjustmentsList,
     isLoading: false
 });
 
@@ -20,7 +20,11 @@ function onNavigatingTo(args) {
         page = args.object;
         navigationContext = page.navigationContext;
 
-        page.actionBar.title = "Assessment Breakdown";
+        if (navigationContext.isManual === "Y") {
+            page.actionBar.title = "Other Adjustments";
+        } else {
+            page.actionBar.title = "Adjustments";
+        }
     
         var companyName = page.getViewById("companyName");
         
@@ -29,11 +33,11 @@ function onNavigatingTo(args) {
         if (args.isBackNavigation) {
             // Do Nothing on Back Navigation
         } else {
-            breakdownList.empty();
+            adjustmentsList.empty();
 
             pageData.set("isLoading", true);
 
-            breakdownList.load(navigationContext.invoiceId, navigationContext.isReinsurer).then(function () {
+            adjustmentsList.load(navigationContext.invoiceId, navigationContext.isManual).then(function () {
                 pageData.set("isLoading", false);
             });
 

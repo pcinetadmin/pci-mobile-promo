@@ -41,7 +41,15 @@ function onBreakdownTap(args) {
 
 function onAdjustmentsTap(args) {
     try {
-        
+        navigationContext.isManual = "N";
+
+        const navigationEntry = {
+            moduleName: "companygroups/companygroup/premiums/invoice/adjustments/adjustments-page",
+            context: navigationContext,
+            clearHistory: false
+        };
+
+        frameModule.topmost().navigate(navigationEntry);
     } catch(e) {
         dialogs.alert(e);
     }
@@ -49,7 +57,15 @@ function onAdjustmentsTap(args) {
 
 function onOtherAdjustmentsTap(args) {
     try {
-        
+        navigationContext.isManual = "Y";
+
+        const navigationEntry = {
+            moduleName: "companygroups/companygroup/premiums/invoice/adjustments/adjustments-page",
+            context: navigationContext,
+            clearHistory: false
+        };
+
+        frameModule.topmost().navigate(navigationEntry);
     } catch(e) {
         dialogs.alert(e);
     }
@@ -57,7 +73,13 @@ function onOtherAdjustmentsTap(args) {
 
 function onAffiliatesTap(args) {
     try {
-        
+        const navigationEntry = {
+            moduleName: "companygroups/companygroup/premiums/invoice/affiliates/affiliates-page",
+            context: navigationContext,
+            clearHistory: false
+        };
+
+        frameModule.topmost().navigate(navigationEntry);
     } catch(e) {
         dialogs.alert(e);
     }

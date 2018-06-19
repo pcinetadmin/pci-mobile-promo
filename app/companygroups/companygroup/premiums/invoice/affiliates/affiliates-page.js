@@ -1,4 +1,4 @@
-const BreakdownViewModel = require("./breakdown-view-model");
+const AffiliatesViewModel = require("./affiliates-view-model");
 const platform = require("platform");
 const ObservableModule = require("data/observable");
 var frameModule = require("ui/frame");
@@ -8,10 +8,10 @@ var page;
 var navigationContext;
 var isGroup;
 
-var breakdownList = new BreakdownViewModel([]);
+var affiliatesList = new AffiliatesViewModel([]);
 
 var pageData = new ObservableModule.fromObject({
-    breakdownList: breakdownList,
+    affiliatesList: affiliatesList,
     isLoading: false
 });
 
@@ -20,7 +20,7 @@ function onNavigatingTo(args) {
         page = args.object;
         navigationContext = page.navigationContext;
 
-        page.actionBar.title = "Assessment Breakdown";
+        page.actionBar.title = "Companies Included";
     
         var companyName = page.getViewById("companyName");
         
@@ -29,11 +29,11 @@ function onNavigatingTo(args) {
         if (args.isBackNavigation) {
             // Do Nothing on Back Navigation
         } else {
-            breakdownList.empty();
+            affiliatesList.empty();
 
             pageData.set("isLoading", true);
 
-            breakdownList.load(navigationContext.invoiceId, navigationContext.isReinsurer).then(function () {
+            affiliatesList.load(navigationContext.invoiceId).then(function () {
                 pageData.set("isLoading", false);
             });
 

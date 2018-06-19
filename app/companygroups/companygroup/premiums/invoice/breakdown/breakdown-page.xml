@@ -6,8 +6,8 @@
     </ActionBar>
     
     <GridLayout columns="*" rows="auto, *" height="100%" width="100%">
-        <StackLayout row="0" col="0" verticalAlignment="center" horizontalAlignment="center" class="view-title">
-            <Label id="companyName" text="" verticalAlignment="center" horizontalAlignment="center" />
+        <StackLayout row="0" col="0" verticalAlignment="center" horizontalAlignment="center" class="view-title-multi">
+            <Label id="companyName" text="" textWrap="true" style="margin-bottom: 8; margin-top: 8;" />
         </StackLayout>
         <StackLayout row="1" col="0" verticalAlignment="top">
             <ListView items="{{ breakdownList }}" height="100%">
@@ -15,15 +15,15 @@
                     <StackLayout>
                         <GridLayout columns="*, auto, auto" rows="*" class="list-view-item-small">
                             <StackLayout row="0" col="0" orientation="horizontal">
-                                <Label text="{{ lowerLimitPremVol | currencyConverter() }}" textWrap="true" class="list-view-item-mail-top-small" />
-                                <Label text="-" textWrap="true" class="list-view-item-mail-top-small" />
-                                <Label text="{{ upperLimitPremVol | currencyConverter() }}" textWrap="true" class="list-view-item-mail-top-small" />
-                                <Label text="@" textWrap="true" class="list-view-item-mail-top-small" />
-                                <Label text="{{ ratePerPremVol }}" textWrap="true" class="list-view-item-mail-top-small" />
-                                <Label text="/MM" textWrap="true" class="list-view-item-mail-top-small" />
+                                <Label text="{{ lowerLimitPremVol | currencyConverter() }}" textWrap="true" class="list-view-item-top-small" />
+                                <Label text="-" textWrap="true" class="list-view-item-top-small" />
+                                <Label text="{{ upperLimitPremVol | currencyConverter() }}" textWrap="true" class="list-view-item-top-small" />
+                                <Label text="@$" textWrap="true" class="list-view-item-top-small" />
+                                <Label text="{{ ratePerPremVol }}" textWrap="true" class="list-view-item-top-small" />
+                                <Label text="/MM" textWrap="true" class="list-view-item-top-small" />
                             </StackLayout>
-                            <Label row="0" col="1" text="&nbsp;&nbsp;" class="list-view-item-mail-top-small" />
-                            <Label row="0" col="2" text="{{ assessmentPremVol | currencyConverter }}" verticalAlignment="bottom" class="list-view-item-mail-top-small" />
+                            <Label row="0" col="1" text="&nbsp;&nbsp;" class="list-view-item-top-small" />
+                            <Label row="0" col="2" text="{{ assessmentPremVol | currencyConverter }}" verticalAlignment="bottom" class="list-view-item-top-small" />
                         </GridLayout>
                     </StackLayout>
                 </ListView.itemTemplate>
