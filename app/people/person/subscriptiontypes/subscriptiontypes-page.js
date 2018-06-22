@@ -1,4 +1,4 @@
-const ContactTypesViewModel = require("./contacttypes-view-model");
+const SubscriptionTypesViewModel = require("./subscriptiontypes-view-model");
 const platform = require("platform");
 const ObservableModule = require("data/observable");
 var frameModule = require("ui/frame");
@@ -6,12 +6,11 @@ var dialogs = require("ui/dialogs");
 
 var page;
 var navigationContext;
-var isGroup;
 
-var contactTypesList = new ContactTypesViewModel([]);
+var subscriptionTypesList = new SubscriptionTypesViewModel([]);
 
 var pageData = new ObservableModule.fromObject({
-    contactTypesList: contactTypesList,
+    subscriptionTypesList: subscriptionTypesList,
     isLoading: false
 });
 
@@ -19,26 +18,18 @@ function onNavigatingTo(args) {
     try {
         page = args.object;
         navigationContext = page.navigationContext;
-
-        isGroup = navigationContext.isGroup;
-            
-        page.actionBar.title = "Contact Types";
-        
-        // if (isGroup === "Y") {
-        //     page.actionBar.title = "Group Contacts";
-        // } else {
-        //     page.actionBar.title = "Company Contacts";
-        // }
+ 
+        page.actionBar.title = "Subscription Types";
     
-        var companyName = page.getViewById("companyName");
+        var fullName = page.getViewById("fullName");
         
-        companyName.text = navigationContext.companyName;
+        fullName.text = navigationContext.fullName;
 
-        contactTypesList.empty();
+        subscriptionTypesList.empty();
 
         pageData.set("isLoading", true);
 
-        contactTypesList.load(navigationContext.companyId, isGroup).then(function () {
+        subscriptionTypesList.load(navigationContext.personId).then(function () {
             pageData.set("isLoading", false);
         });
 
@@ -67,15 +58,15 @@ function onItemTap(args) {
         var view = args.view;
         var model = view.bindingContext;
 
-        model.isGroup = isGroup;
-        
-        const navigationEntry = {
-            moduleName: "companygroups/companygroup/contacttypes/contacts/contacts-page",
-            context: model,
-            clearHistory: false
-        };
+        if (model.subscriptionTypeId !== 0) {
+            const navigationEntry = {
+                moduleName: "people/person/subscriptiontypes/subscriptions/subscriptions-page",
+                context: model,
+                clearHistory: false
+            };
 
-        frameModule.topmost().navigate(navigationEntry);
+            frameModule.topmost().navigate(navigationEntry);
+        }
     }
     catch(e)
     {

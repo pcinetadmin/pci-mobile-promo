@@ -21,12 +21,14 @@ function onNavigatingTo(args) {
         navigationContext = page.navigationContext;
 
         isGroup = navigationContext.isGroup;
+
+        page.actionBar.title = "Remark Types";
             
-        if (isGroup === "Y") {
-            page.actionBar.title = "Group Remarks";
-        } else {
-            page.actionBar.title = "Company Remarks";
-        }
+        // if (isGroup === "Y") {
+        //     page.actionBar.title = "Group Remarks";
+        // } else {
+        //     page.actionBar.title = "Company Remarks";
+        // }
     
         var companyName = page.getViewById("companyName");
         

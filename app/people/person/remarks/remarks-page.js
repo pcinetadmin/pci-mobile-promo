@@ -11,9 +11,7 @@ var searchBar;
 var remarksPageSize = 25;
 var remarksSearchText = "";
 var remarksSearchSubmitted = false;
-var isGroup;
-var companyId;
-var remarkTypeCode;
+var personId;
 
 var remarksList = new RemarksViewModel([]);
 
@@ -27,26 +25,16 @@ function onNavigatingTo(args) {
         page = args.object;
         navigationContext = page.navigationContext;
 
-        var companyName = page.getViewById("companyName");
+        var fullName = page.getViewById("fullName");
         
-        companyName.text = navigationContext.companyName;
+        fullName.text = navigationContext.fullName;
 
-        isGroup = navigationContext.isGroup;
-        companyId = navigationContext.companyId;
-        remarkTypeCode = navigationContext.remarkTypeCode;
+        personId = navigationContext.personId;
 
         page.actionBar.title = "Remarks";
 
-        if (isGroup === "Y") {
-            // page.actionBar.title = "Group Remarks";
-
-            remarksSearchText = global.remarksSearchTextGroup;
-        } else {
-            // page.actionBar.title = "Company Remarks";
-
-            remarksSearchText = global.remarksSearchTextCompany;
-        }
-    
+        remarksSearchText = global.remarksSearchText;
+        
         if (remarksSearchText !== "") {
             var searchBar = page.getViewById("searchBar");
 
@@ -61,7 +49,7 @@ function onNavigatingTo(args) {
 
                 pageData.set("isLoading", true);
 
-                remarksList.load(remarksSearchText, companyId, isGroup, global.isExecutive, 1, remarksPageSize, remarkTypeCode, global.personId).then(function () {
+                remarksList.load(remarksSearchText, personId, global.isProfileExecutive, 1, remarksPageSize, global.personId).then(function () {
                     pageData.set("isLoading", false);
                 });
 
@@ -74,7 +62,7 @@ function onNavigatingTo(args) {
 
             pageData.set("isLoading", true);
 
-            remarksList.load(remarksSearchText, companyId, isGroup, global.isProfileExecutive, 1, remarksPageSize, remarkTypeCode, global.personId).then(function () {
+            remarksList.load(remarksSearchText, personId, global.isProfileExecutive, 1, remarksPageSize, global.personId).then(function () {
                 pageData.set("isLoading", false);
             });
 
@@ -152,11 +140,7 @@ function onSearchBarLoaded(args) {
 function onSubmit(args) {
     searchBar = args.object;
 
-    if (isGroup === "Y") {
-        global.remarksSearchTextGroup = searchBar.text.trim();
-    } else {
-        global.remarksSearchTextCompany = searchBar.text.trim();
-    }
+    global.remarksSearchText = searchBar.text.trim();
 
     remarksSearchText = searchBar.text.trim();
 
@@ -164,7 +148,7 @@ function onSubmit(args) {
     
     pageData.set("isLoading", true);
 
-    remarksList.load(remarksSearchText, companyId, isGroup, global.isProfileExecutive, 1, remarksPageSize, remarkTypeCode, global.personId).then(function (){
+    remarksList.load(remarksSearchText, personId, global.isProfileExecutive, 1, remarksPageSize, global.personId).then(function (){
         pageData.set("isLoading", false);
 
         remarksSearchSubmitted = true;
@@ -177,18 +161,14 @@ function onClear(args) {
     searchBar.text = "";
     remarksSearchText = "";
 
-    if (isGroup === "Y") {
-        global.remarksSearchTextGroup = "";
-    } else {
-        global.remarksSearchTextCompany = "";
-    }
+    global.remarksSearchText = "";
 
     if (remarksSearchSubmitted) {
         remarksList.empty();
         
         pageData.set("isLoading", true);
 
-        remarksList.load(remarksSearchText, companyId, isGroup, global.isProfileExecutive, 1, remarksPageSize, remarkTypeCode, global.personId).then(function (){
+        remarksList.load(remarksSearchText, personId, global.isProfileExecutive, 1, remarksPageSize, global.personId).then(function () {
             pageData.set("isLoading", false);
 
             remarksSearchSubmitted = false;
@@ -203,10 +183,8 @@ function onItemTap(args) {
         var view = args.view;
         var model = view.bindingContext;
 
-        model.isGroup = isGroup;
-
         const navigationEntry = {
-            moduleName: "companygroups/companygroup/remarktypes/remarks/remark/remark-page",
+            moduleName: "people/person/remarks/remark/remark-page",
             context: model,
             clearHistory: false
         };
@@ -236,7 +214,7 @@ function onLoadMoreItems(args) {
 
         pageData.set("isLoading", true);
 
-        remarksList.load(remarksSearchText, companyId, isGroup, global.isProfileExecutive, 1, remarksPageSize, remarkTypeCode, global.personId).then(function () {
+        remarksList.load(remarksSearchText, personId, global.isProfileExecutive, 1, remarksPageSize, global.personId).then(function () {
             pageData.set("isLoading", false);
         });
     } catch(e) {
@@ -249,32 +227,24 @@ function onLoadMoreItems(args) {
 }
 
 function addRemark() {
-    var completionDate = null;
-
-    if (navigationContext.remarkTypeCode !== "8") {
-        completionDate = new Date();
-    }
-
     var model = {
         remarksId: 0,
-        companyId: navigationContext.companyId,
-        companyName: navigationContext.companyName,
-        companyId0: null,
-        groupId: null,
-        groupName: null,
+        personId: navigationContext.personId,
+        fullName: navigationContext.fullName,
         publicPrivate: "Public",
-        remarkTypeCode: navigationContext.remarkTypeCode,
-        remarkType: navigationContext.remarkType,
+        remarkTypeCode: "8",
+        remarkType: "System Update",
         creationDate: new Date(),
-        completionDate: completionDate,
+        completionDate: null,
         visitDate: null,
         userName: global.logonId,
         commentAbbreviated: null,
-        comment: null
+        comment: null,
+        copyToCompanyFlag: "true"
     }
 
     const navigationEntry = {
-        moduleName: "companygroups/companygroup/remarktypes/remarks/remarkadd/remarkadd-page",
+        moduleName: "people/person/remarks/remarkadd/remarkadd-page",
         context: model,
         clearHistory: false
     };

@@ -19,12 +19,14 @@ function onNavigatingTo(args) {
     navigationContext = page.navigationContext;
 
     isGroup = navigationContext.isGroup;
+
+    page.actionBar.title = "Metrics";
         
-    if (isGroup === "Y") {
-        page.actionBar.title = "Group Metrics";
-    } else {
-        page.actionBar.title = "Company Metrics";
-    }
+    // if (isGroup === "Y") {
+    //     page.actionBar.title = "Group Metrics";
+    // } else {
+    //     page.actionBar.title = "Company Metrics";
+    // }
     
     var companyName = page.getViewById("companyName");
     

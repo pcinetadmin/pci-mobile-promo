@@ -1,0 +1,61 @@
+<Page navigatingTo="onNavigatingTo" loaded="onLoaded" class="page" xmlns="http://schemas.nativescript.org/tns.xsd" >
+    <ActionBar class="action-bar">
+        <ActionItem tap="onCancelTap" android.systemIcon="ic_menu_close_clear_cancel" ios.systemIcon="1" ios.position="left" />
+        <ActionItem tap="onSaveTap" ios.systemIcon="3" android.systemIcon="ic_menu_save" ios.position="right" />
+    </ActionBar>
+
+    <GridLayout columns="*" rows="*" height="100%" width="100%">
+        <StackLayout row="0" col="0" verticalAlignment="top">
+            <StackLayout verticalAlignment="center" horizontalAlignment="center" class="view-title">
+                <Label id="fullName" text="{{ fullName }}" verticalAlignment="center" horizontalAlignment="center" />
+            </StackLayout>
+            <StackLayout tap="onStackLayoutRemarkLevelTap">
+                <GridLayout columns="auto, *, auto" rows="auto" class="list-view-item-form">
+                    <Label row="0" col="0" text="Remark Level" class="list-view-item-left" />
+                    <Label id="remarkLevelLabel" row="0" col="1" text="{{ publicPrivate }}" class="list-view-item-right" />
+                    <Label row="0" col="2" text="&#xf105;" class="fn-list-view-item" />
+                </GridLayout>
+            </StackLayout>
+            <StackLayout tap="onStackLayoutRemarkTypeTap">
+                <GridLayout columns="auto, *, auto" rows="auto" class="list-view-item-form">
+                    <Label row="0" col="0" text="Remark Type" class="list-view-item-left" />
+                    <Label id="remarkTypeLabel" row="0" col="1" text="{{ remarkType }}" class="list-view-item-right" />
+                    <Label row="0" col="2" text="&#xf105;" class="fn-list-view-item" />
+                </GridLayout>
+            </StackLayout>
+            <StackLayout tap="onStackLayoutCreationDateTap">
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">
+                    <Label row="0" col="0" text="Creation Date" class="list-view-item-left" />
+                    <Label id="creationDateLabel" row="0" col="1" text="{{ creationDate | dateConverter(dateFormat) }}" class="list-view-item-right" />
+                </GridLayout>
+            </StackLayout>
+            <StackLayout id="completionDateStackLayout" tap="onStackLayoutCompletionDateTap" visibility="{{ completionDate === null ? 'collapse' : 'visible' }}">
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">
+                    <Label row="0" col="0" text="Completion Date" class="list-view-item-left" />
+                    <Label id="completionDateLabel" row="0" col="1" text="{{ completionDate | dateConverter(dateFormat) }}" class="list-view-item-right" />
+                </GridLayout>
+            </StackLayout>
+            <StackLayout tap="onStackLayoutVisitDateTap" visibility="{{ isProfileMembership ? 'visible' : 'collapse' }}">
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">
+                    <Label row="0" col="0" text="Visit Date" class="list-view-item-left" />
+                    <Label id="visitDateLabel" row="0" col="1" text="{{ visitDate | dateConverter(dateFormat) }}" class="list-view-item-right" />
+                </GridLayout>
+            </StackLayout>
+            <GridLayout id="visitDateGridLayout" columns="*" rows="auto" class="list-view-item-form" visibility="collapse">
+                <DatePicker id="visitDateDatePicker" row="0" col="0" date="{{ visitDate }}" horizontalAlignment="center" class="list-view-item-picker"></DatePicker>
+            </GridLayout>
+            <StackLayout tap="onStackLayoutCreatedByTap">
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">
+                    <Label row="0" col="0" text="Created By" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ userName }}" class="list-view-item-right" />
+                </GridLayout>
+            </StackLayout>
+            <!-- <GridLayout columns="*" rows="auto" class="list-view-item-form">
+                <Label row="0" col="0" text="Comment" class="list-view-item-left" />
+            </GridLayout> -->
+            <GridLayout columns="*" rows="*" class="list-view-item-form">
+                <TextView text="{{ comment }}" focus="onTextViewFocus" hint="Comment" class="list-view-item-textview" />
+            </GridLayout>
+        </StackLayout>
+    </GridLayout>
+</Page>

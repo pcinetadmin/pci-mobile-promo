@@ -25,7 +25,13 @@ function onNavigatingTo(args) {
 
         switch (loadData) {
             case "pacauthorization":
-                page.actionBar.title = "PAC Authorization";
+                // page.actionBar.title = "PAC Authorization";
+
+                if (isGroup === "Y") {
+                    page.actionBar.title = "Group PAC";
+                } else {
+                    page.actionBar.title = "Company PAC";
+                }
                 
                 break;
 
@@ -39,7 +45,13 @@ function onNavigatingTo(args) {
                 break;
 
             default:
-                page.actionBar.title = "PAC Authorization";
+                // page.actionBar.title = "PAC Authorization";
+
+                if (isGroup === "Y") {
+                    page.actionBar.title = "Group PAC";
+                } else {
+                    page.actionBar.title = "Company PAC";
+                }
                 
                 break;
 

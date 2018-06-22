@@ -3,7 +3,7 @@ var ObservableArray = require("data/observable-array").ObservableArray;
 var http = require("http");
 var dialogs = require("ui/dialogs");
 
-function ContactsViewModel(items) {
+function RemarksViewModel(items) {
     const viewModel = new ObservableArray(items);
     
     viewModel.load = function(filter, companyId, isGroup, isExecutive, page, pageSize, remarkTypeCode, creatorId) {
@@ -54,4 +54,4 @@ function ContactsViewModel(items) {
     return viewModel;
 }
 
-module.exports = ContactsViewModel;
+module.exports = RemarksViewModel;

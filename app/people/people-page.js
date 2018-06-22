@@ -3,7 +3,10 @@ const platform = require("platform");
 const ObservableModule = require("data/observable");
 var gestures = require("ui/gestures");
 var frameModule = require("ui/frame");
+var http = require("http");
 var dialogs = require("ui/dialogs");
+var email = require("nativescript-email");
+var phone = require("nativescript-phone");
 
 const MIN_X = -80;
 const MAX_X = 160;
@@ -233,41 +236,105 @@ function onLoadMoreItems(args) {
 }
 
 function onEmailClick(args) {
-    
+    try {
+        if (swipeOpen) {
+            swipedItem.animate({
+                translate: { x: 0, y: 0 },
+                duration: 200
+            });
 
-    if (swipeOpen) {
-        swipedItem.animate({
-            translate: { x: 0, y: 0 },
-            duration: 200
+            swipeOpen = false;
+        }
+
+        var view = args.view;
+        var bindingContext = view.bindingContext;
+
+        email.compose({
+            to: [bindingContext.emailAddress]
         });
-
-        swipeOpen = false;
+    }
+    catch(e)
+    {
+        dialogs.alert({
+            title: "Error",
+            message: e.toString(),
+            okButtonText: "OK"
+        });
     }
 }
 
 function onPhoneClick(args) {
-    
+    try {
+        if (swipeOpen) {
+            swipedItem.animate({
+                translate: { x: 0, y: 0 },
+                duration: 200
+            });
 
-    if (swipeOpen) {
-        swipedItem.animate({
-            translate: { x: 0, y: 0 },
-            duration: 200
+            swipeOpen = false;
+        }
+
+        var view = args.view;
+        var bindingContext = view.bindingContext;
+
+        phone.dial(bindingContext.workPhone, false);
+    }
+    catch(e)
+    {
+        dialogs.alert({
+            title: "Error",
+            message: e.toString(),
+            okButtonText: "OK"
         });
-
-        swipeOpen = false;
     }
 }
 
 function onRemarkClick(args) {
+    try {
+        if (swipeOpen) {
+            swipedItem.animate({
+                translate: { x: 0, y: 0 },
+                duration: 200
+            });
+
+            swipeOpen = false;
+        }
+
+        var view = args.view;
+        var bindingContext = view.bindingContext;
+
+        if (global.logonId === null) {
+            return http.request({
+                url: global.apiBaseServiceUrl + "person/personinfo?personId=" + global.personId,
+                method: "GET",
+                headers: { "Content-Type": "application/json", "Authorization": global.token }
+            }).then(function (response) {
+                var result = response.content.toString();
+                var data = JSON.parse(result);
     
+                data.forEach(function(person) {
+                    global.logonId = person.LogonId
+                });
 
-    if (swipeOpen) {
-        swipedItem.animate({
-            translate: { x: 0, y: 0 },
-            duration: 200
+                addRemark(bindingContext);
+            }, function (e) {
+                dialogs.alert({
+                    title: "Error",
+                    message: e.toString(),
+                    okButtonText: "OK"
+                });
+            });
+        } else {
+            addRemark(bindingContext);
+        }
+    }
+    catch(e)
+    {
+        dialogs.alert({
+            title: "Error",
+            message: e.toString(),
+            okButtonText: "OK"
         });
-
-        swipeOpen = false;
     }
 }
 
@@ -392,6 +459,32 @@ function onLayoutLoaded(args) {
             });
         }
     });
+}
+
+function addRemark(bindingContext) {
+    var model = {
+        remarksId: 0,
+        personId: bindingContext.personId,
+        fullName: bindingContext.fullName,
+        publicPrivate: "Public",
+        remarkTypeCode: "8",
+        remarkType: "System Update",
+        creationDate: new Date(),
+        completionDate: null,
+        visitDate: null,
+        userName: global.logonId,
+        commentAbbreviated: null,
+        comment: null,
+        copyToCompanyFlag: "true"
+    }
+
+    const navigationEntry = {
+        moduleName: "people/person/remarks/remarkadd/remarkadd-page",
+        context: model,
+        clearHistory: false
+    };
+
+    frameModule.topmost().navigate(navigationEntry);
 }
 
 exports.onNavigatingTo = onNavigatingTo;

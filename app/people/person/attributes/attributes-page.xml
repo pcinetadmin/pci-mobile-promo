@@ -1,0 +1,115 @@
+<Page navigatingTo="onNavigatingTo" class="page" xmlns="http://schemas.nativescript.org/tns.xsd" >
+    <ActionBar class="action-bar">
+        <android>
+            <NavigationButton android.systemIcon="ic_menu_back" tap="onBackTap" />
+        </android>
+    </ActionBar>
+
+    <ScrollView>
+        <GridLayout columns="*" rows="auto, *" width="100%">
+            <StackLayout row="0" col="0" verticalAlignment="center" horizontalAlignment="center" class="view-title">
+                <Label id="fullName" text="{{ fullName }}" horizontalAlignment="center" />
+            </StackLayout>
+            <StackLayout row="1" col="0">
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">
+                    <Label row="0" col="0" text="Informal Name" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ informalSalutation }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout columns="auto, *" rows="auto" class="list-view-item-form">
+                    <Label row="0" col="0" text="Title" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ title }}" textWrap="true" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout columns="auto, *" rows="auto" class="list-view-item-form">
+                    <Label row="0" col="0" text="Company" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ personCompany }}" textWrap="true" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <StackLayout verticalAlignment="bottom" class="list-view-section-header" visibility="{{ secretary.length > 0 ? 'visible' : 'collapse' }}">
+                    <Label text="ASSISTANT INFORMATION" verticalAlignment="bottom" />
+                </StackLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form" visibility="{{ secretary.length > 0 ? 'visible' : 'collapse' }}">
+                    <Label row="0" col="0" text="Name" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ secretary }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout columns="auto, *" rows="auto" class="list-view-item-form" visibility="{{ secretary.length > 0 ? 'visible' : 'collapse' }}">
+                    <Label row="0" col="0" text="Title" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ secretaryTitle }}" textWrap="true" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form" visibility="{{ secretary.length > 0 ? 'visible' : 'collapse' }}">
+                    <Label row="0" col="0" text="Phone" class="list-view-item-left" />
+                    <StackLayout row="0" col="1" orientation="horizontal">
+                        <Label text="{{ secretaryWorkPhone }}" tap="onSecretaryPhoneTap" horizontalAlignment="right" class="list-view-item-phone" />
+                        <Label text="{{ ' x' + secretaryExtension }}" horizontalAlignment="right" class="list-view-item-right" visibility="{{ secretaryExtension.length > 0 ? 'visible' : 'collapse' }}" />
+                    </StackLayout>
+                </GridLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form" visibility="{{ secretary.length > 0 ? 'visible' : 'collapse' }}">
+                    <Label row="0" col="0" text="Fax" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ secretaryFax }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form-bottom" visibility="{{ secretary.length > 0 ? 'visible' : 'collapse' }}">
+                    <Label row="0" col="0" text="Email" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ secretaryEmailAddress }}" tap="onSecretaryEmailTap" horizontalAlignment="right" class="list-view-item-email" />
+                </GridLayout>
+                <StackLayout verticalAlignment="bottom" class="list-view-section-header">
+                    <Label text="CONTACT INFORMATION" verticalAlignment="bottom" />
+                </StackLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">
+                    <Label row="0" col="0" text="Phone" class="list-view-item-left" />
+                    <StackLayout row="0" col="1" orientation="horizontal">
+                        <Label text="{{ workPhone }}" tap="onPhoneTap" horizontalAlignment="right" class="list-view-item-phone" />
+                        <Label text="{{ ' x' + extension }}" horizontalAlignment="right" class="list-view-item-right" visibility="{{ extension.length > 0 ? 'visible' : 'collapse' }}" />
+                    </StackLayout>
+                </GridLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">
+                    <Label row="0" col="0" text="Mobile" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ cellPhone }}" tap="onMobileTap" horizontalAlignment="right" class="list-view-item-phone" />
+                </GridLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">
+                    <Label row="0" col="0" text="Fax" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ fax }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form-bottom">
+                    <Label row="0" col="0" text="Email" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ emailAddress }}" tap="onEmailTap" horizontalAlignment="right" class="list-view-item-email" />
+                </GridLayout>
+                <StackLayout verticalAlignment="bottom" class="list-view-section-header">
+                    <Label text="ADDRESS INFORMATION" verticalAlignment="bottom" />
+                </StackLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">
+                    <Label row="0" col="0" text="Street Address" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ streetAddress }}" textWrap="true" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">
+                    <Label row="0" col="0" text="City" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ city }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">
+                    <Label row="0" col="0" text="State" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ state }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form-bottom">
+                    <Label row="0" col="0" text="Postal Code" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ postalCode }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <StackLayout verticalAlignment="bottom" class="list-view-section-header" visibility="{{ poBox.length > 0 ? 'visible' : 'collapse' }}">
+                    <Label text="P.O. BOX INFORMATION" verticalAlignment="bottom" />
+                </StackLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form" visibility="{{ poBox.length > 0 ? 'visible' : 'collapse' }}">
+                    <Label row="0" col="0" text="P.O. Box" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ poBox }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form" visibility="{{ poBox.length > 0 ? 'visible' : 'collapse' }}">
+                    <Label row="0" col="0" text="City" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ poBoxCity }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form" visibility="{{ poBox.length > 0 ? 'visible' : 'collapse' }}">
+                    <Label row="0" col="0" text="State" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ poBoxState }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form-bottom" visibility="{{ poBox.length > 0 ? 'visible' : 'collapse' }}">
+                    <Label row="0" col="0" text="Postal Code" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ poBoxPostalCode }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+            </StackLayout>
+        </GridLayout>
+    </ScrollView>
+</Page>

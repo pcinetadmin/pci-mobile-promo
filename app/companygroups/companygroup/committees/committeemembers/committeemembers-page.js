@@ -22,11 +22,13 @@ function onNavigatingTo(args) {
 
         isGroup = navigationContext.isGroup;
 
-        if (isGroup === "Y") {
-            page.actionBar.title = "Group Committees";
-        } else {
-            page.actionBar.title = "Company Committees";
-        }
+        page.actionBar.title = "Committee";
+
+        // if (isGroup === "Y") {
+        //     page.actionBar.title = "Group Committees";
+        // } else {
+        //     page.actionBar.title = "Company Committees";
+        // }
     
         var companyName = page.getViewById("companyName");
         var committee = page.getViewById("committee");

@@ -20,12 +20,14 @@ function onNavigatingTo(args) {
         navigationContext = page.navigationContext;
 
         isGroup = navigationContext.isGroup;
+
+        page.actionBar.title = "Committees";
             
-        if (isGroup === "Y") {
-            page.actionBar.title = "Group Committees";
-        } else {
-            page.actionBar.title = "Company Committees";
-        }
+        // if (isGroup === "Y") {
+        //     page.actionBar.title = "Group Committees";
+        // } else {
+        //     page.actionBar.title = "Company Committees";
+        // }
     
         var companyName = page.getViewById("companyName");
         

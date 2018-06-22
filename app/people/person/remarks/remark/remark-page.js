@@ -7,13 +7,6 @@ function onNavigatingTo(args) {
 
     page.actionBar.title = "Remark";
 
-    // if (navigationContext.isGroup === "Y")
-    // {
-    //     page.actionBar.title = "Group Remark";
-    // } else {
-    //     page.actionBar.title = "Company Remark";
-    // }
-
     navigationContext.isProfileMembership = global.isProfileMembership;
 
     page.bindingContext = navigationContext;

@@ -1,0 +1,47 @@
+<Page navigatingTo="onNavigatingTo" class="page" xmlns="http://schemas.nativescript.org/tns.xsd" >
+    <ActionBar class="action-bar">
+        <android>
+            <NavigationButton android.systemIcon="ic_menu_back" tap="onBackTap" />
+        </android>
+    </ActionBar>
+
+    <GridLayout columns="*" rows="auto, auto, *" height="100%" width="100%">
+        <StackLayout row="0" col="0" verticalAlignment="center" horizontalAlignment="center" class="view-title">
+            <Label id="fullName" text="{{ fullName }}" verticalAlignment="center" horizontalAlignment="center" />
+        </StackLayout>
+        <StackLayout row="1" col="0">
+            <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">
+                <Label row="0" col="0" text="Remark Level" class="list-view-item-left" />
+                <Label row="0" col="1" text="{{ publicPrivate }}" horizontalAlignment="right"  class="list-view-item-right" />
+            </GridLayout>
+            <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">
+                <Label row="0" col="0" text="Remark Type" class="list-view-item-left" />
+                <Label row="0" col="1" text="{{ remarkType }}" horizontalAlignment="right"  class="list-view-item-right" />
+            </GridLayout>
+            <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">
+                <Label row="0" col="0" text="Creation Date" class="list-view-item-left" />
+                <Label row="0" col="1" text="{{ creationDate }}" horizontalAlignment="right"  class="list-view-item-right" />
+            </GridLayout>
+            <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">
+                <Label row="0" col="0" text="Completion Date" class="list-view-item-left" />
+                <Label row="0" col="1" text="{{ completionDate }}" horizontalAlignment="right"  class="list-view-item-right" />
+            </GridLayout>
+            <GridLayout columns="*, auto" rows="auto" class="list-view-item-form" visibility="{{ visitDate.length === 0 ? 'collapse' : isProfileMembership ? 'visible' : 'collapse' }}">
+                <Label row="0" col="0" text="Visit Date" class="list-view-item-left" />
+                <Label row="0" col="1" text="{{ visitDate }}" horizontalAlignment="right"  class="list-view-item-right" />
+            </GridLayout>
+            <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">
+                <Label row="0" col="0" text="Created By" class="list-view-item-left" />
+                <Label row="0" col="1" text="{{ userName }}" horizontalAlignment="right"  class="list-view-item-right" />
+            </GridLayout>
+            <!-- <GridLayout columns="*" rows="auto" class="list-view-item-form">
+                <Label row="0" col="0" text="Comment" class="list-view-item-left" />
+            </GridLayout> -->
+        </StackLayout>
+        <StackLayout row="2" col="0">
+            <GridLayout columns="*" rows="*">
+                <TextView text="{{ comment }}" editable="false" class="scroll-view-item" />
+            </GridLayout>
+        </StackLayout>
+    </GridLayout>
+</Page>

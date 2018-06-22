@@ -8,7 +8,7 @@ function PersonViewModel(items) {
     viewModel.load = function() {
         var data = [
             {"title": "Attributes", "navigateTo": "people/person/attributes/attributes-page"},
-            {"title": "Subscriptions", "navigateTo": "people/person/subscriptions/subscriptions-page"},
+            {"title": "Subscriptions", "navigateTo": "people/person/subscriptiontypes/subscriptiontypes-page"},
             {"title": "Contact for Companies", "navigateTo": "people/person/contacts/contacts-page"},
             {"title": "Committees / Contact Lists", "navigateTo": "people/person/committees/committees-page"},
             {"title": "Meetings", "navigateTo": "people/person/meetings/meetings-page"},

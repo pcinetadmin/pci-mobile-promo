@@ -536,6 +536,18 @@ Page {
     text-align: right;
 }
 
+.android .list-view-item-email {
+    color: #0a6fb0;
+    font-size: 14;
+    text-decoration: underline;
+}
+
+.ios .list-view-item-email {
+    color: #0a6fb0;
+    font-size: 16;
+    text-decoration: underline;
+}
+
 .android .list-view-item-sub-email {
     color: #0a6fb0;
     font-size: 12;
@@ -548,6 +560,16 @@ Page {
     font-size: 14;
     margin-top: 3;
     text-decoration: underline;
+}
+
+.android .list-view-item-phone {
+    color: #0a6fb0;
+    font-size: 14;
+}
+
+.ios .list-view-item-phone {
+    color: #0a6fb0;
+    font-size: 16;
 }
 
 .android .list-view-item-sub-phone {

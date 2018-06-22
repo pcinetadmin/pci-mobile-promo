@@ -54,5 +54,31 @@ function onBackTap(args) {
     }
 }
 
+function onItemTap(args) {
+    try {
+        var view = args.view;
+        var model = view.bindingContext;
+
+        model.isGroup = "N";
+
+        const navigationEntry = {
+            moduleName: "companygroups/companygroup/companygroup-page",
+            context: model,
+            clearHistory: false
+        };
+
+        frameModule.topmost().navigate(navigationEntry);
+    }
+    catch(e)
+    {
+        dialogs.alert({
+            title: "Error",
+            message: e.toString(),
+            okButtonText: "OK"
+        });
+    }
+}
+
 exports.onNavigatingTo = onNavigatingTo;
 exports.onBackTap = onBackTap;
+exports.onItemTap = onItemTap;

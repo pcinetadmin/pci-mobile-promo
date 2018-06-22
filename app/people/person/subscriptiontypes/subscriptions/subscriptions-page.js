@@ -1,4 +1,4 @@
-const MeetingAttendeesViewModel = require("./meetingattendees-view-model");
+const SubscriptionsViewModel = require("./subscriptions-view-model");
 const platform = require("platform");
 const ObservableModule = require("data/observable");
 var frameModule = require("ui/frame");
@@ -6,12 +6,11 @@ var dialogs = require("ui/dialogs");
 
 var page;
 var navigationContext;
-var isGroup;
 
-var meetingAttendeesList = new MeetingAttendeesViewModel([]);
+var subscriptionsList = new SubscriptionsViewModel([]);
 
 var pageData = new ObservableModule.fromObject({
-    meetingAttendeesList: meetingAttendeesList,
+    subscriptionsList: subscriptionsList,
     isLoading: false
 });
 
@@ -20,30 +19,22 @@ function onNavigatingTo(args) {
         page = args.object;
         navigationContext = page.navigationContext;
 
-        isGroup = navigationContext.isGroup;
+        page.actionBar.title = "Subscriptions";
 
-        page.actionBar.title = "Attendees";
-
-        // if (isGroup === "Y") {
-        //     page.actionBar.title = "Group Meetings";
-        // } else {
-        //     page.actionBar.title = "Company Meetings";
-        // }
-    
-        var companyName = page.getViewById("companyName");
-        var meeting = page.getViewById("meeting");
+        var fullName = page.getViewById("fullName");
+        var subscriptionType = page.getViewById("subscriptionType");
         
-        companyName.text = navigationContext.companyName;
-        meeting.text = navigationContext.meeting; // + "(" + navigationContext.companyId + " : " + isGroup + " : " + navigationContext.meetingCode + ")";
+        fullName.text = navigationContext.fullName;
+        subscriptionType.text = navigationContext.subscriptionType;
 
         if (args.isBackNavigation) {
             // Do Nothing on Back Navigation
         } else {
-            meetingAttendeesList.empty();
+            subscriptionsList.empty();
 
             pageData.set("isLoading", true);
 
-            meetingAttendeesList.load(navigationContext.companyId, isGroup, navigationContext.meetingCode).then(function () {
+            subscriptionsList.load(navigationContext.personId, navigationContext.subscriptionTypeId).then(function () {
                 pageData.set("isLoading", false);
             });
 
@@ -73,9 +64,9 @@ function onItemTap(args) {
         var view = args.view;
         var model = view.bindingContext;
 
-        if (!model.isDeleted) {
+        if (model.subscriptionTypeId === 2) {
             const navigationEntry = {
-                moduleName: "people/person/person-page",
+                moduleName: "people/person/subscriptiontypes/subscriptions/states/states-page",
                 context: model,
                 clearHistory: false
             };
