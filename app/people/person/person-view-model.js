@@ -14,7 +14,7 @@ function PersonViewModel(items) {
             {"title": "Meetings", "navigateTo": "people/person/meetings/meetings-page"},
             {"title": "Remarks", "navigateTo": "people/person/remarks/remarks-page"},
             {"title": "Web Access", "navigateTo": "people/person/webaccess/webaccess-page"},
-            {"title": "PAC Eligibility", "navigateTo": "people/person/paceligibility/paceligibility-page"}
+            {"title": "PAC Authorization", "navigateTo": "people/person/pacauthorization/pacauthorization-page"}
         ];
 
         data.forEach(function(dataItem) {

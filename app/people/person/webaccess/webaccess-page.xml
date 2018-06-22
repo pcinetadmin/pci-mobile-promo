@@ -1,0 +1,40 @@
+<Page navigatingTo="onNavigatingTo" class="page" xmlns="http://schemas.nativescript.org/tns.xsd" >
+    <ActionBar class="action-bar">
+        <android>
+            <NavigationButton android.systemIcon="ic_menu_back" tap="onBackTap" />
+        </android>
+    </ActionBar>
+
+    <GridLayout columns="*" rows="auto, auto, *" height="100%" width="100%">
+        <StackLayout row="0" col="0" verticalAlignment="center" horizontalAlignment="center" class="view-title">
+            <Label id="fullName" text="" verticalAlignment="center" horizontalAlignment="center" />
+        </StackLayout>
+        <StackLayout row="1" col="0" verticalAlignment="top">
+            <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">
+                <Label row="0" col="0" text="Web Access?" class="list-view-item-left" />
+                <Label row="0" col="1" text="{{ details.webAccess === 'Y' ? 'Yes' : 'No' }}" horizontalAlignment="right" class="list-view-item-right" />
+            </GridLayout>
+            <GridLayout columns="auto, *" rows="auto" class="list-view-item-form">
+                <Label row="0" col="0" text="Web Access End Date" class="list-view-item-left" />
+                <Label row="0" col="1" text="{{ details.webAccessEndDate }}" textWrap="true" horizontalAlignment="right" class="list-view-item-right" />
+            </GridLayout>
+            <GridLayout columns="auto, *" rows="auto" class="list-view-item-form-bottom">
+                <Label row="0" col="0" text="Registered for Website?" class="list-view-item-left" />
+                <Label row="0" col="1" text="{{ details.webRegistered === 'Y' ? 'Yes' : 'No' }}" textWrap="true" horizontalAlignment="right" class="list-view-item-right" />
+            </GridLayout>
+            <StackLayout verticalAlignment="bottom" class="list-view-section-header">
+                <Label text="WEB ACCESS SECURITY ROLES" verticalAlignment="bottom" />
+            </StackLayout>
+        </StackLayout>
+        <StackLayout row="2" col="0" verticalAlignment="top">
+            <ListView items="{{ webAccessList }}" height="100%">
+                <ListView.itemTemplate>
+                    <StackLayout class="list-view-item">
+                        <Label text="{{ webAccess }}" textWrap="true" class="list-view-item-main-top" />
+                    </StackLayout>
+                </ListView.itemTemplate>
+            </ListView>
+        </StackLayout>
+        <ActivityIndicator busy="{{ isLoading }}" android:height="25%" android:width="25%" ios.activityIndicatorViewStyle="whiteLarge" rowSpan="3" colSpan="1" />
+    </GridLayout>
+</Page>

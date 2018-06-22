@@ -17,6 +17,14 @@ function PeopleViewModel(items) {
 
             data.forEach(function(person) {
                 if (person.PersonId !== null && person.PersonId !== 0) {
+                    var webAccessEndDate;
+
+                    if (person.WebAccessEndDate === null || person.WebAccessEndDate.length === 0) {
+                        webAccessEndDate = null;
+                    } else {
+                        webAccessEndDate = person.WebAccessEndDate.substring(0, person.WebAccessEndDate.indexOf(" "));
+                    }
+
                     viewModel.push({
                         personId: person.PersonId,
                         prefix: person.Prefix,
@@ -35,7 +43,7 @@ function PeopleViewModel(items) {
                         groupName: person.GroupName,
                         webAccessCode: person.WebAccessCode,
                         webAccessGroupType: person.WebAccessGroupType,
-                        webAccessEndDate: person.WebAccessEndDate,
+                        webAccessEndDate: webAccessEndDate, //person.WebAccessEndDate,
                         webAccessComment: person.WebAccessComment,
                         webAccess: person.WebAccess,
                         webRegistered: person.WebRegistered,
