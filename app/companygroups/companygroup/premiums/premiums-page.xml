@@ -31,7 +31,7 @@
                 </GridLayout>
                 <GridLayout row="5" col="0" columns="*, auto" rows="auto" tap="onStatesTap" class="list-view-item-form-bottom">
                     <Label row="0" col="0" text="States Written" class="list-view-item-left" />
-                    <Label row="0" col="1" text="&#xf105;" class="fn-list-view-item" verticalAlignment="middle" />
+                    <Label row="0" col="1" text="&#xf105;" class="fn-list-view-item" verticalAlignment="middle" visibility="{{ premiums.companyId === null ? 'collapse' : 'visible' }}" />
                 </GridLayout>
                 <StackLayout row="6" col="0" verticalAlignment="bottom" class="list-view-section-header">
                     <Label text="LINES OF BUSINESS" verticalAlignment="bottom" />
@@ -42,7 +42,7 @@
                 </GridLayout>
                 <GridLayout row="8" col="0" columns="*, auto" rows="auto" tap="onLinesTap" class="list-view-item-form-bottom">
                     <Label row="0" col="0" text="Lines Written" class="list-view-item-left" />
-                    <Label row="0" col="1" text="&#xf105;" class="fn-list-view-item" verticalAlignment="middle" />
+                    <Label row="0" col="1" text="&#xf105;" class="fn-list-view-item" verticalAlignment="middle" visibility="{{ premiums.companyId === null ? 'collapse' : 'visible' }}" />
                 </GridLayout>
                 <StackLayout row="9" col="0" verticalAlignment="bottom" class="list-view-section-header" visibility="{{ isProfileAccounting ? 'visible' : 'collapse' }}">
                     <Label text="SEMI-ANNUAL ASSESSMENTS BY LEAD COMPANY" verticalAlignment="bottom" />

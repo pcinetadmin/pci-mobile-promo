@@ -16,13 +16,16 @@ function RemarkTypesViewModel(items) {
             var data = JSON.parse(result);
 
             data.forEach(function(remarkType) {
-                viewModel.push({
-                    companyId: remarkType.CompanyId,
-                    companyName: remarkType.CompanyName,
-                    remarkTypeCode: remarkType.RemarkTypeCode,
-                    remarkType: remarkType.RemarkType,
-                    sortOrder: remarkType.SortOrder
-                });
+                if (data[0].CompanyId !== undefined && data[0].CompanyId !== null)
+                {
+                    viewModel.push({
+                        companyId: remarkType.CompanyId,
+                        companyName: remarkType.CompanyName,
+                        remarkTypeCode: remarkType.RemarkTypeCode,
+                        remarkType: remarkType.RemarkType,
+                        sortOrder: remarkType.SortOrder
+                    });
+                }
             });
         }, function (e) {
             dialogs.alert({

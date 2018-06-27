@@ -50,7 +50,23 @@ function PremiumsViewModel() {
                 else
                 {
                     // undefined or null data.CompanyId returned.
-                    dialogs.alert("Company assessment information not available at this time.")
+                    viewModel.companyId = null;
+                    viewModel.companyName = "";
+                    viewModel.companyId0 = null;
+                    viewModel.groupId = null;
+                    viewModel.groupName = "";
+                    viewModel.leadCompanyId = null;
+                    viewModel.leadCompanyName = "";
+                    viewModel.assessmentYear = "";
+                    viewModel.dwpYear = "";
+                    viewModel.totalDwp = null;
+                    viewModel.excludedDwp = "";
+                    viewModel.assessedDwp = null;
+                    viewModel.totalAssessment = "";
+                    viewModel.stateCount = "";
+                    viewModel.lineCount = "";
+
+                    // dialogs.alert("Company assessment information not available at this time.")
                 }
             }, function (e) {
                 dialogs.alert({

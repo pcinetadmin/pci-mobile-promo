@@ -44,10 +44,19 @@ function onNavigatingTo(args) {
         
             pageData.set("isLoading", true);
 
+            // if (navigationContext.companyId === navigationContext.groupId && navigationContext.companyId === navigationContext.companyId0) {
+            //     isGroup = "Y";
+            // }
+
             premiums.load(navigationContext.companyId, isGroup).then(function () {
-                invoicesList.load(navigationContext.companyId, isGroup).then(function () {
+                if (premiums.companyId !== null) {
+                    invoicesList.load(navigationContext.companyId, isGroup).then(function () {
+                        pageData.set("isLoading", false);
+                    });
+                } else {
                     pageData.set("isLoading", false);
-                });
+                }
+                
             });
 
             page.bindingContext = pageData;
@@ -105,15 +114,17 @@ function onStatesTap(args) {
         var view = args.view;
         var model = view.bindingContext.premiums;
 
-        model.isGroup = isGroup;
-        
-        const navigationEntry = {
-            moduleName: "companygroups/companygroup/premiums/states/states-page",
-            context: model,
-            clearHistory: false
-        };
+        if (model.companyId !== null) {
+            model.isGroup = isGroup;
+            
+            const navigationEntry = {
+                moduleName: "companygroups/companygroup/premiums/states/states-page",
+                context: model,
+                clearHistory: false
+            };
 
-        frameModule.topmost().navigate(navigationEntry);
+            frameModule.topmost().navigate(navigationEntry);
+        }
     } catch(e) {
         dialogs.alert(e);
     }
@@ -124,15 +135,17 @@ function onLinesTap(args) {
         var view = args.view;
         var model = view.bindingContext.premiums;
 
-        model.isGroup = isGroup;
-        
-        const navigationEntry = {
-            moduleName: "companygroups/companygroup/premiums/lines/lines-page",
-            context: model,
-            clearHistory: false
-        };
+        if (model.companyId !== null) {
+            model.isGroup = isGroup;
+            
+            const navigationEntry = {
+                moduleName: "companygroups/companygroup/premiums/lines/lines-page",
+                context: model,
+                clearHistory: false
+            };
 
-        frameModule.topmost().navigate(navigationEntry);
+            frameModule.topmost().navigate(navigationEntry);
+        }
     } catch(e) {
         dialogs.alert(e);
     }
