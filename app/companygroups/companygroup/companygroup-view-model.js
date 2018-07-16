@@ -1,6 +1,4 @@
-const observableModule = require("data/observable");
 var ObservableArray = require("data/observable-array").ObservableArray;
-var dialogs = require("ui/dialogs");
 
 function CompanyGroupViewModel(items) {
     const viewModel = new ObservableArray(items);

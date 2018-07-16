@@ -352,9 +352,11 @@ function onLayoutLoaded(args) {
                 } else {
                     var view = args.view;
                     var model = view.bindingContext;
+
+                    model.isGroup = isGroup;
         
                     const navigationEntry = {
-                        moduleName: "groups/group/group-page",
+                        moduleName: "companygroups/companygroup/companygroup-page",
                         context: model,
                         clearHistory: false
                     };

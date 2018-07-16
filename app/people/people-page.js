@@ -32,6 +32,7 @@ var peopleList = new PeopleViewModel([]);
 var pageData = new ObservableModule.fromObject({
     peopleList: peopleList,
     companyId: companyId,
+    reference: "tab",
     isLoading: false
 });
 
@@ -42,6 +43,12 @@ function onNavigatingTo(args) {
         page.actionBar.title = "People";
 
         navigationContext = page.navigationContext;
+
+        if (navigationContext.reference === "tab") {
+            pageData.reference = "tab";
+        } else {
+            pageData.reference = "nav";
+        }
 
         isGroup = navigationContext.isGroup;
 
@@ -96,6 +103,14 @@ function onNavigatingTo(args) {
             message: e.toString(),
             okButtonText: "OK"
         });
+    }
+}
+
+function onBackTap(args) {
+    try {
+        frameModule.topmost().goBack();
+    } catch(e) {
+        dialogs.alert(e);
     }
 }
 
@@ -488,6 +503,7 @@ function addRemark(bindingContext) {
 }
 
 exports.onNavigatingTo = onNavigatingTo;
+exports.onBackTap = onBackTap;
 exports.onSearchBarLoaded = onSearchBarLoaded;
 exports.onSubmit = onSubmit;
 exports.onClear = onClear;
