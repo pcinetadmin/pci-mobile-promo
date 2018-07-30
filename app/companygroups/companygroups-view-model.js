@@ -63,7 +63,9 @@ function CompanyGroupsViewModel(items) {
                         webAccessCode: group.WebAccessCode,
                         webAccess: group.WebAccess,
                         webAccessEndDate: group.WebAccessEndDate,
-                        affiliations: group.Affiliations
+                        affiliations: group.Affiliations,
+                        accountManagerId: group.AccountManagerId,
+                        accountManager: group.AccountManager
                     });
                 }
             });

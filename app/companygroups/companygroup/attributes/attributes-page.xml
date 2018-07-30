@@ -11,6 +11,13 @@
                 <Label id="companyName" text="{{ companyName }}" horizontalAlignment="center" />
             </StackLayout>
             <StackLayout row="1" col="0">
+                <GridLayout columns="*, auto" rows="auto" class="list-view-item-form-bottom">
+                    <Label row="0" col="0" text="Account Manager" class="list-view-item-left" />
+                    <Label row="0" col="1" text="{{ accountManager }}" horizontalAlignment="right" class="list-view-item-right" />
+                </GridLayout>
+                <StackLayout verticalAlignment="bottom" class="list-view-section-header">
+                    <Label text="COMPANY INFORMATION" verticalAlignment="bottom" />
+                </StackLayout>
                 <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">
                     <Label row="0" col="0" text="Status" class="list-view-item-left" />
                     <Label row="0" col="1" text="{{ status }}" horizontalAlignment="right" class="list-view-item-right" />

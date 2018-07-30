@@ -64,7 +64,9 @@ function HierarchyViewModel(items) {
                     webAccessEndDate: company.WebAccessEndDate,
                     affiliations: company.Affiliations,
                     subGroupFlag: company.SubGroupFlag,
-                    subGroupCompanyId: company.SubGroupCompanyId //,
+                    subGroupCompanyId: company.SubGroupCompanyId,
+                    accountManagerId: company.AccountManagerId,
+                    accountManager: company.AccountManager //,
                     //endDate: company.EndDate,
                     //pacEligible: company.PacEligible,
                     //sortOrder: company.SortOrder
