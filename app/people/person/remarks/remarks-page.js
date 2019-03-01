@@ -214,7 +214,7 @@ function onLoadMoreItems(args) {
 
         pageData.set("isLoading", true);
 
-        remarksList.load(remarksSearchText, personId, global.isProfileExecutive, 1, remarksPageSize, global.personId).then(function () {
+        remarksList.load(remarksSearchText, personId, global.isProfileExecutive, remarksPageNumber, remarksPageSize, global.personId).then(function () {
             pageData.set("isLoading", false);
         });
     } catch(e) {
