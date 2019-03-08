@@ -106,10 +106,26 @@ function LoginViewModel() {
 
                         if ((useTouchId === undefined || useTouchId === null || useTouchId === false) && rememberMe && platformModule.isIOS)
                         {
+                            var dialogTitleType = "Touch ID";
+                            var dialogMessageType = "the fingerprint scanner";
+
+                            // fingerprintAuth.available().then((result) => {
+                            //     if (result.touch)
+                            //     {
+                            //         dialogTitleType = "Touch ID";
+                            //         dialogMessageType = "the fingerprint scanner";
+                            //     }
+                            //     else
+                            //     {
+                            //         dialogTitleType = "Face ID";
+                            //         dialogMessageType = "facial recognition";
+                            //     }
+                            // });
+                            
                             dialogs.confirm(
                                 {
-                                    title: "Touch ID for \"PCI LegCon\"",
-                                    message: "Would you like to use the fingerprint scanner to log on in the future?",
+                                    title: dialogTitleType + " for \"ProMo\"",
+                                    message: "Would you like to use " + dialogMessageType + " to log on in the future?",
                                     okButtonText: "Yes",
                                     cancelButtonText: "No"
                                 }
