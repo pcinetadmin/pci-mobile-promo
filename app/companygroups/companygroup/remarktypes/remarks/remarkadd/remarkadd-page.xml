@@ -54,7 +54,7 @@
                 <Label row="0" col="0" text="Comment" class="list-view-item-left" />
             </GridLayout> -->
             <GridLayout columns="*" rows="*" class="list-view-item-form">
-                <TextView text="{{ comment }}" focus="onTextViewFocus" hint="Comment" class="list-view-item-textview" />
+                <TextView row="0" col="0" text="{{ comment }}" focus="onTextViewFocus" hint="Comment" class="list-view-item-textview" />
             </GridLayout>
         </StackLayout>
     </GridLayout>

@@ -8,7 +8,7 @@ function PeopleViewModel(items) {
     
     viewModel.load = function(filter, isGroup, page, pageSize, companyId) {
         return http.request({
-            url: global.apiBaseServiceUrl + "person/personfilter?filter=" + filter.replace(/ /g, "%20") + "&isGroup=" + isGroup + "&page=" + page + "&pageSize=" + pageSize + "&companyId=" + companyId,
+            url: global.apiBaseServiceUrl + "person/personfilter?filter=" + filter.replace(/ /g, "%20").replace(/‘/g, "'").replace(/’/g, "'") + "&isGroup=" + isGroup + "&page=" + page + "&pageSize=" + pageSize + "&companyId=" + companyId,
             method: "GET",
             headers: { "Content-Type": "application/json", "Authorization": global.token }
         }).then(function (response) {

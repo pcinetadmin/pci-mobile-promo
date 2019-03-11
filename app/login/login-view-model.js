@@ -12,7 +12,7 @@ function LoginViewModel() {
         rememberMe: false,
         useTouchId: false,
 
-        signIn: function() {
+        signIn: function(scanType) {
             const email = this.email;
             const password = this.password;
 
@@ -52,8 +52,23 @@ function LoginViewModel() {
 
                     if (profileManagerPosition > 0)
                     {
+                        global.isProfileEngagement = true;
                         global.isProfileManager = true;
                         global.isExecutive = "Y";
+                    }
+    
+                    var profilePoliticalEngagementPosition = global.token.toLowerCase().indexOf("profile+political+engagement");
+
+                    if (profilePoliticalEngagementPosition > 0)
+                    {
+                        global.isProfileEngagement = true;
+                    }
+    
+                    var profileFGRPosition = global.token.toLowerCase().indexOf("profile+fgr");
+
+                    if (profileFGRPosition > 0)
+                    {
+                        global.isProfileEngagement = true;
                     }
 
                     var profileAccountingPosition = global.token.toLowerCase().indexOf("profile+accounting");
@@ -104,28 +119,12 @@ function LoginViewModel() {
                         var useTouchId = appSettings.getBoolean("useTouchId", false);
                         var rememberMe = appSettings.getBoolean("rememberMe", false);
 
-                        if ((useTouchId === undefined || useTouchId === null || useTouchId === false) && rememberMe && platformModule.isIOS)
+                        if ((useTouchId === undefined || useTouchId === null || useTouchId === false) && scanType === "touch" && rememberMe && platformModule.isIOS)
                         {
-                            var dialogTitleType = "Touch ID";
-                            var dialogMessageType = "the fingerprint scanner";
-
-                            // fingerprintAuth.available().then((result) => {
-                            //     if (result.touch)
-                            //     {
-                            //         dialogTitleType = "Touch ID";
-                            //         dialogMessageType = "the fingerprint scanner";
-                            //     }
-                            //     else
-                            //     {
-                            //         dialogTitleType = "Face ID";
-                            //         dialogMessageType = "facial recognition";
-                            //     }
-                            // });
-                            
                             dialogs.confirm(
                                 {
-                                    title: dialogTitleType + " for \"ProMo\"",
-                                    message: "Would you like to use " + dialogMessageType + " to log on in the future?",
+                                    title: "Touch ID for \"ProMo\"",
+                                    message: "Would you like to use the fingerprint scanner to log on in the future?",
                                     okButtonText: "Yes",
                                     cancelButtonText: "No"
                                 }
@@ -165,6 +164,10 @@ function LoginViewModel() {
                                     }
                                 }
                             });
+                        }
+                        else if ((useTouchId === undefined || useTouchId === null || useTouchId === false) && scanType === "face" && rememberMe && platformModule.isIOS)
+                        {
+                            appSettings.setBoolean("useTouchId", true);
                         }
                         else
                         {

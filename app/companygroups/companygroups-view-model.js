@@ -8,7 +8,7 @@ function CompanyGroupsViewModel(items) {
     
     viewModel.load = function(filter, page, pageSize, isGroup, memberOnly) {
         return http.request({
-            url: global.apiBaseServiceUrl + "company/companyfilter?filter=" + filter.replace(/ /g, "%20") + "&isGroup=" + isGroup + "&page=" + page + "&pageSize=" + pageSize + "&memberOnly=" + memberOnly,
+            url: global.apiBaseServiceUrl + "company/companyfilter?filter=" + filter.replace(/ /g, "%20").replace(/‘/g, "'").replace(/’/g, "'") + "&isGroup=" + isGroup + "&page=" + page + "&pageSize=" + pageSize + "&memberOnly=" + memberOnly,
             method: "GET",
             headers: { "Content-Type": "application/json", "Authorization": global.token }
         }).then(function (response) {

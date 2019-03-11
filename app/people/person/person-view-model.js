@@ -6,16 +6,33 @@ function PersonViewModel(items) {
     const viewModel = new ObservableArray(items);
 
     viewModel.load = function() {
-        var data = [
-            {"title": "Attributes", "navigateTo": "people/person/attributes/attributes-page"},
-            {"title": "Subscriptions", "navigateTo": "people/person/subscriptiontypes/subscriptiontypes-page"},
-            {"title": "Contact for Companies", "navigateTo": "people/person/contacts/contacts-page"},
-            {"title": "Committees / Contact Lists", "navigateTo": "people/person/committees/committees-page"},
-            {"title": "Meetings", "navigateTo": "people/person/meetings/meetings-page"},
-            {"title": "Remarks", "navigateTo": "people/person/remarks/remarks-page"},
-            {"title": "Web Access", "navigateTo": "people/person/webaccess/webaccess-page"},
-            {"title": "PAC Authorization", "navigateTo": "people/person/pacauthorization/pacauthorization-page"}
-        ];
+        var data;
+
+        if (global.isProfileEngagement)
+        {
+            data = [
+                {"title": "Attributes", "navigateTo": "people/person/attributes/attributes-page"},
+                {"title": "Subscriptions", "navigateTo": "people/person/subscriptiontypes/subscriptiontypes-page"},
+                {"title": "Contact for Companies", "navigateTo": "people/person/contacts/contacts-page"},
+                {"title": "Committees / Contact Lists", "navigateTo": "people/person/committees/committees-page"},
+                {"title": "Meetings", "navigateTo": "people/person/meetings/meetings-page"},
+                {"title": "Remarks", "navigateTo": "people/person/remarks/remarks-page"},
+                {"title": "Web Access", "navigateTo": "people/person/webaccess/webaccess-page"},
+                {"title": "PAC Authorization", "navigateTo": "people/person/pacauthorization/pacauthorization-page"}
+            ];
+        }
+        else
+        {
+            data = [
+                {"title": "Attributes", "navigateTo": "people/person/attributes/attributes-page"},
+                {"title": "Subscriptions", "navigateTo": "people/person/subscriptiontypes/subscriptiontypes-page"},
+                {"title": "Contact for Companies", "navigateTo": "people/person/contacts/contacts-page"},
+                {"title": "Committees / Contact Lists", "navigateTo": "people/person/committees/committees-page"},
+                {"title": "Meetings", "navigateTo": "people/person/meetings/meetings-page"},
+                {"title": "Remarks", "navigateTo": "people/person/remarks/remarks-page"},
+                {"title": "Web Access", "navigateTo": "people/person/webaccess/webaccess-page"}
+            ];
+        } 
 
         data.forEach(function(dataItem) {
             viewModel.push({

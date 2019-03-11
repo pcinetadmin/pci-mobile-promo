@@ -32,6 +32,7 @@ global.isProfileExecutive = false;
 global.isProfileManager = false;
 global.isProfileAccounting = false;
 global.isProfileMembership = false;
+global.isProfileEngagement = false;
 global.isProfileUser = false;
 global.isExecutive = "N";
 global.companyGroupsSearchText = "";
