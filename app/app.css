@@ -59,12 +59,6 @@ Page {
     width: 100%;
 }
 
-.hr-gray {
-    height: 1;
-    background-color: #ccc;
-    width: 95%;
-}
-
 .hr-dark {
     height: 1;
     background-color: #303030;
@@ -86,8 +80,8 @@ Page {
 }
 
 .ios .button {
-    background: #0075be;
-    border-color: #0075be;
+    background: #eee;
+    border-color: #ccc;
     border-radius: 3;
     border-style: solid;
     border-width: 1;

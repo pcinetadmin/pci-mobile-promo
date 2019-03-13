@@ -6,11 +6,10 @@
             </StackLayout>
             <StackLayout row="1" col="0" orientation="vertical" backgroundColor="#eee" verticalAlignment="bottom" margin="0 10 0 10" borderRadius="5">
                 <StackLayout orientation="horizontal" class="login-field">
-                    <StackLayout width="15%" verticalAlignment="center">
-                        <!-- <Label text="Email" horizontalAlignment="left" /> -->
+                    <StackLayout width="10%" verticalAlignment="center">
                         <Image src="res://email" android:stretch="aspectFill" ios:stretch="none"></Image>
                     </StackLayout>
-                    <StackLayout width="85%" verticalAlignment="center">
+                    <StackLayout width="90%" verticalAlignment="center">
                         <TextField id="email" hint="Email" keyboardType="email" autocorrect="false" autocapitalization="none"
                             text="{{ email }}" width="100%" textAlignment="left"></TextField>
                     </StackLayout>
@@ -18,11 +17,10 @@
             </StackLayout>
             <StackLayout row="2" col="0" orientation="vertical" backgroundColor="#eee" verticalAlignment="bottom" margin="5 10 0 10" borderRadius="5">
                 <StackLayout orientation="horizontal" class="login-field">
-                    <StackLayout width="15%" verticalAlignment="center">
-                        <!-- <Label text="Password" horizontalAlignment="left" /> -->
+                    <StackLayout width="10%" verticalAlignment="center">
                         <Image src="res://password" android:stretch="aspectFill" ios:stretch="none"></Image>
                     </StackLayout>
-                    <StackLayout width="85%" verticalAlignment="center">
+                    <StackLayout width="90%" verticalAlignment="center">
                         <TextField id="password" hint="Password" secure="true" autocorrect="false" autocapitalization="none"
                             text="{{ password }}" width="100%" textAlignment="left"></TextField>
                     </StackLayout>

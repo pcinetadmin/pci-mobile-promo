@@ -35,8 +35,7 @@ function onNavigatedTo(args)
         if (platformModule.isIOS) {
             if (loginViewModel.useTouchId)
             {
-                fingerprintAuth.available().then((result) => 
-                {
+                fingerprintAuth.available().then(
                     fingerprintAuth.verifyFingerprint({
                         message: 'Log on to view Profile information' // optional, shown in the fingerprint dialog (default: 'Scan your finger').
                     }).then(
@@ -50,7 +49,7 @@ function onNavigatedTo(args)
                             dialogs.alert("Fingerprint NOT OK. Error code: " + error.code + ". Error message: " + error.message);
                         }
                     )
-                });
+                );
             }
         }
     } catch(e) {
@@ -103,8 +102,7 @@ function onSigninButtonTap(args) {
             scanType = null;
 
             bindingContext.signIn(scanType);
-        });        
-
+        });
     } catch(e) {
         dialogs.alert({
             title: "Error",
