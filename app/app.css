@@ -119,7 +119,14 @@ Page {
     padding: 10;
 }
 
-.forgot-button {
+.android .forgot-button {
+    background: transparent;
+    border: none;
+    color: #ea092a;
+    font-size: 11;
+}
+
+.ios .forgot-button {
     background: transparent;
     border: none;
     color: #ea092a;
