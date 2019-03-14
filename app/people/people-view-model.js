@@ -24,7 +24,16 @@ function PeopleViewModel(items) {
                     } else {
                         webAccessEndDate = person.WebAccessEndDate.substring(0, person.WebAccessEndDate.indexOf(" "));
                     }
+                    
+                    // The following is necessary, adding space at the end of bio, so it will display properly in the Label with CSS padding.
+                    var bio;
 
+                    if (person.BioPlainText === null || person.BioPlainText.length === 0) {
+                        bio = "";
+                    } else {
+                        bio = person.BioPlainText + new Array(Math.round((person.BioPlainText.length) * 0.005)).join("\n");
+                    }
+                    
                     viewModel.push({
                         personId: person.PersonId,
                         prefix: person.Prefix,
@@ -82,6 +91,7 @@ function PeopleViewModel(items) {
                         extension: person.Extension,
                         cellPhone: person.CellPhone,
                         fax: person.Fax,
+                        bio: bio,
                         secretaryId: person.SecretaryId,
                         secretary: person.Secretary,
                         secretaryTitle: person.SecretaryTitle,

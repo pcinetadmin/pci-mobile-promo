@@ -41,6 +41,9 @@ function CommitteesViewModel(items) {
                         committee: committee.Committee,
                         positionCode: committee.PositionCode,
                         position: committee.Position,
+                        designatedMember: committee.DesignatedMember,
+                        memberTypeCode: committee.MemberTypeCode,
+                        memberType: committee.MemberType,
                         startDate: startDate,
                         endDate: endDate
                     });

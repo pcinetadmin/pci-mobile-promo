@@ -22,8 +22,12 @@
             <ListView items="{{ committeesList }}" height="100%">
                 <ListView.itemTemplate>
                     <StackLayout class="list-view-item">
-                        <Label text="{{ committee }}" textWrap="true" class="list-view-item-main-top" />
-                        <Label text="{{ position }}" class="list-view-item-sub" visibility="{{ committeeListCode === 1 ? 'visible' : 'collapse' }}" />
+                        <StackLayout orientation="horizontal">
+                            <Label text="{{ committee }}" textWrap="true" class="list-view-item-main-top" />
+                            <Label text="&#xf005;" class="fn-list-view-item-small" verticalAlignment="middle" visibility="{{ memberTypeCode === 'M' ? 'visible' : 'collapse' }}" />
+                        </StackLayout>
+                        <!-- <Label text="{{ committee }}" textWrap="true" class="list-view-item-main-top" /> -->
+                        <Label text="{{ designatedMember === 'N' ? positionCode === 10 ? memberType : position : positionCode === 10 ? memberType : position }}" class="list-view-item-sub" visibility="{{ committeeListCode === 1 ? 'visible' : 'collapse' }}" />
                         <Label text="{{ endDate === null ? 'Since ' + startDate : startDate + ' to ' + endDate }}" class="list-view-item-sub" />
                     </StackLayout>
                 </ListView.itemTemplate>

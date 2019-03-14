@@ -16,10 +16,14 @@
                         <GridLayout columns="*, auto" rows="*" class="list-view-item">
                             <StackLayout row="0" col="0" verticalAlignment="middle">
                                 <GridLayout columns="*, auto" rows="auto, auto, auto, *">
-                                    <Label row="0" colSpan="2" text="{{ fullName }}" textWrap="true" class="list-view-item-main-top" />
+                                    <StackLayout row="0" colSpan="2" orientation="horizontal">
+                                        <Label text="{{ fullName }}" textWrap="true" class="list-view-item-main-top" />
+                                        <Label text="&#xf005;" class="fn-list-view-item-small" verticalAlignment="middle" visibility="{{ memberTypeCode === 'M' ? 'visible' : 'collapse' }}" />
+                                    </StackLayout>
+                                    <!-- <Label row="0" colSpan="2" text="{{ fullName }}" textWrap="true" class="list-view-item-main-top" /> -->
                                     <Label row="1" colSpan="2" text="{{ title }}" textWrap="true" class="list-view-item-sub" />
                                     <Label row="2" colSpan="2" text="{{ personCompany }}" textWrap="true" class="list-view-item-sub" />
-                                    <Label row="3" col="0" text="{{ position }}" class="list-view-item-sub" />
+                                    <Label row="3" col="0" text="{{ designatedMember === 'N' ? positionCode === 10 ? memberType : position : positionCode === 10 ? memberType : position }}" class="list-view-item-sub" />
                                     <Label row="3" col="1" text="{{ 'Since ' + startDate }}" class="list-view-item-sub" />
                                 </GridLayout>
                             </StackLayout>

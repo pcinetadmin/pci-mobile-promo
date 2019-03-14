@@ -119,6 +119,13 @@ Page {
     padding: 10;
 }
 
+.forgot-button {
+    background: transparent;
+    border: none;
+    color: #ea092a;
+    font-size: 16;
+}
+
 .navigation-frame Page {
     /* margin-top: 20; fix nested frame spacing */
     background-color: white;
@@ -692,6 +699,11 @@ Page {
     padding-right: 15;
 }
 
+.bio-label {
+    color: #666;
+    font-size: 16;
+}
+
 .android .segmented-bar {
     /* background-color: #ccc; */
     color: #0075be;
@@ -760,6 +772,15 @@ Page {
     color: white;
     font-size: 20;
     height: 44;
+    width: 100%;
+}
+
+.view-title-space {
+    background-color: #0075be;
+    color: white;
+    font-size: 20;
+    height: 44;
+    margin-bottom: 10;
     width: 100%;
 }
 

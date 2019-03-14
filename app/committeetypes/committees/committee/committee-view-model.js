@@ -88,6 +88,9 @@ function CommitteeViewModel(items) {
                     committee: person.Committee,
                     positionCode: person.PositionCode,
                     position: person.Position,
+                    designatedMember: person.DesignatedMember,
+                    memberTypeCode: person.MemberTypeCode,
+                    memberType: person.MemberType,
                     startDate: person.StartDate.substring(0, person.StartDate.indexOf(" ")),
                     endDate: person.EndDate.substring(0, person.EndDate.indexOf(" "))
                 });

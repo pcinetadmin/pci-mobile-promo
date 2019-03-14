@@ -5,6 +5,7 @@ var dialogs = require("ui/dialogs");
 var page;
 var navigationContext;
 var isGroup;
+var hasBio;
 
 var personList = new PersonViewModel([]);
 
@@ -23,11 +24,20 @@ function onNavigatingTo(args) {
     
     fullName.text = navigationContext.fullName;
 
+    if (navigationContext.bio.length > 0)
+    {
+        hasBio = true;
+    }
+    else
+    {
+        hasBio = false;
+    }
+
     if (args.isBackNavigation) {
         // Do Nothing on Back Navigation
     } else {
         personList.empty();
-        personList.load();
+        personList.load(hasBio);
 
         page.bindingContext = pageData;
     }
