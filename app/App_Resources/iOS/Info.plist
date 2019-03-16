@@ -37,7 +37,9 @@
 			<string>UIInterfaceOrientationPortrait</string>
 		</array>
 		<key>UISupportedInterfaceOrientations~ipad</key>
-		<array/>
+		<array>
+			<string>UIInterfaceOrientationPortrait</string>
+		</array>
 		<key>NSFaceIDUsageDescription</key>
 		<string>For easier authentication when using ProMo.</string>
 	</dict>
