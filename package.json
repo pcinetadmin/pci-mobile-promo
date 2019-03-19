@@ -1,6 +1,6 @@
 {
   "name": "promo",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "NativeScript Application",
   "license": "SEE LICENSE IN <your-license-filename>",
   "readme": "NativeScript Application",
@@ -20,10 +20,9 @@
     "nativescript-iqkeyboardmanager": "1.4.0",
     "nativescript-phone": "1.4.0",
     "nativescript-platform-css": "1.6.6",
-    "nativescript-pro-ui": "3.4.1",
     "nativescript-theme-core": "~1.0.4",
-    "nativescript-ui-chart": "3.11.1",
-    "tns-core-modules": "4.0.0"
+    "nativescript-ui-chart": "4.0.0",
+    "tns-core-modules": "5.2.2"
   },
   "devDependencies": {
     "clean-webpack-plugin": "~0.1.19",

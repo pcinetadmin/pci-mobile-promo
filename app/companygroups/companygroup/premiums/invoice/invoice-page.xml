@@ -7,7 +7,7 @@
 
     <ScrollView>
         <GridLayout columns="*" rows="auto, *" width="100%">
-            <StackLayout row="0" col="0" verticalAlignment="center" horizontalAlignment="center" class="view-title-multi">
+            <StackLayout row="0" col="0" verticalAlignment="top" horizontalAlignment="center" class="view-title-multi">
                 <Label id="companyName" text="{{ companyNumber + ' ' + leadCompanyName }}" textWrap="true" style="margin-bottom: 8; margin-top: 8;" />
             </StackLayout>
             <StackLayout row="1" col="0">
