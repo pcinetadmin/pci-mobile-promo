@@ -18,12 +18,15 @@
                     <StackLayout>
                         <GridLayout columns="*, auto" rows="*" class="list-view-item">
                             <StackLayout row="0" col="0" verticalAlignment="middle">
-                                <Label text="{{ fullName }}" textWrap="true" class="list-view-item-main-top" />
-                                <Label text="{{ title }}" textWrap="true" class="list-view-item-sub" />
-                                <Label text="{{ personCompany }}" textWrap="true" class="list-view-item-sub" visibility="{{ personCompany !== companyName ? 'visible' : 'collapse' }}" />
-                                <GridLayout columns="*, auto" rows="*" width="100%">
-                                    <Label row="0" col="0" text="{{ position }}" class="list-view-item-sub" />
-                                    <Label row="0" col="1" text="{{ endDate === null ? 'Since ' + startDate : startDate + ' to ' + endDate }}" class="list-view-item-sub" />
+                                <GridLayout columns="*, auto" rows="auto, auto, auto, *">
+                                    <StackLayout row="0" colSpan="2" orientation="horizontal">
+                                        <Label text="{{ fullName }}" textWrap="true" class="list-view-item-main-top" />
+                                        <Label text="&#xf005;" class="fn-list-view-item-small" verticalAlignment="middle" visibility="{{ memberTypeCode === 'M' ? 'visible' : 'collapse' }}" />
+                                    </StackLayout>
+                                    <Label row="1" colSpan="2" text="{{ title }}" textWrap="true" class="list-view-item-sub" />
+                                    <Label row="2" colSpan="2" text="{{ personCompany }}" textWrap="true" class="list-view-item-sub" visibility="{{ personCompany !== companyName ? 'visible' : 'collapse' }}" />
+                                    <Label row="3" col="0" text="{{ designatedMember === 'N' ? positionCode === 10 ? memberType : position : positionCode === 10 ? memberType : position }}" class="list-view-item-sub" />
+                                    <Label row="3" col="1" text="{{ endDate === null ? 'Since ' + startDate : startDate + ' to ' + endDate }}" class="list-view-item-sub" />
                                 </GridLayout>
                             </StackLayout>
                             <Label row="0" col="1" text="&#xf105;" class="fn-list-view-item" verticalAlignment="middle" visibility="{{ isDeleted ? 'collapse' : 'visible' }}" />

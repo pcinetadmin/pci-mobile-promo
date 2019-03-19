@@ -10,8 +10,9 @@
             <StackLayout row="0" col="0" verticalAlignment="top" horizontalAlignment="center" class="view-title-space">
                 <Label id="fullName" text="{{ fullName }}" horizontalAlignment="center" />
             </StackLayout>
-            <StackLayout row="2" col="0">
-                <Label text="{{ bio }}" editable="false" class="scroll-view-item" textWrap="true" />
+            <!-- <TextView row="1" col="0" text="{{ bio }}" editable="false" class="scroll-view-item" /> -->
+            <StackLayout row="1" col="0">
+                <Label text="{{ bio }}" editable="false" class="scroll-view-item-bio" textWrap="true" />
             </StackLayout>
         </GridLayout>
     </ScrollView>

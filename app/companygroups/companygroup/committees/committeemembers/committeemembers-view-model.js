@@ -108,6 +108,9 @@ function CommitteeMembersViewModel(items) {
                     committee: person.Committee,
                     positionCode: person.PositionCode,
                     position: person.Position,
+                    designatedMember: person.DesignatedMember,
+                    memberTypeCode: person.MemberTypeCode,
+                    memberType: person.MemberType,
                     startDate: startDate,
                     endDate: endDate,
                     isDeleted: isDeleted

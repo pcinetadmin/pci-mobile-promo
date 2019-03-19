@@ -706,6 +706,21 @@ Page {
     padding-right: 15;
 }
 
+.android .scroll-view-item-bio {
+    color: #666;
+    font-size: 14;
+    padding-left: 10;
+    padding-right: 10;
+}
+
+.ios .scroll-view-item-bio {
+    color: #666;
+    font-size: 16;
+    padding-left: 15;
+    padding-right: 15;
+    padding-top: 15;
+}
+
 .bio-label {
     color: #666;
     font-size: 16;

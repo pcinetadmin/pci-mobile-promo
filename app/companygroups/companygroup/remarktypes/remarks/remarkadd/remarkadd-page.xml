@@ -6,7 +6,7 @@
 
     <GridLayout columns="*" rows="*" height="100%" width="100%">
         <StackLayout row="0" col="0" verticalAlignment="top">
-            <StackLayout verticalAlignment="center" horizontalAlignment="center" class="view-title">
+            <StackLayout verticalAlignment="top" horizontalAlignment="center" class="view-title">
                 <Label id="companyName" text="{{ companyName }}" verticalAlignment="center" horizontalAlignment="center" />
             </StackLayout>
             <StackLayout tap="onStackLayoutRemarkLevelTap">
