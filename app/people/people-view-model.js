@@ -18,16 +18,24 @@ function PeopleViewModel(items) {
             data.forEach(function(person) {
                 if (person.PersonId !== null && person.PersonId !== 0) {
                     var webAccessEndDate;
+                    var bio;
 
                     if (person.WebAccessEndDate === null || person.WebAccessEndDate.length === 0) {
                         webAccessEndDate = null;
                     } else {
-                        webAccessEndDate = person.WebAccessEndDate.substring(0, person.WebAccessEndDate.indexOf(" "));
+                        var spaceIndex = person.WebAccessEndDate.indexOf(" ");
+    
+                        if (spaceIndex === -1)
+                        {
+                            webAccessEndDate = person.WebAccessEndDate;
+                        }
+                        else
+                        {
+                            webAccessEndDate = person.WebAccessEndDate.substring(0, person.WebAccessEndDate.indexOf(" "));
+                        }
                     }
                     
                     // The following is necessary, adding space at the end of bio, so it will display properly in the Label with CSS padding.
-                    var bio;
-
                     if (person.BioPlainText === null || person.BioPlainText.length === 0) {
                         bio = "";
                     } else {

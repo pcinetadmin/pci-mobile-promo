@@ -19,9 +19,33 @@ function ContactsViewModel(items) {
 
             data.forEach(function(person) {
                 var showCompanyHeader = false;
+                var webAccessEndDate;
+                var bio;
 
                 if (prevCompanyName !== person.CompanyName) {
                     showCompanyHeader = true;
+                }
+
+                if (person.WebAccessEndDate === null || person.WebAccessEndDate.length === 0) {
+                    webAccessEndDate = null;
+                } else {
+                    var spaceIndex = person.WebAccessEndDate.indexOf(" ");
+
+                    if (spaceIndex === -1)
+                    {
+                        webAccessEndDate = person.WebAccessEndDate;
+                    }
+                    else
+                    {
+                        webAccessEndDate = person.WebAccessEndDate.substring(0, person.WebAccessEndDate.indexOf(" "));
+                    }
+                }
+                
+                // The following is necessary, adding space at the end of bio, so it will display properly in the Label with CSS padding.
+                if (person.BioPlainText === null || person.BioPlainText.length === 0) {
+                    bio = "";
+                } else {
+                    bio = person.BioPlainText + new Array(Math.round((person.BioPlainText.length) * 0.005)).join("\n");
                 }
 
                 viewModel.push({
@@ -42,7 +66,7 @@ function ContactsViewModel(items) {
                     groupName: person.GroupName,
                     webAccessCode: person.WebAccessCode,
                     webAccessGroupType: person.WebAccessGroupType,
-                    webAccessEndDate: person.WebAccessEndDate,
+                    webAccessEndDate: webAccessEndDate,
                     webAccessComment: person.WebAccessComment,
                     webAccess: person.WebAccess,
                     webRegistered: person.WebRegistered,
@@ -81,6 +105,7 @@ function ContactsViewModel(items) {
                     extension: person.Extension,
                     cellPhone: person.CellPhone,
                     fax: person.Fax,
+                    bio: bio,
                     secretaryId: person.SecretaryId,
                     secretary: person.Secretary,
                     secretaryTitle: person.SecretaryTitle,
