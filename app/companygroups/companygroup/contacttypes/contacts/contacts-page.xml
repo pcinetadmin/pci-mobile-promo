@@ -13,7 +13,7 @@
             <ListView items="{{ contactsList }}" itemTap="onItemTap" height="100%" separatorColor="transparent">
                 <ListView.itemTemplate>
                     <StackLayout backgroundColor="white" width="100%">
-                        <StackLayout class="list-view-item-header" visibility="{{ isGroup === 'Y' && showCompanyHeader ? 'visible' : 'collapse' }}">
+                        <StackLayout class="list-view-item-header" visibility="{{ isGroup === 'Y' &amp;&amp; showCompanyHeader ? 'visible' : 'collapse' }}">
                             <Label text="{{ companyName }}" textWrap="true" />
                         </StackLayout>
                         <StackLayout class="list-view-item-header-separator" visibility="{{ showCompanyHeader ? 'collapse' : 'visible' }}"></StackLayout>

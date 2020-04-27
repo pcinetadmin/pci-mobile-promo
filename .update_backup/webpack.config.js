@@ -12,13 +12,12 @@ const hashSalt = Date.now().toString();
 
 module.exports = env => {
     // Add your custom Activities, Services and other android app components here.
-    const appComponents = env.appComponents || [];
-    appComponents.push(...[
+    const appComponents = [
         "tns-core-modules/ui/frame",
         "tns-core-modules/ui/frame/activity",
-    ]);
+    ];
 
-    const platform = env && (env.android && "android" || env.ios && "ios" || env.platform);
+    const platform = env && (env.android && "android" || env.ios && "ios");
     if (!platform) {
         throw new Error("You need to provide a target platform!");
     }
@@ -26,16 +25,13 @@ module.exports = env => {
     const platforms = ["ios", "android"];
     const projectRoot = __dirname;
 
-    if (env.platform) {
-        platforms.push(env.platform);
-    }
-
     // Default destination inside platforms/<platform>/...
     const dist = resolve(projectRoot, nsWebpack.getAppPath(platform, projectRoot));
 
     const {
         // The 'appPath' and 'appResourcesPath' values are fetched from
-        // the nsconfig.json configuration file.
+        // the nsconfig.json configuration file
+        // when bundling with `tns run android|ios --bundle`.
         appPath = "app",
         appResourcesPath = "app/App_Resources",
 
@@ -49,31 +45,16 @@ module.exports = env => {
         hmr, // --env.hmr,
         unitTesting, // --env.unitTesting,
         verbose, // --env.verbose
-        snapshotInDocker, // --env.snapshotInDocker
-        skipSnapshotTools, // --env.skipSnapshotTools
-        compileSnapshot // --env.compileSnapshot
     } = env;
 
-    const useLibs = compileSnapshot;
     const isAnySourceMapEnabled = !!sourceMap || !!hiddenSourceMap;
     const externals = nsWebpack.getConvertedExternals(env.externals);
     const appFullPath = resolve(projectRoot, appPath);
-    const hasRootLevelScopedModules = nsWebpack.hasRootLevelScopedModules({ projectDir: projectRoot });
-    let coreModulesPackageName = "tns-core-modules";
-    const alias = env.alias || {};
-    alias['~'] = appFullPath;
-
-    if (hasRootLevelScopedModules) {
-        coreModulesPackageName = "@nativescript/core";
-        alias["tns-core-modules"] = coreModulesPackageName;
-    }
     const appResourcesFullPath = resolve(projectRoot, appResourcesPath);
 
     const entryModule = nsWebpack.getEntryModule(appFullPath, platform);
     const entryPath = `.${sep}${entryModule}.js`;
-    const entries = env.entries || {};
-    entries.bundle = entryPath;
-
+    const entries = { bundle: entryPath };
     const areCoreModulesExternal = Array.isArray(env.externals) && env.externals.some(e => e.indexOf("tns-core-modules") > -1);
     if (platform === "ios" && !areCoreModulesExternal) {
         entries["tns_modules/tns-core-modules/inspector_modules"] = "inspector_modules";
@@ -115,12 +96,14 @@ module.exports = env => {
             extensions: [".js", ".scss", ".css"],
             // Resolve {N} system modules from tns-core-modules
             modules: [
-                resolve(__dirname, `node_modules/${coreModulesPackageName}`),
+                resolve(__dirname, "node_modules/tns-core-modules"),
                 resolve(__dirname, "node_modules"),
-                `node_modules/${coreModulesPackageName}`,
+                "node_modules/tns-core-modules",
                 "node_modules",
             ],
-            alias,
+            alias: {
+                '~': appFullPath
+            },
             // resolve symlinks to symlinked modules
             symlinks: true
         },
@@ -139,7 +122,6 @@ module.exports = env => {
         devtool: hiddenSourceMap ? "hidden-source-map" : (sourceMap ? "inline-source-map" : "none"),
         optimization: {
             runtimeChunk: "single",
-            noEmitOnErrors: true,
             splitChunks: {
                 cacheGroups: {
                     vendor: {
@@ -179,7 +161,7 @@ module.exports = env => {
         module: {
             rules: [
                 {
-                    include: join(appFullPath, entryPath),
+                    test: nsWebpack.getEntryPathRegExp(appFullPath, entryPath),
                     use: [
                         // Require all Android app components
                         platform === "android" && {
@@ -209,13 +191,13 @@ module.exports = env => {
 
                 {
                     test: /\.css$/,
-                    use: "nativescript-dev-webpack/css2json-loader"
+                    use: { loader: "css-loader", options: { url: false } }
                 },
 
                 {
                     test: /\.scss$/,
                     use: [
-                        "nativescript-dev-webpack/css2json-loader",
+                        { loader: "css-loader", options: { url: false } },
                         "sass-loader"
                     ]
                 },
@@ -268,9 +250,6 @@ module.exports = env => {
             ],
             projectRoot,
             webpackConfig: config,
-            snapshotInDocker,
-            skipSnapshotTools,
-            useLibs
         }));
     }
 

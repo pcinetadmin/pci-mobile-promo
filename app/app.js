@@ -44,7 +44,9 @@ global.remarksSearchText = "";
 global.remarksSearchTextCompany = "";
 global.remarksSearchTextGroup = "";
 
-application.start({ moduleName: "login/login-page" });
+//application.start({ moduleName: "login/login-page" });
+//application.run({ moduleName: "login/login-page" });
+application.run({ moduleName: "app-root" });
 
 /*
 Do not place any code after the application has been started as it will not

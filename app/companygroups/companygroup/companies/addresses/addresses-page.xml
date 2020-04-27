@@ -13,7 +13,7 @@
             <ListView items="{{ addressesList }}" height="100%">
                 <ListView.itemTemplate>
                     <StackLayout class="list-view-item">
-                        <StackLayout visibility="{{ city !== null && city.length > 0 ? 'visible' : 'collapse' }}">
+                        <StackLayout visibility="{{ city !== null &amp;&amp; city.length > 0 ? 'visible' : 'collapse' }}">
                             <StackLayout orientation="horizontal">
                                 <Label text="{{ streetAddress }}" textWrap="true" class="list-view-item-main-top" />
                                 <Label text="&#xf005;" class="fn-list-view-item-small" verticalAlignment="middle" visibility="{{ primaryAddress === '1' ? 'visible' : 'collapse' }}" />
@@ -21,10 +21,10 @@
                             <Label text="{{ city + ', ' + stateCode + ' ' + postalCode }}" textWrap="true" class="list-view-item-main" />
                             <Label text="{{ phoneNumber }}" class="list-view-item-main" />
                         </StackLayout>
-                        <StackLayout visibility="{{ city !== null && city.length > 0 && poBoxCityCode !== null && poBoxCityCode.length > 0 ? 'visible' : 'collapse' }}">
+                        <StackLayout visibility="{{ city !== null &amp;&amp; city.length > 0 &amp;&amp; poBoxCityCode !== null &amp;&amp; poBoxCityCode.length > 0 ? 'visible' : 'collapse' }}">
                             <Label text=" " textWrap="true" class="list-view-item-main" />
                         </StackLayout>
-                        <StackLayout visibility="{{ poBoxCityCode !== null && poBoxCityCode.length > 0 ? 'visible' : 'collapse' }}">
+                        <StackLayout visibility="{{ poBoxCityCode !== null &amp;&amp; poBoxCityCode.length > 0 ? 'visible' : 'collapse' }}">
                             <Label text="{{ poBox }}" textWrap="true" class="list-view-item-main" />
                             <Label text="{{ poBoxCityCode + ', ' + poBoxStateCode + ' ' + poBoxPostalCode }}" textWrap="true" class="list-view-item-main" />
                         </StackLayout>

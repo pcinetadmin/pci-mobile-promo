@@ -35,7 +35,8 @@
                     <Label id="completionDateLabel" row="0" col="1" text="{{ completionDate | dateConverter(dateFormat) }}" class="list-view-item-right" />
                 </GridLayout>
             </StackLayout>
-            <StackLayout tap="onStackLayoutVisitDateTap" visibility="{{ isProfileMembership ? 'visible' : 'collapse' }}">
+            <!-- visibility="{{ isProfileMembership ? 'visible' : 'collapse' }}" - Previously applied to the below StackLayout to hide the Visit Date in certain instances. -->
+            <StackLayout tap="onStackLayoutVisitDateTap">
                 <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">
                     <Label row="0" col="0" text="Visit Date" class="list-view-item-left" />
                     <Label id="visitDateLabel" row="0" col="1" text="{{ visitDate | dateConverter(dateFormat) }}" class="list-view-item-right" />

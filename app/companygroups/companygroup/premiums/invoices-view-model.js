@@ -18,43 +18,51 @@ function InvoicesViewModel(items) {
             const monthList = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
             data.forEach(function(invoice) {
-                var invoiceDateText = invoice.InvoiceDate;
-                var invoiceDate;
-                var invoiceDateFormatted;
-
-                if (invoiceDateText.indexOf(" ") > 0) {
-                    invoiceDateText = invoiceDateText.substring(0, invoiceDateText.indexOf(" "))
+                if (invoice.InvoiceDate == null)
+                {
+                   // Do nothing to return an empty array.
                 }
+                else
+                {
+                    var invoiceDateText = invoice.InvoiceDate;
+                    var invoiceDate;
+                    var invoiceDateFormatted;
 
-                invoiceDate = new Date(invoiceDateText);
+                    if (invoiceDateText.indexOf(" ") > 0) {
+                        invoiceDateText = invoiceDateText.substring(0, invoiceDateText.indexOf(" "))
+                    }
 
-                invoiceDateFormatted = monthList[invoiceDate.getMonth()] + ' ' + invoiceDate.getDate() + ', ' + invoiceDate.getFullYear();
+                    invoiceDate = new Date(invoiceDateText);
+
+                    invoiceDateFormatted = monthList[invoiceDate.getMonth()] + ' ' + invoiceDate.getDate() + ', ' + invoiceDate.getFullYear();
                 
-                viewModel.push({
-                    invoiceId: invoice.InvoiceId,
-                    invoiceDate: invoiceDateFormatted.toUpperCase(),
-                    leadCompanyId: invoice.LeadCompanyId,
-                    leadCompanyName: invoice.LeadCompanyName,
-                    companyNumber: invoice.CompanyNumber,
-                    assessmentPeriodId: invoice.AssessmentPeriodId,
-                    assessmentPeriod: invoice.AssessmentPeriod,
-                    finalAssessment: invoice.FinalAssessment,
-                    fixedAssessment: invoice.FixedAssessment,
-                    totalPayments: -1 * Number(invoice.TotalPayments),
-                    previousBalance: invoice.PreviousBalance,
-                    balanceDue: invoice.BalanceDue,
-                    reinsurerCalcTypeId: invoice.ReinsurerCalcTypeId,
-                    adjustedDwp: invoice.AdjustedDwp,
-                    stateCount: invoice.StateCount,
-                    stateCountRate: invoice.StateCountRate,
-                    stateAssessment: invoice.StateAssessment,
-                    totalBreakdowns: invoice.TotalBreakdowns,
-                    annualAssessment: invoice.AnnualAssessment,
-                    semiAnnualAssessment: invoice.SemiAnnualAssessment,
-                    totalAdjustments: invoice.TotalAdjustments,
-                    semiAnnualAdjustedAssessment: invoice.SemiAnnualAdjustedAssessment,
-                    totalManualAdjustments: invoice.TotalManualAdjustments
-                });
+                    viewModel.push({
+                        invoiceId: invoice.InvoiceId,
+                        invoiceDate: invoiceDateFormatted.toUpperCase(),
+                        leadCompanyId: invoice.LeadCompanyId,
+                        leadCompanyName: invoice.LeadCompanyName,
+                        companyNumber: invoice.CompanyNumber,
+                        assessmentPeriodId: invoice.AssessmentPeriodId,
+                        assessmentPeriod: invoice.AssessmentPeriod,
+                        finalAssessment: invoice.FinalAssessment,
+                        fixedAssessment: invoice.FixedAssessment,
+                        totalPayments: -1 * Number(invoice.TotalPayments),
+                        previousBalance: invoice.PreviousBalance,
+                        balanceDue: invoice.BalanceDue,
+                        reinsurerCalcTypeId: invoice.ReinsurerCalcTypeId,
+                        adjustedDwp: invoice.AdjustedDwp,
+                        stateCount: invoice.StateCount,
+                        stateCountRate: invoice.StateCountRate,
+                        stateAssessment: invoice.StateAssessment,
+                        totalBreakdowns: invoice.TotalBreakdowns,
+                        annualAssessment: invoice.AnnualAssessment,
+                        semiAnnualAssessment: invoice.SemiAnnualAssessment,
+                        totalAdjustments: invoice.TotalAdjustments,
+                        semiAnnualAdjustedAssessment: invoice.SemiAnnualAdjustedAssessment,
+                        totalManualAdjustments: invoice.TotalManualAdjustments
+                    
+                    });
+                }
             });
         }, function (e) {
             dialogs.alert({

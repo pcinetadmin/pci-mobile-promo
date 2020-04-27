@@ -113,6 +113,7 @@ function LoginViewModel() {
 
                         const navigationEntry = {
                             moduleName: "main-page",
+                            //modeleName: "tab-root",
                             clearHistory: true
                         };
 
@@ -136,6 +137,7 @@ function LoginViewModel() {
                                     try
                                     {
                                         frameModule.topmost().navigate(navigationEntry);
+                                        //frameModule.topmost().navigate("tab-root");
                                     }
                                     catch(e)
                                     {
@@ -153,6 +155,7 @@ function LoginViewModel() {
                                     try
                                     {
                                         frameModule.topmost().navigate(navigationEntry);
+                                        //frameModule.topmost().navigate("tab-root");
                                     }
                                     catch(e)
                                     {
@@ -174,6 +177,7 @@ function LoginViewModel() {
                             try
                             {
                                 frameModule.topmost().navigate(navigationEntry);
+                                //frameModule.topmost().navigate("tab-root");
                             }
                             catch(e)
                             {

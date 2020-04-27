@@ -4,10 +4,12 @@ var gridLayout = require("ui/layouts/grid-layout");
 var stackLayout = require("ui/layouts/stack-layout")
 var Label = require("ui/label").Label;
 var dialogs = require("ui/dialogs");
+var orientation = require('nativescript-orientation');
 
 var page;
 
 function onNavigatingTo(args) {
+    orientation.enableRotation();
     page = args.object;
     page._tabs = [];
 
