@@ -15,7 +15,7 @@
                     <StackLayout backgroundColor="white" width="100%">
                         <GridLayout columns="*, auto" rows="*" class="list-view-item">
                             <StackLayout row="0" col="0" verticalAlignment="middle">
-                                <GridLayout columns="*, auto" rows="auto, *" style="{{ subCommitteeFlag === 'Y' ? 'margin-left: 15;' : 'margin-left: 0;' }}">
+                                <GridLayout columns="*, auto" rows="auto, *" style="{{ subCommitteeFlag === 'Y' ? (parentCommitteeTypeCode === '10' ? (committeeTypeCode === '15' ? 'color: #ea092a; margin-left: 30;' : committeeTypeCode === '16' ? 'color: #0075be; margin-left: 30;' : 'color: black; margin-left: 30;') : (committeeTypeCode === '15' ? 'color: #ea092a; margin-left: 15;' : committeeTypeCode === '16' ? 'color: #0075be; margin-left: 15;' : 'color: black; margin-left: 15;')) : 'color: black; margin-left: 0;' }}">
                                     <Label row="0" colSpan="2" text="{{ committeeName }}" textWrap="true" class="list-view-item-main-top" />
                                     <Label row="1" col="0" text="{{ fullName.length === 0 ? 'No PCI Staff Representative' : fullName }}" class="list-view-item-sub" style="{{ fullName.length === 0 ? 'font-style: italic;' : 'font-style: normal;' }}" />
                                     <Label row="1" col="1" text="{{ memberCount + ' Members' }}" class="list-view-item-sub" />

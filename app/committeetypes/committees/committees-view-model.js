@@ -26,6 +26,7 @@ function CommitteesViewModel(items) {
                         committeeStateList: committee.CommitteeStateList,
                         parentCommitteeCode: committee.ParentCommitteeCode,
                         parentCommittee: committee.ParentCommittee,
+                        parentCommitteeTypeCode: committee.ParentCommitteeTypeCode,
                         committeeCode: committee.CommitteeCode,
                         committeeName: committee.CommitteeName,
                         dateFormed: committee.DateFormed,
