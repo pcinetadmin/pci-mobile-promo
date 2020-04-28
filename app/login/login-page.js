@@ -94,9 +94,6 @@ function onSigninButtonTap(args) {
             appSettings.setString("password", "");
         }
 
-        const button = args.object;
-        const bindingContext = button.bindingContext;
-        
         var scanType;
 
         fingerprintAuth.available().then((result) => 

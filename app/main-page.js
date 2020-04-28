@@ -3,7 +3,6 @@ var frame = require("ui/frame");
 var gridLayout = require("ui/layouts/grid-layout");
 var stackLayout = require("ui/layouts/stack-layout")
 var Label = require("ui/label").Label;
-var dialogs = require("ui/dialogs");
 var orientation = require('nativescript-orientation');
 
 var page;
