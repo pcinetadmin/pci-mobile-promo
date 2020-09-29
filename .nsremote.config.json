@@ -1,0 +1,9 @@
+{
+    "circleci": {
+        "httpsRepositoryURL": "https://github.com/pcinetadmin/pci-mobile-promo"
+    },
+    "local": {
+        "CIRCLE_CI_API_ACCESS_TOKEN": "d507c16db9d9a1e78298f272b1e62080585dff63",
+        "GITHUB_ACCESS_TOKEN": "6895320739af9af763e30f338ed75a0b76447fc4"
+    }
+}
