@@ -11,13 +11,13 @@ const application = require("application");
 // Dev, test, prod urls
 const apiLoginUrlDev = "https://sts-dev.pciaa.net/api/pci/signin/issue";
 const apiLoginUrlTest = "https://sts-test.pciaa.net/api/pci/signin/issue";
-const apiLoginUrlProd = "https://sts.pciaa.net/api/pci/signin/issue";
+const apiLoginUrlProd = "https://sts.apci.org/api/pci/signin/issue";
 const apiBaseServiceUrlDev = "https://dev.pciaa.net/pciwebsite/profileapi/";
 const apiBaseServiceUrlTest = "https://test.pciaa.net/pciwebsite/profileapi/";
-const apiBaseServiceUrlProd = "https://www.pciaa.net/pciwebsite/profileapi/";
+const apiBaseServiceUrlProd = "https://www.apci.org/pciwebsite/profileapi/";
 const scopeDev = "http://dev.pciaa.net/";
 const scopeTest = "http://test.pciaa.net/";
-const scopeProd = "http://www.pciaa.net/";
+const scopeProd = "http://www.apci.org/";
 
 // Define all global variables used throughout the entire solution.
 global.apiLoginUrl = apiLoginUrlProd;

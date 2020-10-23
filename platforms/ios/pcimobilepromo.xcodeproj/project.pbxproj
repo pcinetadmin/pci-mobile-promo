@@ -7,31 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		08504198ABD14370B698D0C7 /* TNSWidgets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A5802A98D54358A4BF9C28 /* TNSWidgets.framework */; };
-		15DC39814C4F48B9B54EE4B5 /* NativeScriptEmbedder.m in Sources */ = {isa = PBXBuildFile; fileRef = E72BAB26701C43F6BADB89BC /* NativeScriptEmbedder.m */; };
 		39940D9122C4EF600050DDE1 /* NativeScript.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 39940D8C22C4EAAA0050DDE1 /* NativeScript.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		39940E1C22C5DFFF0050DDE1 /* TKLiveSync.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 39940E1B22C5DFFF0050DDE1 /* TKLiveSync.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		44E34E65414B400EA326A8FD /* password.png in Resources */ = {isa = PBXBuildFile; fileRef = 2358121912BC43D0AD743C12 /* password.png */; };
-		50A4C91166554E01B0C752C5 /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BEC9F5684064034A15722DB /* login.png */; };
-		5DCEB24F89AE456FAE97BB3B /* password@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DCAC74CBAA14DE5A5F000FA /* password@2x.png */; };
-		5EFEB55E56E34222A8969E37 /* TNSChart.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 90855807372D499E982D4B59 /* TNSChart.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		673F7E6045E24E7EA7F2F680 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BD760CC32C44D1A96DC5C58 /* Assets.xcassets */; };
-		6CCB8230DD5143F6900F081A /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = B4CBEF9863244863A2D595FB /* email.png */; };
+		3D1640562AC14C2BB26CC7E9 /* TNSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75CB5E8C2E5C4E559C454E97 /* TNSCore.framework */; };
+		45C50578CA034A3B49DC85B2 /* Pods_pcimobilepromo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C994F36F448E5ADB52B4F7 /* Pods_pcimobilepromo.framework */; };
+		4827977308694DF2BDF4D90E /* password@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B07C511AE54E799C26ADDB /* password@3x.png */; };
+		488170637B7E4558BD4793CD /* NativeScriptEmbedder.m in Sources */ = {isa = PBXBuildFile; fileRef = EDD2DA0189114FB092865B9E /* NativeScriptEmbedder.m */; };
+		49B9AF9F2EC54F529CBA36C0 /* TNSChart.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 89A7F1B6D425421CA8515DB5 /* TNSChart.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		6AA4DE040B344D0D9812FF25 /* login@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD9632F7D5D64E9B88731043 /* login@3x.png */; };
+		6D8E5CBB32DE413F94F64F3C /* build.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = E1EC8D1E074F4E7882CC3AA9 /* build.xcconfig */; };
+		7BDA6158546C40F1931466A4 /* password.png in Resources */ = {isa = PBXBuildFile; fileRef = 16936FDC668C4CD0B5B0A395 /* password.png */; };
 		858B842D18CA22B800AB12DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 858B833A18CA111C00AB12DE /* InfoPlist.strings */; };
-		926C79A3F06DEB525C8EDED1 /* Pods_pcimobilepromo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921F4CA223ADB20FD1DC013E /* Pods_pcimobilepromo.framework */; };
-		946A7FCEF0D84CF59C486BF5 /* login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 694FE137D6DF42A1A9E73870 /* login@2x.png */; };
-		9980DE940E014DED8BE9C179 /* TNSChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90855807372D499E982D4B59 /* TNSChart.framework */; };
-		A3F061C775CE4D218C086D37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F270C1E5E904E3D9E8170FF /* LaunchScreen.storyboard */; };
-		A807C5BA0B754C819854CB23 /* TNSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4162C258C1489184EF0951 /* TNSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		B05F70929A4C467C940DFB7D /* login@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B85559E559B419C87B9AEAD /* login@3x.png */; };
-		B22DA4B4644941ADA9E6D598 /* TNSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4162C258C1489184EF0951 /* TNSCore.framework */; };
-		BB2145655D0B4BD5B37398F2 /* email@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED2F91F349914876827758C3 /* email@3x.png */; };
+		86885B409ACC46598F68A598 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F5BE07B84DA455EAA1B02D0 /* Assets.xcassets */; };
+		9568FFF4768842F39B1D1772 /* email@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D84E7D336424611A4986814 /* email@2x.png */; };
+		97101296DEC24C0999A9045C /* TNSWidgets.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B0FAA14B73A945FCA6B147C6 /* TNSWidgets.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		9B1F3BC72AE24B578C8043BA /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4F22E42C3F4D8099630D03 /* email.png */; };
+		A150F9F0D96E47FB876C6067 /* login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAA4D841168A41F488CA2D2D /* login@2x.png */; };
 		CD45EE7C18DC2D5800FB50C0 /* app in Resources */ = {isa = PBXBuildFile; fileRef = CD45EE7A18DC2D5800FB50C0 /* app */; };
 		CD62955D1BB2678900AE3A93 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CD62955C1BB2678900AE3A93 /* main.m */; };
-		D641C805D3F54C78BC58EF8B /* TNSWidgets.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8A5802A98D54358A4BF9C28 /* TNSWidgets.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		EB872FC20071474AAE2FCF67 /* email@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 638CABB8AA6542B0ABF27267 /* email@2x.png */; };
-		F4028342862E46A5BCE13009 /* password@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0111AD2BF96143B6923FFF68 /* password@3x.png */; };
-		FE2A745CC86947A8910C463A /* build.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D5FB7C0ECA204D2E96158976 /* build.xcconfig */; };
+		DB69FF015A8C45768B847571 /* TNSChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89A7F1B6D425421CA8515DB5 /* TNSChart.framework */; };
+		DF332E455E1E4955A54BFF6D /* TNSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75CB5E8C2E5C4E559C454E97 /* TNSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		DFB8EA3BC7B941E4884BC622 /* TNSWidgets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0FAA14B73A945FCA6B147C6 /* TNSWidgets.framework */; };
+		E4E58DCAF51A4396850E1628 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C7FFB9982ED4F838ACD561F /* LaunchScreen.storyboard */; };
+		EEA20FA47D024F93832B8953 /* password@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAF58168FDA749E9996B46DB /* password@2x.png */; };
+		F402EDC0B5094D3AB8B78D90 /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = 0014C40B7A3C4DB2B4EFAEE2 /* login.png */; };
+		FF7317BBE5DB4031B60AE352 /* email@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BD0AEF69EA549BDAB7A8B1F /* email@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,9 +43,9 @@
 			files = (
 				39940D9122C4EF600050DDE1 /* NativeScript.xcframework in Embed Frameworks */,
 				39940E1C22C5DFFF0050DDE1 /* TKLiveSync.xcframework in Embed Frameworks */,
-				D641C805D3F54C78BC58EF8B /* TNSWidgets.framework in Embed Frameworks */,
-				5EFEB55E56E34222A8969E37 /* TNSChart.framework in Embed Frameworks */,
-				A807C5BA0B754C819854CB23 /* TNSCore.framework in Embed Frameworks */,
+				97101296DEC24C0999A9045C /* TNSWidgets.framework in Embed Frameworks */,
+				49B9AF9F2EC54F529CBA36C0 /* TNSChart.framework in Embed Frameworks */,
+				DF332E455E1E4955A54BFF6D /* TNSCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,49 +53,49 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0111AD2BF96143B6923FFF68 /* password@3x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = image.png; name = "password@3x.png"; path = "pcimobilepromo/Resources/password@3x.png"; sourceTree = "<group>"; };
-		1BEC9F5684064034A15722DB /* login.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = image.png; name = login.png; path = pcimobilepromo/Resources/login.png; sourceTree = "<group>"; };
-		2094601090074691BB504B93 /* module.modulemap */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = "../../node_modules/@nativescript/core/platforms/ios/src/module.modulemap"; sourceTree = "<group>"; };
-		2358121912BC43D0AD743C12 /* password.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = image.png; name = password.png; path = pcimobilepromo/Resources/password.png; sourceTree = "<group>"; };
+		0014C40B7A3C4DB2B4EFAEE2 /* login.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = image.png; name = login.png; path = pcimobilepromo/Resources/login.png; sourceTree = "<group>"; };
+		0C7FFB9982ED4F838ACD561F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = LaunchScreen.storyboard; path = pcimobilepromo/Resources/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0D84E7D336424611A4986814 /* email@2x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = image.png; name = "email@2x.png"; path = "pcimobilepromo/Resources/email@2x.png"; sourceTree = "<group>"; };
+		11F71CE7DE317B6E11D93697 /* Pods-pcimobilepromo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pcimobilepromo.release.xcconfig"; path = "Target Support Files/Pods-pcimobilepromo/Pods-pcimobilepromo.release.xcconfig"; sourceTree = "<group>"; };
+		16936FDC668C4CD0B5B0A395 /* password.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = image.png; name = password.png; path = pcimobilepromo/Resources/password.png; sourceTree = "<group>"; };
+		22C994F36F448E5ADB52B4F7 /* Pods_pcimobilepromo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pcimobilepromo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		391174B521F1D7BF00BA2583 /* nativescript-build.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "nativescript-build.xcconfig"; path = "internal/nativescript-build.xcconfig"; sourceTree = SOURCE_ROOT; };
 		391174B721F1D99900BA2583 /* plugins-release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "plugins-release.xcconfig"; sourceTree = SOURCE_ROOT; };
 		391174B821F1D99900BA2583 /* plugins-debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "plugins-debug.xcconfig"; sourceTree = SOURCE_ROOT; };
 		39940D8122C4E84C0050DDE1 /* pcimobilepromo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = pcimobilepromo.entitlements; sourceTree = "<group>"; };
 		39940D8C22C4EAAA0050DDE1 /* NativeScript.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NativeScript.xcframework; path = internal/NativeScript.xcframework; sourceTree = "<group>"; };
 		39940E1B22C5DFFF0050DDE1 /* TKLiveSync.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TKLiveSync.xcframework; path = internal/TKLiveSync.xcframework; sourceTree = "<group>"; };
-		3B4162C258C1489184EF0951 /* TNSCore.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = TNSCore.framework; path = "$(SRCROOT)/../../node_modules/nativescript-ui-core/platforms/ios/TNSCore.framework"; sourceTree = "<group>"; };
+		3F9BE147F5B7E989FF67D524 /* Pods-pcimobilepromo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pcimobilepromo.debug.xcconfig"; path = "Target Support Files/Pods-pcimobilepromo/Pods-pcimobilepromo.debug.xcconfig"; sourceTree = "<group>"; };
 		42C751E2232B769100186695 /* nativescript-pre-link */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "nativescript-pre-link"; path = "internal/nativescript-pre-link"; sourceTree = SOURCE_ROOT; };
 		42C751E3232B769100186695 /* strip-dynamic-framework-architectures.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = "strip-dynamic-framework-architectures.sh"; path = "internal/strip-dynamic-framework-architectures.sh"; sourceTree = SOURCE_ROOT; };
 		42C751E4232B769100186695 /* nsld.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = nsld.sh; path = internal/nsld.sh; sourceTree = SOURCE_ROOT; };
 		42C751E5232B769100186695 /* nativescript-post-build */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "nativescript-post-build"; path = "internal/nativescript-post-build"; sourceTree = SOURCE_ROOT; };
 		42C751E6232B769100186695 /* nativescript-pre-build */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "nativescript-pre-build"; path = "internal/nativescript-pre-build"; sourceTree = SOURCE_ROOT; };
-		4BD760CC32C44D1A96DC5C58 /* Assets.xcassets */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = pcimobilepromo/Resources/Assets.xcassets; sourceTree = "<group>"; };
-		5F270C1E5E904E3D9E8170FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = LaunchScreen.storyboard; path = pcimobilepromo/Resources/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		638CABB8AA6542B0ABF27267 /* email@2x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = image.png; name = "email@2x.png"; path = "pcimobilepromo/Resources/email@2x.png"; sourceTree = "<group>"; };
-		66214A77EE8EF8EB9DCB4F8C /* Pods-pcimobilepromo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pcimobilepromo.debug.xcconfig"; path = "Target Support Files/Pods-pcimobilepromo/Pods-pcimobilepromo.debug.xcconfig"; sourceTree = "<group>"; };
-		694FE137D6DF42A1A9E73870 /* login@2x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = image.png; name = "login@2x.png"; path = "pcimobilepromo/Resources/login@2x.png"; sourceTree = "<group>"; };
-		6DCAC74CBAA14DE5A5F000FA /* password@2x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = image.png; name = "password@2x.png"; path = "pcimobilepromo/Resources/password@2x.png"; sourceTree = "<group>"; };
-		72365823A3EB4380A3D84A02 /* NativeScriptEmbedder.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = NativeScriptEmbedder.h; path = "../../node_modules/@nativescript/core/platforms/ios/src/NativeScriptEmbedder.h"; sourceTree = "<group>"; };
+		498C8600586E44C991F1836D /* module.modulemap */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = "../../node_modules/@nativescript/core/platforms/ios/src/module.modulemap"; sourceTree = "<group>"; };
+		6F5BE07B84DA455EAA1B02D0 /* Assets.xcassets */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = pcimobilepromo/Resources/Assets.xcassets; sourceTree = "<group>"; };
+		75CB5E8C2E5C4E559C454E97 /* TNSCore.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = TNSCore.framework; path = "$(SRCROOT)/../../node_modules/nativescript-ui-core/platforms/ios/TNSCore.framework"; sourceTree = "<group>"; };
+		7BD0AEF69EA549BDAB7A8B1F /* email@3x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = image.png; name = "email@3x.png"; path = "pcimobilepromo/Resources/email@3x.png"; sourceTree = "<group>"; };
 		858B832E18CA111C00AB12DE /* pcimobilepromo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pcimobilepromo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		858B833918CA111C00AB12DE /* pcimobilepromo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "pcimobilepromo-Info.plist"; sourceTree = "<group>"; };
 		858B833B18CA111C00AB12DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		858B833F18CA111C00AB12DE /* pcimobilepromo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "pcimobilepromo-Prefix.pch"; sourceTree = "<group>"; };
 		858B843318CA22B800AB12DE /* pcimobilepromo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pcimobilepromo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B85559E559B419C87B9AEAD /* login@3x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = image.png; name = "login@3x.png"; path = "pcimobilepromo/Resources/login@3x.png"; sourceTree = "<group>"; };
-		90855807372D499E982D4B59 /* TNSChart.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = TNSChart.framework; path = "$(SRCROOT)/../../node_modules/nativescript-ui-chart/platforms/ios/TNSChart.framework"; sourceTree = "<group>"; };
-		921F4CA223ADB20FD1DC013E /* Pods_pcimobilepromo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pcimobilepromo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89A7F1B6D425421CA8515DB5 /* TNSChart.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = TNSChart.framework; path = "$(SRCROOT)/../../node_modules/nativescript-ui-chart/platforms/ios/TNSChart.framework"; sourceTree = "<group>"; };
+		92B07C511AE54E799C26ADDB /* password@3x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = image.png; name = "password@3x.png"; path = "pcimobilepromo/Resources/password@3x.png"; sourceTree = "<group>"; };
 		930F05DB22671AE300D269DC /* Swift-ObjC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Swift-ObjC-Bridging-Header.h"; path = "internal/Swift-ObjC-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
-		B4CBEF9863244863A2D595FB /* email.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = image.png; name = email.png; path = pcimobilepromo/Resources/email.png; sourceTree = "<group>"; };
+		AB4F22E42C3F4D8099630D03 /* email.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = image.png; name = email.png; path = pcimobilepromo/Resources/email.png; sourceTree = "<group>"; };
+		AD9632F7D5D64E9B88731043 /* login@3x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = image.png; name = "login@3x.png"; path = "pcimobilepromo/Resources/login@3x.png"; sourceTree = "<group>"; };
+		B0FAA14B73A945FCA6B147C6 /* TNSWidgets.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = TNSWidgets.framework; path = "$(SRCROOT)/../../node_modules/@nativescript/core/platforms/ios/TNSWidgets.framework"; sourceTree = "<group>"; };
+		BA2D813E5F5C48C589689E42 /* NativeScriptEmbedder.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = NativeScriptEmbedder.h; path = "../../node_modules/@nativescript/core/platforms/ios/src/NativeScriptEmbedder.h"; sourceTree = "<group>"; };
 		CD45EE7A18DC2D5800FB50C0 /* app */ = {isa = PBXFileReference; lastKnownFileType = folder; path = app; sourceTree = "<group>"; };
 		CD62955C1BB2678900AE3A93 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = internal/main.m; sourceTree = SOURCE_ROOT; };
 		CDD59A261BB43B5D00EC2671 /* build-debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "build-debug.xcconfig"; sourceTree = "<group>"; };
 		CDD59A271BB43B5D00EC2671 /* build-release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "build-release.xcconfig"; sourceTree = "<group>"; };
 		CDF4743E1BA4855C0087EA85 /* build.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = build.xcconfig; sourceTree = "<group>"; };
-		D5FB7C0ECA204D2E96158976 /* build.xcconfig */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.xcconfig; name = build.xcconfig; path = pcimobilepromo/Resources/build.xcconfig; sourceTree = "<group>"; };
-		D8A5802A98D54358A4BF9C28 /* TNSWidgets.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = TNSWidgets.framework; path = "$(SRCROOT)/../../node_modules/@nativescript/core/platforms/ios/TNSWidgets.framework"; sourceTree = "<group>"; };
-		DF8342DA20907AA5BF2B57F7 /* Pods-pcimobilepromo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pcimobilepromo.release.xcconfig"; path = "Target Support Files/Pods-pcimobilepromo/Pods-pcimobilepromo.release.xcconfig"; sourceTree = "<group>"; };
-		E72BAB26701C43F6BADB89BC /* NativeScriptEmbedder.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = NativeScriptEmbedder.m; path = "../../node_modules/@nativescript/core/platforms/ios/src/NativeScriptEmbedder.m"; sourceTree = "<group>"; };
-		ED2F91F349914876827758C3 /* email@3x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = image.png; name = "email@3x.png"; path = "pcimobilepromo/Resources/email@3x.png"; sourceTree = "<group>"; };
+		E1EC8D1E074F4E7882CC3AA9 /* build.xcconfig */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.xcconfig; name = build.xcconfig; path = pcimobilepromo/Resources/build.xcconfig; sourceTree = "<group>"; };
+		EAA4D841168A41F488CA2D2D /* login@2x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = image.png; name = "login@2x.png"; path = "pcimobilepromo/Resources/login@2x.png"; sourceTree = "<group>"; };
+		EAF58168FDA749E9996B46DB /* password@2x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = image.png; name = "password@2x.png"; path = "pcimobilepromo/Resources/password@2x.png"; sourceTree = "<group>"; };
+		EDD2DA0189114FB092865B9E /* NativeScriptEmbedder.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = NativeScriptEmbedder.m; path = "../../node_modules/@nativescript/core/platforms/ios/src/NativeScriptEmbedder.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,28 +103,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08504198ABD14370B698D0C7 /* TNSWidgets.framework in Frameworks */,
-				9980DE940E014DED8BE9C179 /* TNSChart.framework in Frameworks */,
-				B22DA4B4644941ADA9E6D598 /* TNSCore.framework in Frameworks */,
-				926C79A3F06DEB525C8EDED1 /* Pods_pcimobilepromo.framework in Frameworks */,
+				DFB8EA3BC7B941E4884BC622 /* TNSWidgets.framework in Frameworks */,
+				DB69FF015A8C45768B847571 /* TNSChart.framework in Frameworks */,
+				3D1640562AC14C2BB26CC7E9 /* TNSCore.framework in Frameworks */,
+				45C50578CA034A3B49DC85B2 /* Pods_pcimobilepromo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0E73759EB6684BEA92102688 /* nativescript-fingerprint-auth */ = {
+		150BCC0152DA4575A6C46EEA /* @nativescript/core */ = {
 			isa = PBXGroup;
 			children = (
+				BA2D813E5F5C48C589689E42 /* NativeScriptEmbedder.h */,
+				EDD2DA0189114FB092865B9E /* NativeScriptEmbedder.m */,
+				498C8600586E44C991F1836D /* module.modulemap */,
 			);
-			name = "nativescript-fingerprint-auth";
-			sourceTree = "<group>";
-		};
-		1D881C6CEEA945209DEB1936 /* nativescript-iqkeyboardmanager */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "nativescript-iqkeyboardmanager";
+			name = "@nativescript/core";
 			sourceTree = "<group>";
 		};
 		39940D8E22C4EBCC0050DDE1 /* Sources */ = {
@@ -136,14 +132,11 @@
 			name = Sources;
 			sourceTree = "<group>";
 		};
-		3E9BE025C6D2490FB5F932BB /* @nativescript/core */ = {
+		417BD10FCFF8403ABD5EF76F /* nativescript-fingerprint-auth */ = {
 			isa = PBXGroup;
 			children = (
-				72365823A3EB4380A3D84A02 /* NativeScriptEmbedder.h */,
-				E72BAB26701C43F6BADB89BC /* NativeScriptEmbedder.m */,
-				2094601090074691BB504B93 /* module.modulemap */,
 			);
-			name = "@nativescript/core";
+			name = "nativescript-fingerprint-auth";
 			sourceTree = "<group>";
 		};
 		42C751E1232B767700186695 /* Build Scripts */ = {
@@ -158,28 +151,35 @@
 			name = "Build Scripts";
 			sourceTree = "<group>";
 		};
-		4EC7F7925C0843A2B9FFF42A /* nativescript-ui-chart */ = {
+		5389F3BBFF856DC14DD41B6A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3F9BE147F5B7E989FF67D524 /* Pods-pcimobilepromo.debug.xcconfig */,
+				11F71CE7DE317B6E11D93697 /* Pods-pcimobilepromo.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		573FDBC05BF54FF59F6A8E4B /* nativescript-ui-chart */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = "nativescript-ui-chart";
 			sourceTree = "<group>";
 		};
-		5C3035FD9CC944B6B2582FA1 /* @proplugins/nativescript-dom */ = {
+		720DCD4ADB4A48198DAD43F9 /* nativescript-ui-core */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = "@proplugins/nativescript-dom";
+			name = "nativescript-ui-core";
 			sourceTree = "<group>";
 		};
-		7B5A15418B4767429A42B115 /* Pods */ = {
+		79BEE54F2ED3486BAEA11135 /* nativescript-iqkeyboardmanager */ = {
 			isa = PBXGroup;
 			children = (
-				66214A77EE8EF8EB9DCB4F8C /* Pods-pcimobilepromo.debug.xcconfig */,
-				DF8342DA20907AA5BF2B57F7 /* Pods-pcimobilepromo.release.xcconfig */,
 			);
-			name = Pods;
-			path = Pods;
+			name = "nativescript-iqkeyboardmanager";
 			sourceTree = "<group>";
 		};
 		858B832518CA111C00AB12DE = {
@@ -189,14 +189,14 @@
 				858B833718CA111C00AB12DE /* pcimobilepromo */,
 				858B833018CA111C00AB12DE /* Frameworks */,
 				858B832F18CA111C00AB12DE /* Products */,
-				F0AC8AE5E8F74B8DAA84B011 /* TNSNativeSource */,
-				3E9BE025C6D2490FB5F932BB /* @nativescript/core */,
-				0E73759EB6684BEA92102688 /* nativescript-fingerprint-auth */,
-				1D881C6CEEA945209DEB1936 /* nativescript-iqkeyboardmanager */,
-				4EC7F7925C0843A2B9FFF42A /* nativescript-ui-chart */,
-				5C3035FD9CC944B6B2582FA1 /* @proplugins/nativescript-dom */,
-				F92E603D30F046F382B576CB /* nativescript-ui-core */,
-				7B5A15418B4767429A42B115 /* Pods */,
+				B408A0007F954DFEA3994F0B /* TNSNativeSource */,
+				150BCC0152DA4575A6C46EEA /* @nativescript/core */,
+				417BD10FCFF8403ABD5EF76F /* nativescript-fingerprint-auth */,
+				79BEE54F2ED3486BAEA11135 /* nativescript-iqkeyboardmanager */,
+				573FDBC05BF54FF59F6A8E4B /* nativescript-ui-chart */,
+				88E7B9BE986C425CB68DDD34 /* @proplugins/nativescript-dom */,
+				720DCD4ADB4A48198DAD43F9 /* nativescript-ui-core */,
+				5389F3BBFF856DC14DD41B6A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -214,10 +214,10 @@
 			children = (
 				39940E1B22C5DFFF0050DDE1 /* TKLiveSync.xcframework */,
 				39940D8C22C4EAAA0050DDE1 /* NativeScript.xcframework */,
-				D8A5802A98D54358A4BF9C28 /* TNSWidgets.framework */,
-				90855807372D499E982D4B59 /* TNSChart.framework */,
-				3B4162C258C1489184EF0951 /* TNSCore.framework */,
-				921F4CA223ADB20FD1DC013E /* Pods_pcimobilepromo.framework */,
+				B0FAA14B73A945FCA6B147C6 /* TNSWidgets.framework */,
+				89A7F1B6D425421CA8515DB5 /* TNSChart.framework */,
+				75CB5E8C2E5C4E559C454E97 /* TNSCore.framework */,
+				22C994F36F448E5ADB52B4F7 /* Pods_pcimobilepromo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -250,37 +250,37 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		E070579D1B39A9D000214BF1 /* Resources */ = {
+		88E7B9BE986C425CB68DDD34 /* @proplugins/nativescript-dom */ = {
 			isa = PBXGroup;
 			children = (
-				4BD760CC32C44D1A96DC5C58 /* Assets.xcassets */,
-				5F270C1E5E904E3D9E8170FF /* LaunchScreen.storyboard */,
-				D5FB7C0ECA204D2E96158976 /* build.xcconfig */,
-				B4CBEF9863244863A2D595FB /* email.png */,
-				638CABB8AA6542B0ABF27267 /* email@2x.png */,
-				ED2F91F349914876827758C3 /* email@3x.png */,
-				1BEC9F5684064034A15722DB /* login.png */,
-				694FE137D6DF42A1A9E73870 /* login@2x.png */,
-				8B85559E559B419C87B9AEAD /* login@3x.png */,
-				2358121912BC43D0AD743C12 /* password.png */,
-				6DCAC74CBAA14DE5A5F000FA /* password@2x.png */,
-				0111AD2BF96143B6923FFF68 /* password@3x.png */,
 			);
-			name = Resources;
+			name = "@proplugins/nativescript-dom";
 			sourceTree = "<group>";
 		};
-		F0AC8AE5E8F74B8DAA84B011 /* TNSNativeSource */ = {
+		B408A0007F954DFEA3994F0B /* TNSNativeSource */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = TNSNativeSource;
 			sourceTree = "<group>";
 		};
-		F92E603D30F046F382B576CB /* nativescript-ui-core */ = {
+		E070579D1B39A9D000214BF1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6F5BE07B84DA455EAA1B02D0 /* Assets.xcassets */,
+				0C7FFB9982ED4F838ACD561F /* LaunchScreen.storyboard */,
+				E1EC8D1E074F4E7882CC3AA9 /* build.xcconfig */,
+				AB4F22E42C3F4D8099630D03 /* email.png */,
+				0D84E7D336424611A4986814 /* email@2x.png */,
+				7BD0AEF69EA549BDAB7A8B1F /* email@3x.png */,
+				0014C40B7A3C4DB2B4EFAEE2 /* login.png */,
+				EAA4D841168A41F488CA2D2D /* login@2x.png */,
+				AD9632F7D5D64E9B88731043 /* login@3x.png */,
+				16936FDC668C4CD0B5B0A395 /* password.png */,
+				EAF58168FDA749E9996B46DB /* password@2x.png */,
+				92B07C511AE54E799C26ADDB /* password@3x.png */,
 			);
-			name = "nativescript-ui-core";
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,7 +290,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 858B843018CA22B800AB12DE /* Build configuration list for PBXNativeTarget "pcimobilepromo" */;
 			buildPhases = (
-				E3E80F94803B4BEAF7D4A1E1 /* [CP] Check Pods Manifest.lock */,
+				5D7B66683310363FD1DCFC1D /* [CP] Check Pods Manifest.lock */,
 				C97FD7AC1ADE5369004DB2A4 /* NativeScript PreBuild */,
 				858B83F218CA22B800AB12DE /* Sources */,
 				CD62955B1BB2651D00AE3A93 /* NativeScript PreLink */,
@@ -298,7 +298,7 @@
 				858B842C18CA22B800AB12DE /* Resources */,
 				85F5BDFC1A9363BE006B9701 /* Embed Frameworks */,
 				CD3EAD351B05FF060042DBFC /* NativeScript PostBuild */,
-				1E95E740F08BE3F5F13C6C08 /* [CP] Embed Pods Frameworks */,
+				4BE59C6A234401D8F1975C0B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -350,25 +350,25 @@
 			files = (
 				CD45EE7C18DC2D5800FB50C0 /* app in Resources */,
 				858B842D18CA22B800AB12DE /* InfoPlist.strings in Resources */,
-				673F7E6045E24E7EA7F2F680 /* Assets.xcassets in Resources */,
-				A3F061C775CE4D218C086D37 /* LaunchScreen.storyboard in Resources */,
-				FE2A745CC86947A8910C463A /* build.xcconfig in Resources */,
-				6CCB8230DD5143F6900F081A /* email.png in Resources */,
-				EB872FC20071474AAE2FCF67 /* email@2x.png in Resources */,
-				BB2145655D0B4BD5B37398F2 /* email@3x.png in Resources */,
-				50A4C91166554E01B0C752C5 /* login.png in Resources */,
-				946A7FCEF0D84CF59C486BF5 /* login@2x.png in Resources */,
-				B05F70929A4C467C940DFB7D /* login@3x.png in Resources */,
-				44E34E65414B400EA326A8FD /* password.png in Resources */,
-				5DCEB24F89AE456FAE97BB3B /* password@2x.png in Resources */,
-				F4028342862E46A5BCE13009 /* password@3x.png in Resources */,
+				86885B409ACC46598F68A598 /* Assets.xcassets in Resources */,
+				E4E58DCAF51A4396850E1628 /* LaunchScreen.storyboard in Resources */,
+				6D8E5CBB32DE413F94F64F3C /* build.xcconfig in Resources */,
+				9B1F3BC72AE24B578C8043BA /* email.png in Resources */,
+				9568FFF4768842F39B1D1772 /* email@2x.png in Resources */,
+				FF7317BBE5DB4031B60AE352 /* email@3x.png in Resources */,
+				F402EDC0B5094D3AB8B78D90 /* login.png in Resources */,
+				A150F9F0D96E47FB876C6067 /* login@2x.png in Resources */,
+				6AA4DE040B344D0D9812FF25 /* login@3x.png in Resources */,
+				7BDA6158546C40F1931466A4 /* password.png in Resources */,
+				EEA20FA47D024F93832B8953 /* password@2x.png in Resources */,
+				4827977308694DF2BDF4D90E /* password@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1E95E740F08BE3F5F13C6C08 /* [CP] Embed Pods Frameworks */ = {
+		4BE59C6A234401D8F1975C0B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -388,6 +388,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-pcimobilepromo/Pods-pcimobilepromo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5D7B66683310363FD1DCFC1D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-pcimobilepromo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C97FD7AC1ADE5369004DB2A4 /* NativeScript PreBuild */ = {
@@ -435,28 +457,6 @@
 			shellScript = "\"$SRCROOT/internal/nativescript-pre-link\"";
 			showEnvVarsInLog = 0;
 		};
-		E3E80F94803B4BEAF7D4A1E1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-pcimobilepromo-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -465,7 +465,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD62955D1BB2678900AE3A93 /* main.m in Sources */,
-				15DC39814C4F48B9B54EE4B5 /* NativeScriptEmbedder.m in Sources */,
+				488170637B7E4558BD4793CD /* NativeScriptEmbedder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,7 +599,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/pcimobilepromo/pcimobilepromo-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.pciaa.profile;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.pciaa.profile";
 				PRODUCT_NAME = pcimobilepromo;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -638,7 +638,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/pcimobilepromo/pcimobilepromo-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.pciaa.profile;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.pciaa.profile";
 				PRODUCT_NAME = pcimobilepromo;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
