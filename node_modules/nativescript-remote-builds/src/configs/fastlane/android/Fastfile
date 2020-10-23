@@ -1,0 +1,53 @@
+fastlane_version '2.140.0'
+require_relative './common/utils'
+
+platform :android do
+  desc 'Build the Android application.'
+  lane :build do
+
+    buildAppPath = File.expand_path("~/fl_output/{{OUTPUT_APP_FILENAME}}");
+    nativescriptCLICommand = ["tns", "build", "android", "--copy-to", buildAppPath];
+    cliCommandArgs = getCLIArgsFromEnv([
+      "release", "forDevice", "log", "env.local", "env.remotePublish", "clean", "aab", "hmr",
+      "env.snapshot", "env.production", "env.uglify", "env.sourceMap", "env.hiddenSourceMap",
+      "env.hmr", "env.unitTesting", "env.verbose", "env.snapshotInDocker", "env.skipSnapshotTools",
+      "env.compileSnapshot", "env.appPath", "env.appResourcesPath", "key-store-password", "key-store-alias",
+      "key-store-alias-password",
+      ]);
+    nativescriptCLICommand.push(*cliCommandArgs);
+    hasAab = cliCommandArgs.include?("--aab");
+    shouldPublish = cliCommandArgs.include?("--env.remotePublish");
+
+    keyStoreEnvVar = getCLIArgEnvName("key-store");
+    if ENV[keyStoreEnvVar]
+      keyStoreContent = Base64.decode64(ENV[keyStoreEnvVar]);
+      keyStoreFilePath = File.join(".", "__envKeystore");
+      keyStoreDirPath = File.dirname(keyStoreFilePath)
+      unless File.directory?(keyStoreDirPath)
+        FileUtils.mkdir_p(keyStoreDirPath)
+      end
+      File.open(keyStoreFilePath, "wb") do |f|
+        f.write(keyStoreContent)
+      end
+      nativescriptCLICommand.push("--key-store-path", keyStoreFilePath);
+    end
+
+    sh(nativescriptCLICommand);
+
+    if (shouldPublish)
+      track = getEnvVar("IOS_PUBLISH_TRACK") || "beta";
+      releaseStatus = getEnvVar("IOS_PUBLISH_RELEASE_STATUS") || "draft";
+      trackPromoteTo = getEnvVar("IOS_PUBLISH_TRACK_PROMOTE_TO") || "beta";
+      upload_to_play_store(
+        package_name: '{{PROJECT_ID}}',
+        track: track,
+        release_status: releaseStatus,
+        track_promote_to: trackPromoteTo,
+        json_key_data: Base64.decode64(getEnvVar("PLAYSTORE_ACCOUNT_BASE_64_JSON")),
+        aab: hasAab ? buildAppPath : nil,
+        apk: hasAab ? nil : buildAppPath
+      )
+    end
+  end
+ 
+ end
