@@ -2,18 +2,18 @@ BCSymbolMap Version: 2.0
 Apple clang version 12.0.0 (clang-1200.0.32.21)
 /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.1.sdk
 iPhoneOS14.1.sdk
-/Users/pci/Library/Developer/Xcode/DerivedData/pcimobilepromo-gkqgaekfvlynujhemxsfukabpbko/Build/Intermediates.noindex/ArchiveIntermediates/pcimobilepromo/IntermediateBuildFilesPath/Pods.build/Debug-iphoneos/MDFInternationalization.build/DerivedSources/MDFInternationalization_vers.c
-/Users/pci/Documents/pci-mobile-promo/platforms/ios/Pods
+/Users/pci/Library/Developer/Xcode/DerivedData/ProMo-ezdboyydfuvqexawblylwpfaozsp/Build/Intermediates.noindex/ArchiveIntermediates/ProMo/IntermediateBuildFilesPath/Pods.build/Debug-iphoneos/MDFInternationalization.build/DerivedSources/MDFInternationalization_vers.c
+/Users/pci/Documents/ProMo/platforms/ios/Pods
 __OBJC_METACLASS_RO_$_PodsDummy_MDFInternationalization
 __OBJC_CLASS_RO_$_PodsDummy_MDFInternationalization
-/Users/pci/Documents/pci-mobile-promo/platforms/ios/Pods/Target Support Files/MDFInternationalization/MDFInternationalization-dummy.m
+/Users/pci/Documents/ProMo/platforms/ios/Pods/Target Support Files/MDFInternationalization/MDFInternationalization-dummy.m
 _UIEdgeInsetsMake
 _OBJC_CLASSLIST_REFERENCES_$_
 _OBJC_SELECTOR_REFERENCES_
 _OBJC_CLASSLIST_REFERENCES_$_.1
 _OBJC_SELECTOR_REFERENCES_.3
 _OBJC_SELECTOR_REFERENCES_.7
-/Users/pci/Documents/pci-mobile-promo/platforms/ios/Pods/MDFInternationalization/Sources/MDFRTL.m
+/Users/pci/Documents/ProMo/platforms/ios/Pods/MDFInternationalization/Sources/MDFRTL.m
 UIEdgeInsetsMake
 /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIGeometry.h
 MDFInsetsMakeWithLayoutDirection
@@ -28,7 +28,7 @@ _OBJC_SELECTOR_REFERENCES_.2
 _OBJC_SELECTOR_REFERENCES_.4
 __OBJC_$_CATEGORY_CLASS_METHODS_NSLocale_$_MaterialRTL
 __OBJC_$_CATEGORY_NSLocale_$_MaterialRTL
-/Users/pci/Documents/pci-mobile-promo/platforms/ios/Pods/MDFInternationalization/Sources/NSLocale+MaterialRTL.m
+/Users/pci/Documents/ProMo/platforms/ios/Pods/MDFInternationalization/Sources/NSLocale+MaterialRTL.m
 MDFInternationalization/Sources/NSLocale+MaterialRTL.m
 -[NSString(MaterialBidi) mdf_calculatedLanguageDirection]
 _CFRangeMake
@@ -63,7 +63,7 @@ _OBJC_SELECTOR_REFERENCES_.51
 _OBJC_SELECTOR_REFERENCES_.55
 __OBJC_$_CATEGORY_INSTANCE_METHODS_NSString_$_MaterialBidi
 __OBJC_$_CATEGORY_NSString_$_MaterialBidi
-/Users/pci/Documents/pci-mobile-promo/platforms/ios/Pods/MDFInternationalization/Sources/NSString+MaterialBidi.m
+/Users/pci/Documents/ProMo/platforms/ios/Pods/MDFInternationalization/Sources/NSString+MaterialBidi.m
 MDFInternationalization/Sources/NSString+MaterialBidi.m
 CFRangeMake
 /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.1.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers/CFBase.h
@@ -91,7 +91,7 @@ _OBJC_CLASSLIST_REFERENCES_$_.33
 _OBJC_SELECTOR_REFERENCES_.35
 _OBJC_SELECTOR_REFERENCES_.37
 _OBJC_SELECTOR_REFERENCES_.39
-/Users/pci/Documents/pci-mobile-promo/platforms/ios/Pods/MDFInternationalization/Sources/UIImage+MaterialRTL.m
+/Users/pci/Documents/ProMo/platforms/ios/Pods/MDFInternationalization/Sources/UIImage+MaterialRTL.m
 CGRectMake
 /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.1.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGGeometry.h
 MDFRTLFlippedImage
@@ -125,7 +125,7 @@ _OBJC_SELECTOR_REFERENCES_.57
 _OBJC_CLASSLIST_REFERENCES_$_.58
 _OBJC_SELECTOR_REFERENCES_.60
 _OBJC_SELECTOR_REFERENCES_.66
-/Users/pci/Documents/pci-mobile-promo/platforms/ios/Pods/MDFInternationalization/Sources/UIView+MaterialRTL.m
+/Users/pci/Documents/ProMo/platforms/ios/Pods/MDFInternationalization/Sources/UIView+MaterialRTL.m
 MDFInternationalization/Sources/UIView+MaterialRTL.m
 MDFUserInterfaceLayoutDirectionForSemanticContentAttributeRelativeToLayoutDirection
 __ZL15__ARCLite__loadv
