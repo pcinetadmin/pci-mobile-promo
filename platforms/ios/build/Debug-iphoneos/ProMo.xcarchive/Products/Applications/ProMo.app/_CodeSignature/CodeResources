@@ -66,7 +66,7 @@
 		</data>
 		<key>Frameworks/IQKeyboardManager.framework/IQKeyboardManager</key>
 		<data>
-		pXm1gUbwJUxM5s4cN2qbtX0KuKg=
+		aO+gJg5dAeeyKFVSCp3vHPSRTcU=
 		</data>
 		<key>Frameworks/IQKeyboardManager.framework/IQKeyboardManager.bundle/IQButtonBarArrowDown@2x.png</key>
 		<data>
@@ -114,7 +114,7 @@
 		</data>
 		<key>Frameworks/MDFInternationalization.framework/MDFInternationalization</key>
 		<data>
-		+8fparPNHrDE4juZ5EXSKDwcbtY=
+		LkFrXQNboQhRw+j42QG/LQmbpNU=
 		</data>
 		<key>Frameworks/MDFInternationalization.framework/_CodeSignature/CodeResources</key>
 		<data>
@@ -126,7 +126,7 @@
 		</data>
 		<key>Frameworks/MaterialComponents.framework/MaterialComponents</key>
 		<data>
-		VlhlfeicFh4xmMhbkt8PenH4SJk=
+		1/Pc0cUVp+pafLPBMBjz4ek1Re0=
 		</data>
 		<key>Frameworks/MaterialComponents.framework/MaterialTabs.bundle/Resources/ar.lproj/MaterialTabs.strings</key>
 		<dict>
@@ -642,7 +642,7 @@
 		</data>
 		<key>Frameworks/NativeScript.framework/NativeScript</key>
 		<data>
-		0A+3E6vXZM4/tXq9ISt7ixfSXuc=
+		A3/dpQHyG2nJhWBr5luytI+ALbg=
 		</data>
 		<key>Frameworks/NativeScript.framework/_CodeSignature/CodeResources</key>
 		<data>
@@ -654,7 +654,7 @@
 		</data>
 		<key>Frameworks/TKLiveSync.framework/TKLiveSync</key>
 		<data>
-		ePRc3E0h0a5+jxJUX4y+amSe/pE=
+		wVRkOrOBwXS53hiqeDX8dcAwj0E=
 		</data>
 		<key>Frameworks/TKLiveSync.framework/_CodeSignature/CodeResources</key>
 		<data>
@@ -1486,7 +1486,7 @@
 		</data>
 		<key>Frameworks/TNSChart.framework/TNSChart</key>
 		<data>
-		zEPQ6w54gSS1pXxYOe+rYxOknHA=
+		jiZQcX8rmsHBegFEkdi2ZR6ykIM=
 		</data>
 		<key>Frameworks/TNSChart.framework/_CodeSignature/CodeResources</key>
 		<data>
@@ -1690,7 +1690,7 @@
 		</data>
 		<key>Frameworks/TNSCore.framework/TNSCore</key>
 		<data>
-		bGLm94INlPRkFpN61gBF+SAgeN4=
+		+UmRYHcNeDYLJfKFDJzM3oj/Auo=
 		</data>
 		<key>Frameworks/TNSCore.framework/_CodeSignature/CodeResources</key>
 		<data>
@@ -1734,7 +1734,7 @@
 		</data>
 		<key>Frameworks/TNSWidgets.framework/TNSWidgets</key>
 		<data>
-		GcjP97svisr0COf70dEjBPK1HLU=
+		jhnT+fqXXH7h8EVSDTUA33u21Iw=
 		</data>
 		<key>Frameworks/TNSWidgets.framework/_CodeSignature/CodeResources</key>
 		<data>
@@ -1746,7 +1746,7 @@
 		</data>
 		<key>LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		4qsMOEw9tSsOtes3cL+kSiI7RyI=
+		r8LhqylK2STOvzuJQuMwnBMd0M4=
 		</data>
 		<key>LaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -1754,7 +1754,7 @@
 		</data>
 		<key>LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		kEGUu4LIvIVWD0qo0CNwEJMSXzE=
+		ODe7/teIJK73jThtTUei4vdOOs4=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -1956,9 +1956,17 @@
 		<data>
 		NPwcsBU4SqukBZfzG/A+2T8gTIw=
 		</data>
+		<key>app/bundle.ca2d375b9ec21dc3ef01.hot-update.js</key>
+		<data>
+		acIQKhQ46MMEKjxrT40LijU7DiA=
+		</data>
 		<key>app/bundle.js</key>
 		<data>
-		dSasqqV8mcuwHtzS1S22Xhc7l94=
+		eC7pEIlT9/g8/CD5uhHWZKQmTTg=
+		</data>
+		<key>app/ca2d375b9ec21dc3ef01.hot-update.json</key>
+		<data>
+		qvutQJjd0LV7621Bow2l3s6UUu0=
 		</data>
 		<key>app/fonts/fontawesome.ttf</key>
 		<data>
@@ -1966,15 +1974,15 @@
 		</data>
 		<key>app/package.json</key>
 		<data>
-		/c7DlArSD0UBRRWcm3IC92uLRYE=
+		Xih6Tq/LcZOCDqfRaW0J9naUp9M=
 		</data>
 		<key>app/runtime.js</key>
 		<data>
-		rh8skNq6Is0KAsHQF/ccb+JLGhQ=
+		3csBF83aBXdoSDEf+Ggl1VVlJ0c=
 		</data>
 		<key>app/tns_modules/@nativescript/core/inspector_modules.js</key>
 		<data>
-		sLpvcff8RYXMfKy7Fzl1xUBtPqU=
+		pMHYRggwS0pz3GyCtlcrfywpLb4=
 		</data>
 		<key>app/tools/assets/appTemplate-android.png</key>
 		<data>
@@ -1994,7 +2002,11 @@
 		</data>
 		<key>app/vendor.js</key>
 		<data>
-		ZrLzGW/vd3Q3RWfZGVydlHtOJFk=
+		9XBIwXQ2nR2svuKZGXWPqowgteI=
+		</data>
+		<key>app/vendor.js.LICENSE.txt</key>
+		<data>
+		95U3mRUb3pTJqr1UaJ9tn18jSAU=
 		</data>
 		<key>build.xcconfig</key>
 		<data>
@@ -2221,11 +2233,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			pXm1gUbwJUxM5s4cN2qbtX0KuKg=
+			aO+gJg5dAeeyKFVSCp3vHPSRTcU=
 			</data>
 			<key>hash2</key>
 			<data>
-			1az434VNb0WnlVumdvkvMxR5BluqMybX+FR921lDDpA=
+			GshPCzbkluB0aKqZ21uJb6mILZdUgwy0tAUYAd+ylRE=
 			</data>
 		</dict>
 		<key>Frameworks/IQKeyboardManager.framework/IQKeyboardManager.bundle/IQButtonBarArrowDown@2x.png</key>
@@ -2353,11 +2365,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+8fparPNHrDE4juZ5EXSKDwcbtY=
+			LkFrXQNboQhRw+j42QG/LQmbpNU=
 			</data>
 			<key>hash2</key>
 			<data>
-			5na/g2dcaeADiZdUSBSGXvS1163YxjppRG4ou2aj65Y=
+			J99+d9RJ1oFO+bQACn/MlU9qdOfIyXz//log4KWPQgk=
 			</data>
 		</dict>
 		<key>Frameworks/MDFInternationalization.framework/_CodeSignature/CodeResources</key>
@@ -2386,11 +2398,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			VlhlfeicFh4xmMhbkt8PenH4SJk=
+			1/Pc0cUVp+pafLPBMBjz4ek1Re0=
 			</data>
 			<key>hash2</key>
 			<data>
-			amj8YmUqVaXjIWwUhhLNDW+OY2Kz5VJcbk7tfFIMhCc=
+			TFBSU3hDGgOq0NZ1rWsh3MlhDRurGYkvWsqNulMuNE0=
 			</data>
 		</dict>
 		<key>Frameworks/MaterialComponents.framework/MaterialTabs.bundle/Resources/ar.lproj/MaterialTabs.strings</key>
@@ -3147,11 +3159,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			0A+3E6vXZM4/tXq9ISt7ixfSXuc=
+			A3/dpQHyG2nJhWBr5luytI+ALbg=
 			</data>
 			<key>hash2</key>
 			<data>
-			HY1ljmSJQcgB6LyLhWH5Zeg3+jL2eRaPBIwc/Zs22kI=
+			cP6LH/YCzUCrRkUOT2/ImvpRmDRXBmPAOZh3h/vL5Cs=
 			</data>
 		</dict>
 		<key>Frameworks/NativeScript.framework/_CodeSignature/CodeResources</key>
@@ -3180,11 +3192,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ePRc3E0h0a5+jxJUX4y+amSe/pE=
+			wVRkOrOBwXS53hiqeDX8dcAwj0E=
 			</data>
 			<key>hash2</key>
 			<data>
-			5+BF5bpYbKrnlabAgpvLVuGDGKwXMSh0GaQUij9Ztxg=
+			wA9hbdhscyzV2mDRQraWZJ5t0odxda3x9QgkLw+kQcc=
 			</data>
 		</dict>
 		<key>Frameworks/TKLiveSync.framework/_CodeSignature/CodeResources</key>
@@ -5468,11 +5480,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			zEPQ6w54gSS1pXxYOe+rYxOknHA=
+			jiZQcX8rmsHBegFEkdi2ZR6ykIM=
 			</data>
 			<key>hash2</key>
 			<data>
-			XAPZNRO2xID6LGTDP5x7Mjd0UFk33Sg/WBoHsVTWuec=
+			NvSInqal5XHXgw6pEkayFuXTaLMoiNiGje2eWETeE+A=
 			</data>
 		</dict>
 		<key>Frameworks/TNSChart.framework/_CodeSignature/CodeResources</key>
@@ -6029,11 +6041,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			bGLm94INlPRkFpN61gBF+SAgeN4=
+			+UmRYHcNeDYLJfKFDJzM3oj/Auo=
 			</data>
 			<key>hash2</key>
 			<data>
-			9q+E8VkMUwdBfcqam0yFse9LFHlZDiAKJiBotN8pcrc=
+			p+NK8NcDCN9AWt3Iceeop/IV+lCZ+7JHo4L3apkSPDM=
 			</data>
 		</dict>
 		<key>Frameworks/TNSCore.framework/_CodeSignature/CodeResources</key>
@@ -6150,11 +6162,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			GcjP97svisr0COf70dEjBPK1HLU=
+			jhnT+fqXXH7h8EVSDTUA33u21Iw=
 			</data>
 			<key>hash2</key>
 			<data>
-			2S2XZS8LGxUORfsbUaxDXJEz8SKwr4U10hsZD3XHv5I=
+			xXuXxfqr6axeGbO2kVOSolCfVjvbyDeeYWhXzXtK2nU=
 			</data>
 		</dict>
 		<key>Frameworks/TNSWidgets.framework/_CodeSignature/CodeResources</key>
@@ -6172,11 +6184,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			4qsMOEw9tSsOtes3cL+kSiI7RyI=
+			r8LhqylK2STOvzuJQuMwnBMd0M4=
 			</data>
 			<key>hash2</key>
 			<data>
-			aqJXRL/dQFef7/rJ4tKD+wwN1qChCWpO3r/agaL3y1w=
+			Rpl8h+OMaW6/qNkleR64EkVH1C1vrUGC80fKFiSjfZM=
 			</data>
 		</dict>
 		<key>LaunchScreen.storyboardc/Info.plist</key>
@@ -6194,11 +6206,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			kEGUu4LIvIVWD0qo0CNwEJMSXzE=
+			ODe7/teIJK73jThtTUei4vdOOs4=
 			</data>
 			<key>hash2</key>
 			<data>
-			3lqAcKSTt3sJE0OMSa2bxEmpyjC/RicChGuvNc8TskI=
+			dKIMIp9/4V60ofcYGqRPkDu4yxtMP2HG7ZfZ5yJnHfg=
 			</data>
 		</dict>
 		<key>app/App_Resources/Android/drawable-hdpi/background.png</key>
@@ -6740,15 +6752,37 @@
 			q1n/5CNGt5iXax6gPpuyEFnVzPCDc/MmnWZ9L6WoMiY=
 			</data>
 		</dict>
+		<key>app/bundle.ca2d375b9ec21dc3ef01.hot-update.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			acIQKhQ46MMEKjxrT40LijU7DiA=
+			</data>
+			<key>hash2</key>
+			<data>
+			lGgNDGO2XY15KHC6BXtzuCgOQ7u4FxGlhmlSOtY6ApU=
+			</data>
+		</dict>
 		<key>app/bundle.js</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			dSasqqV8mcuwHtzS1S22Xhc7l94=
+			eC7pEIlT9/g8/CD5uhHWZKQmTTg=
 			</data>
 			<key>hash2</key>
 			<data>
-			O5BRGbJCOzFRnpSXJI+xd3+A8KeISdr1dPIrcnFe7Mw=
+			IaUwf7oYFRloxSCOcg9F4ZLsJBrqL7hqqrHxMlIpNpo=
+			</data>
+		</dict>
+		<key>app/ca2d375b9ec21dc3ef01.hot-update.json</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			qvutQJjd0LV7621Bow2l3s6UUu0=
+			</data>
+			<key>hash2</key>
+			<data>
+			QmiqB6JtI9m4l81jehcAL3zAz4Bkn4fnc6sUn4xqq38=
 			</data>
 		</dict>
 		<key>app/fonts/fontawesome.ttf</key>
@@ -6766,33 +6800,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			/c7DlArSD0UBRRWcm3IC92uLRYE=
+			Xih6Tq/LcZOCDqfRaW0J9naUp9M=
 			</data>
 			<key>hash2</key>
 			<data>
-			bFZwlch7u8bRYsW5C/ra3NpPrsreR8PZO/oLCc/llg0=
+			jTEJI1aezZSDCaMpEvO9wUpgqMfNZrYIwkH/ELC9XQM=
 			</data>
 		</dict>
 		<key>app/runtime.js</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			rh8skNq6Is0KAsHQF/ccb+JLGhQ=
+			3csBF83aBXdoSDEf+Ggl1VVlJ0c=
 			</data>
 			<key>hash2</key>
 			<data>
-			6+O3bEwk82kvwuCChIobl0UX5mb/z3IT/7e2zgJ6Yrk=
+			rDriKSGTvwBlECalsDzqShHLK2ER5AQW0nyHoMis4mw=
 			</data>
 		</dict>
 		<key>app/tns_modules/@nativescript/core/inspector_modules.js</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			sLpvcff8RYXMfKy7Fzl1xUBtPqU=
+			pMHYRggwS0pz3GyCtlcrfywpLb4=
 			</data>
 			<key>hash2</key>
 			<data>
-			+AgtUzNtQ3Jklha7UjUjGBEGtJY12W3Ga9j3i6RKmJI=
+			t4XtLOpF2PNGMwn93lZg+dkdbRe9j5Wz79H4Qx4RdcA=
 			</data>
 		</dict>
 		<key>app/tools/assets/appTemplate-android.png</key>
@@ -6843,11 +6877,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ZrLzGW/vd3Q3RWfZGVydlHtOJFk=
+			9XBIwXQ2nR2svuKZGXWPqowgteI=
 			</data>
 			<key>hash2</key>
 			<data>
-			bsB1l9T7z7jbJLRQ0ItYJpd2uGOpgnuzjEzJqPGrUbI=
+			wYLXHjVnDjWhmcJ3voZsD+FAjZAg3/wo/T+/DuHcA/g=
+			</data>
+		</dict>
+		<key>app/vendor.js.LICENSE.txt</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			95U3mRUb3pTJqr1UaJ9tn18jSAU=
+			</data>
+			<key>hash2</key>
+			<data>
+			LZXaksTl3YQIOSc7EO9gLoaZ0nzNmqmDfWzcOkXaw08=
 			</data>
 		</dict>
 		<key>build.xcconfig</key>
