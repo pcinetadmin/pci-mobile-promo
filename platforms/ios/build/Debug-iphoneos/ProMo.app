@@ -1,0 +1,1 @@
+/Users/pci/Library/Developer/Xcode/DerivedData/ProMo-ezdboyydfuvqexawblylwpfaozsp/Build/Intermediates.noindex/ArchiveIntermediates/ProMo/InstallationBuildProductsLocation/Applications/ProMo.app

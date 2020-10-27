@@ -298,14 +298,17 @@ function saveRemark() {
 function dateConverter(value, format) {
     let result = format;
 
-    const day = value.getDate();
+    if (value != null)
+    {
+        const day = value.getDate();
 
-    result = result.replace("DD", day < 10 ? `0${day}` : day);
+        result = result.replace("DD", day < 10 ? `0${day}` : day);
 
-    const month = value.getMonth() + 1;
+        const month = value.getMonth() + 1;
 
-    result = result.replace("MM", month < 10 ? `0${month}` : month);
-    result = result.replace("YYYY", value.getFullYear());
+        result = result.replace("MM", month < 10 ? `0${month}` : month);
+        result = result.replace("YYYY", value.getFullYear());
+    }
 
     return result;
 };
