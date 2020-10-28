@@ -15,3 +15,4 @@ TARGETED_DEVICE_FAMILY = 1,2;
 // Build IPA file for release command:
 // ns build ios --release --for-device --provision e6a0f454-905c-499c-8f55-df0aecaccc93
 // Publish to app store connect command:
+// ns publish ios jonathonleslie@hotmail.com Master76! --appleApplicationSpecificPassword ucnc-hsqy-faud-csif --ipa /Users/pci/Documents/ProMo/platforms/ios/build/Release-iphoneos/ProMo.ipa
