@@ -1,6 +1,6 @@
 if (global.TNS_WEBPACK) {
     // Register tns-core-modules UI framework modules
-    require("bundle-entry-points");
+    require("@nativescript/core/bundle-entry-points");
 
     // register application modules
     // This will register each `root`, `page`, `fragment` postfixed xml, css, js, ts, scss file in the app/ folder

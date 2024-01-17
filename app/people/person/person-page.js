@@ -1,10 +1,9 @@
 const PersonViewModel = require("./person-view-model");
-const observableModule = require("data/observable");
-var frameModule = require("ui/frame");
-var dialogs = require("ui/dialogs");
+const observableModule = require("@nativescript/core/data/observable");
+var frameModule = require("@nativescript/core/ui/frame");
+var dialogs = require("@nativescript/core/ui/dialogs");
 var page;
 var navigationContext;
-var isGroup;
 var hasBio;
 
 var personList = new PersonViewModel([]);

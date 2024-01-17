@@ -1,8 +1,8 @@
 const CommitteeMembersViewModel = require("./committeemembers-view-model");
-const platform = require("platform");
-const ObservableModule = require("data/observable");
-var frameModule = require("ui/frame");
-var dialogs = require("ui/dialogs");
+const platform = require("@nativescript/core/platform");
+const ObservableModule = require("@nativescript/core/data/observable");
+var frameModule = require("@nativescript/core/ui/frame");
+var dialogs = require("@nativescript/core/ui/dialogs");
 
 var page;
 var navigationContext;
@@ -21,20 +21,14 @@ function onNavigatingTo(args) {
         navigationContext = page.navigationContext;
 
         isGroup = navigationContext.isGroup;
-
+        
         page.actionBar.title = "Committee";
 
-        // if (isGroup === "Y") {
-        //     page.actionBar.title = "Group Committees";
-        // } else {
-        //     page.actionBar.title = "Company Committees";
-        // }
-    
         var companyName = page.getViewById("companyName");
         var committee = page.getViewById("committee");
         
         companyName.text = navigationContext.companyName;
-        committee.text = navigationContext.committee; // + "(" + navigationContext.companyId + " : " + isGroup + " : " + navigationContext.committeeCode + ")";
+        committee.text = navigationContext.committee;
 
         if (args.isBackNavigation) {
             // Do Nothing on Back Navigation

@@ -1,7 +1,8 @@
 {
-	"time": "Tue Nov 03 2020 07:30:38 GMT-0600 (Central Standard Time)",
+	"time": "Fri Jan 12 2024 11:21:38 GMT-0600 (Central Standard Time)",
 	"nativePlatformStatus": "3",
 	"changesRequireBuild": true,
-	"projectFileHash": "59330c964241e13be5f96ef7cd0ccc7d8e52be6a6191043b0284f1bdf7b8656e",
-	"changesRequireBuildTime": "Tue Nov 03 2020 07:30:38 GMT-0600 (Central Standard Time)"
+	"projectFileHash": "0c95d819a59b995c5fce5cf6beaa104e68c5d8c50d1cd39279b40de6c5af6e2d",
+	"changesRequireBuildTime": "Fri Jan 12 2024 11:21:38 GMT-0600 (Central Standard Time)",
+	"release": true
 }

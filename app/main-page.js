@@ -1,22 +1,20 @@
-const application = require("application");
-var frame = require("ui/frame");
-var gridLayout = require("ui/layouts/grid-layout");
-var stackLayout = require("ui/layouts/stack-layout")
-var Label = require("ui/label").Label;
-var orientation = require('@proplugins/nativescript-orientation');
+const application = require("@nativescript/core/application");
+var frame = require("@nativescript/core/ui/frame");
+var gridLayout = require("@nativescript/core/ui/layouts/grid-layout");
+var stackLayout = require("@nativescript/core/ui/layouts/stack-layout")
+var Label = require("@nativescript/core/ui/label").Label;
 
 var page;
 
 function onNavigatingTo(args) {
-    orientation.enableRotation();
     page = args.object;
     page._tabs = [];
 
     page.tabItems = [
-        { path: "companygroups/companygroups-page", iconCode: "\uf0e8", label: "Groups", isGroup: "Y" },
-        { path: "companygroups/companygroups-page", iconCode: "\uf0b1", label: "Companies", isGroup: "N" },
-        { path: "people/people-page", iconCode: "\uf007", label: "People", isGroup: "N" },
-        { path: "committeetypes/committeetypes-page", iconCode: "\uf0c0", label: "Committees", isGroup: "N" }
+        { path: "companygroups/groups-page", iconCode: "\uf0e8", label: "Groups" },
+        { path: "companygroups/companies-page", iconCode: "\uf0b1", label: "Companies" },
+        { path: "people/people-page", iconCode: "\uf007", label: "People" },
+        { path: "committeetypes/committeetypes-page", iconCode: "\uf0c0", label: "Committees" }
     ];
 
     var numItems = page.tabItems.length;
@@ -92,7 +90,7 @@ function onNavigatingTo(args) {
         let result = format;
 
         if (value === undefined || value === null) {
-            //result = "";
+            // result = "";
         } else {
             const day = value.getDate();
             result = result.replace("DD", day < 10 ? `0${day}` : day);
@@ -124,8 +122,7 @@ function onNavigatingTo(args) {
     var navigationEntry = {
         moduleName: page.tabItems[0].path,
         context: {
-            reference: "tab",
-            isGroup: page.tabItems[0].isGroup
+            reference: "tab"
         },
         clearHistory: true
     }
@@ -158,8 +155,7 @@ function showTab(tabItem) {
     var navigationEntry = {
         moduleName: tabItem.path,
         context: {
-            reference: "tab",
-            isGroup: tabItem.isGroup
+            reference: "tab"
         },
         clearHistory: true
     }

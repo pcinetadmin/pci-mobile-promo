@@ -1,7 +1,7 @@
 const MetricsViewModel = require("./metrics-view-model");
-const observableModule = require("data/observable");
-var frameModule = require("ui/frame");
-var dialogs = require("ui/dialogs");
+const observableModule = require("@nativescript/core/data/observable");
+var frameModule = require("@nativescript/core/ui/frame");
+var dialogs = require("@nativescript/core/ui/dialogs");
 
 var page;
 var navigationContext;
@@ -21,12 +21,6 @@ function onNavigatingTo(args) {
     isGroup = navigationContext.isGroup;
 
     page.actionBar.title = "Metrics";
-        
-    // if (isGroup === "Y") {
-    //     page.actionBar.title = "Group Metrics";
-    // } else {
-    //     page.actionBar.title = "Company Metrics";
-    // }
     
     var companyName = page.getViewById("companyName");
     
@@ -58,8 +52,8 @@ function onItemTap(args)
         var index = args.index;
         var item = metricsList.getItem(index);
 
-        navigationContext.isGroup = isGroup;
-        
+        // navigationContext.isGroup = isGroup;
+
         const navigationEntry = {
             moduleName: item.navigateTo,
             context: navigationContext,

@@ -1,8 +1,8 @@
 const PremiumsViewModel = require("./premiums-view-model");
 const InvoicesViewModel = require("./invoices-view-model");
-const ObservableModule = require("data/observable");
-var frameModule = require("ui/frame");
-var dialogs = require("ui/dialogs");
+const ObservableModule = require("@nativescript/core/data/observable");
+var frameModule = require("@nativescript/core/ui/frame");
+var dialogs = require("@nativescript/core/ui/dialogs");
 
 var page;
 var navigationContext;
@@ -25,7 +25,7 @@ function onNavigatingTo(args) {
         navigationContext = page.navigationContext;
 
         isGroup = navigationContext.isGroup;
-        
+
         if (global.isProfileAccounting) {
             page.actionBar.title = "Premiums & Assessents";
         } else {
@@ -43,10 +43,6 @@ function onNavigatingTo(args) {
             invoicesList.empty();
         
             pageData.set("isLoading", true);
-
-            // if (navigationContext.companyId === navigationContext.groupId && navigationContext.companyId === navigationContext.companyId0) {
-            //     isGroup = "Y";
-            // }
 
             premiums.load(navigationContext.companyId, isGroup).then(function () {
                 if (premiums.companyId !== null) {
@@ -116,7 +112,7 @@ function onStatesTap(args) {
 
         if (model.companyId !== null) {
             model.isGroup = isGroup;
-            
+
             const navigationEntry = {
                 moduleName: "companygroups/companygroup/premiums/states/states-page",
                 context: model,

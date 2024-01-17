@@ -1,16 +1,16 @@
-const ObservableModule = require("data/observable");
-var ObservableArray = require("data/observable-array").ObservableArray;
-var http = require("http");
-var dialogs = require("ui/dialogs");
+const ObservableModule = require("@nativescript/core/data/observable");
+var ObservableArray = require("@nativescript/core/data/observable-array").ObservableArray;
+var http = require("@nativescript/core/http");
+var dialogs = require("@nativescript/core/ui/dialogs");
 
 function MeetingAttendeesViewModel(items) {
     const viewModel = new ObservableArray(items);
     
     viewModel.load = function(companyId, isGroup, meetingCode) {
         return http.request({
-            url: global.apiBaseServiceUrl + "company/companymeetingattendees?companyId=" + companyId + "&isGroup=" + isGroup + "&meetingCode=" + meetingCode,
+            url: global.apiBaseServiceUrl + "companymeetingattendees?companyId=" + companyId + "&isGroup=" + isGroup + "&meetingCode=" + meetingCode,
             method: "GET",
-            headers: { "Content-Type": "application/json", "Authorization": global.token }
+            headers: { "Content-Type": "application/json", "Authorization": `Bearer ${global.token}` }
         }).then(function (response) {
             var result = response.content.toString();
             var data = JSON.parse(result);

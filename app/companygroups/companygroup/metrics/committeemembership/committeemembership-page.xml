@@ -14,12 +14,12 @@
                 <chart:RadCartesianChart.series>
                     <chart:BarSeries legendTitle="Distinct Committees" showLabels="true" seriesName="Bar" valueProperty="committeeCount" categoryProperty="year" items="{{ committeeMembershipList }}">
                         <chart:BarSeries.labelStyle>
-                            <chart:PointLabelStyle margin="7" fontStyle="Bold" fillColor="transparent" textSize="10" textColor="white" />
+                            <chart:PointLabelStyle margin="7" fontStyle="Bold" fillColor="transparent" textSize="12" textColor="black" />
                         </chart:BarSeries.labelStyle>
                     </chart:BarSeries>
                     <chart:BarSeries legendTitle="Distinct Members" showLabels="true" seriesName="Bar" valueProperty="attendeeCount" categoryProperty="year" items="{{ committeeMembershipList }}">
                         <chart:BarSeries.labelStyle>
-                            <chart:PointLabelStyle margin="7" fontStyle="Bold" fillColor="transparent" textSize="10" textColor="white" />
+                            <chart:PointLabelStyle margin="7" fontStyle="Bold" fillColor="transparent" textSize="12" textColor="black" />
                         </chart:BarSeries.labelStyle>
                     </chart:BarSeries>
                 </chart:RadCartesianChart.series>
@@ -35,11 +35,11 @@
                 <chart:RadCartesianChart.palettes>
                     <chart:Palette seriesName="Bar">
                         <chart:Palette.entries>
-                            <chart:PaletteEntry fillColor="#cc2d30" strokeColor="#666"/>
-                            <chart:PaletteEntry fillColor="#44c8f5" strokeColor="#666"/>
-                            <chart:PaletteEntry fillColor="#35c4af" strokeColor="#666"/>
-                            <chart:PaletteEntry fillColor="#f68320" strokeColor="#666"/>
-                            <chart:PaletteEntry fillColor="#0a6fb0" strokeColor="#666"/>
+                            <chart:PaletteEntry fillColor="#e06c75" strokeColor="#e06c75"/>
+                            <chart:PaletteEntry fillColor="#6fa8dc" strokeColor="#6fa8dc"/>
+                            <chart:PaletteEntry fillColor="#35c4af" strokeColor="#35c4af"/>
+                            <chart:PaletteEntry fillColor="#f68320" strokeColor="#f68320"/>
+                            <chart:PaletteEntry fillColor="#0a6fb0" strokeColor="#0a6fb0"/>
                         </chart:Palette.entries>
                     </chart:Palette>
                 </chart:RadCartesianChart.palettes>

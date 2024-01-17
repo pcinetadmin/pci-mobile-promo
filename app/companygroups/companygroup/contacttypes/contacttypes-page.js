@@ -1,8 +1,8 @@
 const ContactTypesViewModel = require("./contacttypes-view-model");
-const platform = require("platform");
-const ObservableModule = require("data/observable");
-var frameModule = require("ui/frame");
-var dialogs = require("ui/dialogs");
+const platform = require("@nativescript/core/platform");
+const ObservableModule = require("@nativescript/core/data/observable");
+var frameModule = require("@nativescript/core/ui/frame");
+var dialogs = require("@nativescript/core/ui/dialogs");
 
 var page;
 var navigationContext;
@@ -21,15 +21,9 @@ function onNavigatingTo(args) {
         navigationContext = page.navigationContext;
 
         isGroup = navigationContext.isGroup;
-            
+
         page.actionBar.title = "Contact Types";
         
-        // if (isGroup === "Y") {
-        //     page.actionBar.title = "Group Contacts";
-        // } else {
-        //     page.actionBar.title = "Company Contacts";
-        // }
-    
         var companyName = page.getViewById("companyName");
         
         companyName.text = navigationContext.companyName;
@@ -66,9 +60,9 @@ function onItemTap(args) {
     try {
         var view = args.view;
         var model = view.bindingContext;
-
-        model.isGroup = isGroup;
         
+        model.isGroup = isGroup;
+
         const navigationEntry = {
             moduleName: "companygroups/companygroup/contacttypes/contacts/contacts-page",
             context: model,

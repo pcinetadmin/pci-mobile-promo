@@ -1,8 +1,8 @@
 const MeetingAttendeesViewModel = require("./meetingattendees-view-model");
-const platform = require("platform");
-const ObservableModule = require("data/observable");
-var frameModule = require("ui/frame");
-var dialogs = require("ui/dialogs");
+const platform = require("@nativescript/core/platform");
+const ObservableModule = require("@nativescript/core/data/observable");
+var frameModule = require("@nativescript/core/ui/frame");
+var dialogs = require("@nativescript/core/ui/dialogs");
 
 var page;
 var navigationContext;
@@ -24,17 +24,11 @@ function onNavigatingTo(args) {
 
         page.actionBar.title = "Attendees";
 
-        // if (isGroup === "Y") {
-        //     page.actionBar.title = "Group Meetings";
-        // } else {
-        //     page.actionBar.title = "Company Meetings";
-        // }
-    
         var companyName = page.getViewById("companyName");
         var meeting = page.getViewById("meeting");
         
         companyName.text = navigationContext.companyName;
-        meeting.text = navigationContext.meeting; // + "(" + navigationContext.companyId + " : " + isGroup + " : " + navigationContext.meetingCode + ")";
+        meeting.text = navigationContext.meeting;
 
         if (args.isBackNavigation) {
             // Do Nothing on Back Navigation

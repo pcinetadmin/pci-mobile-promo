@@ -21,7 +21,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "IQToolbar.h"
+#import <IQToolbar.h>
 
 #import <UIKit/UIView.h>
 #import <UIKit/UIImage.h>
@@ -41,10 +41,10 @@
 
 @interface UIImage (IQKeyboardToolbarNextPreviousImage)
 
-+(nullable UIImage*)keyboardPreviousiOS9Image;
-+(nullable UIImage*)keyboardNextiOS9Image;
-+(nullable UIImage*)keyboardPreviousiOS10Image;
-+(nullable UIImage*)keyboardNextiOS10Image;
++(nullable UIImage*)keyboardLeftImage;
++(nullable UIImage*)keyboardRightImage;
++(nullable UIImage*)keyboardUpImage;
++(nullable UIImage*)keyboardDownImage;
 
 +(nullable UIImage*)keyboardPreviousImage;
 +(nullable UIImage*)keyboardNextImage;

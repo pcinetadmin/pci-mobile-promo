@@ -1,16 +1,16 @@
-const observableModule = require("data/observable");
-var ObservableArray = require("data/observable-array").ObservableArray;
-var http = require("http");
-var dialogs = require("ui/dialogs");
+const observableModule = require("@nativescript/core/data/observable");
+var ObservableArray = require("@nativescript/core/data/observable-array").ObservableArray;
+var http = require("@nativescript/core/http");
+var dialogs = require("@nativescript/core/ui/dialogs");
 
 function PeopleViewModel(items) {
     const viewModel = new ObservableArray(items);
     
-    viewModel.load = function(filter, isGroup, page, pageSize, companyId) {
+    viewModel.load = function(filter, page, pageSize, companyId, isGroup) {
         return http.request({
-            url: global.apiBaseServiceUrl + "person/personfilter?filter=" + filter.replace(/ /g, "%20").replace(/‘/g, "'").replace(/’/g, "'") + "&isGroup=" + isGroup + "&page=" + page + "&pageSize=" + pageSize + "&companyId=" + companyId,
+            url: global.apiBaseServiceUrl + "personfilter?filter=" + filter.replace(/ /g, "%20").replace(/‘/g, "'").replace(/’/g, "'") + "&isGroup=" + isGroup + "&page=" + page + "&pageSize=" + pageSize + "&companyId=" + companyId,
             method: "GET",
-            headers: { "Content-Type": "application/json", "Authorization": global.token }
+            headers: { "Content-Type": "application/json", "Authorization": `Bearer ${global.token}` }
         }).then(function (response) {
             var result = response.content.toString();
             var data = JSON.parse(result);

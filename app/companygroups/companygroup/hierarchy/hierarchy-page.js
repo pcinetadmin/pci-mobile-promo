@@ -1,7 +1,7 @@
 const HiearchyViewModel = require("./hierarchy-view-model");
-const observableModule = require("data/observable");
-var frameModule = require("ui/frame");
-var dialogs = require("ui/dialogs");
+const observableModule = require("@nativescript/core/data/observable");
+var frameModule = require("@nativescript/core/ui/frame");
+var dialogs = require("@nativescript/core/ui/dialogs");
 var page;
 
 var hierarchyList = new HiearchyViewModel([]);
@@ -58,8 +58,6 @@ function onItemTap(args) {
     try {
         var view = args.view;
         var model = view.bindingContext;
-
-        model.isGroup = "N";
 
         const navigationEntry = {
             moduleName: "companygroups/companygroup/companygroup-page",

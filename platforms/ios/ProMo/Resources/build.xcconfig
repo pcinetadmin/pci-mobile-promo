@@ -1,7 +1,8 @@
 // You can add custom settings here
 // for example you can uncomment the following line to force distribution code signing
 // CODE_SIGN_IDENTITY = iPhone Distribution;
-// PROVISIONING_PROFILE = e6a0f454-905c-499c-8f55-df0aecaccc93;
+// PROVISIONING_PROFILE = 4ed12163-e533-4a17-9221-6adb70f67e61; // e0d4aa8c-448d-404a-a54c-3628e4b49b9d;
+// bundle identifier: net.pciaa.profile
 // To build for device with Xcode you need to specify your development team.
 // DEVELOPMENT_TEAM = G2SMTM65P8;
 ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -13,6 +14,6 @@ TARGETED_DEVICE_FAMILY = 1,2;
 // Provision information command:
 // ns prepare ios --provision
 // Build IPA file for release command:
-// ns build ios --release --for-device --provision e6a0f454-905c-499c-8f55-df0aecaccc93
-// Publish to app store connect command:
-// ns publish ios jonathonleslie@hotmail.com Master76! --appleApplicationSpecificPassword ucnc-hsqy-faud-csif --ipa /Users/pci/Documents/ProMo/platforms/ios/build/Release-iphoneos/ProMo.ipa
+// ns build ios --release --for-device --provision 031f1c9a-d101-4c29-bb58-2b4a6b7d38cf
+// Publish to app store connect command:  USE TRANSPORTER APP INSTEAD
+// ns publish ios jonathonleslie@hotmail.com Master76! --appleApplicationSpecificPassword emaq-pxcw-hpye-lhhl --ipa /Users/pci/Documents/ProMo/platforms/ios/build/Release-iphoneos/ProMo.ipa

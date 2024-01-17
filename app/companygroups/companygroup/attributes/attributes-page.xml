@@ -23,7 +23,7 @@
                     <Label row="0" col="1" text="{{ status }}" horizontalAlignment="right" class="list-view-item-right" />
                 </GridLayout>
                 <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">
-                    <Label row="0" col="0" text="Joined PCI" class="list-view-item-left" />
+                    <Label row="0" col="0" text="Joined APCIA" class="list-view-item-left" />
                     <Label row="0" col="1" text="{{ companyFoundedDate }}" horizontalAlignment="right" class="list-view-item-right" />
                 </GridLayout>
                 <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">
@@ -39,7 +39,7 @@
                     <Label row="0" col="1" text="{{ numberedNaic }}" horizontalAlignment="right" class="list-view-item-right" />
                 </GridLayout>
                 <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">
-                    <Label row="0" col="0" text="PCI #" class="list-view-item-left" />
+                    <Label row="0" col="0" text="APCIA #" class="list-view-item-left" />
                     <Label row="0" col="1" text="{{ numberedNaii }}" horizontalAlignment="right" class="list-view-item-right" />
                 </GridLayout>
                 <GridLayout columns="*, auto" rows="auto" class="list-view-item-form">

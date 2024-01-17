@@ -1,6 +1,6 @@
-const ObservableModule = require("data/observable");
-var http = require("http");
-var dialogs = require("ui/dialogs");
+const ObservableModule = require("@nativescript/core/data/observable");
+var http = require("@nativescript/core/http");
+var dialogs = require("@nativescript/core/ui/dialogs");
 
 function PremiumsViewModel() {
     const viewModel = ObservableModule.fromObject({
@@ -22,9 +22,9 @@ function PremiumsViewModel() {
     
         load: function(companyId, isGroup) {
             return http.request({
-                url: global.apiBaseServiceUrl + "company/companyassessments?companyId=" + companyId + "&isGroup=" + isGroup,
+                url: global.apiBaseServiceUrl + "companyassessments?companyId=" + companyId + "&isGroup=" + isGroup,
                 method: "GET",
-                headers: { "Content-Type": "application/json", "Authorization": global.token }
+                headers: { "Content-Type": "application/json", "Authorization": `Bearer ${global.token}` }
             }).then(function (response) {
                 var result = response.content.toString();
                 var data = JSON.parse(result);

@@ -1,18 +1,11 @@
-const observableModule = require("data/observable");
-var frameModule = require("ui/frame");
+const observableModule = require("@nativescript/core/data/observable");
+var frameModule = require("@nativescript/core/ui/frame");
 
 function onNavigatingTo(args) {
     const page = args.object;
     var navigationContext = page.navigationContext;
 
     page.actionBar.title = "Remark";
-
-    // if (navigationContext.isGroup === "Y")
-    // {
-    //     page.actionBar.title = "Group Remark";
-    // } else {
-    //     page.actionBar.title = "Company Remark";
-    // }
 
     navigationContext.isProfileMembership = global.isProfileMembership;
 

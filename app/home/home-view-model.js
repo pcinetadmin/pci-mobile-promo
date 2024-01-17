@@ -1,4 +1,4 @@
-const observableModule = require("data/observable");
+const observableModule = require("@nativescript/core/data/observable");
 
 function HomeViewModel() {
     const viewModel = observableModule.fromObject({

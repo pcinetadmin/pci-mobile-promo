@@ -1,17 +1,17 @@
-const ObservableModule = require("data/observable");
-var ObservableArray = require("data/observable-array").ObservableArray;
-var http = require("http");
-var dialogs = require("ui/dialogs");
+const ObservableModule = require("@nativescript/core/data/observable");
+var ObservableArray = require("@nativescript/core/data/observable-array").ObservableArray;
+var http = require("@nativescript/core/http");
+var dialogs = require("@nativescript/core/ui/dialogs");
 
 function RemarksViewModel(items) {
     const viewModel = new ObservableArray(items);
     
     viewModel.load = function(filter, personId, isExecutive, page, pageSize, creatorId) {
         return http.request({
-            url: global.apiBaseServiceUrl + "person/personremarksfilter?filter=" + filter.replace(/ /g, "%20") + "&personId=" + personId + 
-                "&isExecutive" + isExecutive + "&page=" + page + "&pageSize=" + pageSize + "&creatorId=" + creatorId,
+            url: global.apiBaseServiceUrl + "personremarksfilter?filter=" + filter.replace(/ /g, "%20") + "&personId=" + personId + 
+                "&isExecutive=" + isExecutive + "&page=" + page + "&pageSize=" + pageSize + "&creatorId=" + creatorId,
             method: "GET",
-            headers: { "Content-Type": "application/json", "Authorization": global.token }
+            headers: { "Content-Type": "application/json", "Authorization": `Bearer ${global.token}` }
         }).then(function (response) {
             var result = response.content.toString();
             var data = JSON.parse(result);

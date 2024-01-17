@@ -1,7 +1,7 @@
-const ObservableModule = require("data/observable");
-var ObservableArray = require("data/observable-array").ObservableArray;
-var http = require("http");
-var dialogs = require("ui/dialogs");
+const ObservableModule = require("@nativescript/core/data/observable");
+var ObservableArray = require("@nativescript/core/data/observable-array").ObservableArray;
+var http = require("@nativescript/core/http");
+var dialogs = require("@nativescript/core/ui/dialogs");
 
 function CompaniesViewModel(items) {
     const viewModel = new ObservableArray(items);
@@ -11,17 +11,17 @@ function CompaniesViewModel(items) {
 
         switch (loadData) {
             case "pacauthorization":
-                requestUrl = global.apiBaseServiceUrl + "company/companypaceligiblecompanies?companyId=" + companyId + "&isGroup=" + isGroup;
+                requestUrl = global.apiBaseServiceUrl + "companypaceligiblecompanies?companyId=" + companyId + "&isGroup=" + isGroup;
                 
                 break;
 
             case "addresses":
-                requestUrl = global.apiBaseServiceUrl + "company/companyaddresscompanies?companyId=" + companyId + "&isGroup=" + isGroup;
+                requestUrl = global.apiBaseServiceUrl + "companyaddresscompanies?companyId=" + companyId + "&isGroup=" + isGroup;
                 
                 break;
 
             default:
-                requestUrl = global.apiBaseServiceUrl + "company/companypaceligiblecompanies?companyId=" + companyId + "&isGroup=" + isGroup;
+                requestUrl = global.apiBaseServiceUrl + "companypaceligiblecompanies?companyId=" + companyId + "&isGroup=" + isGroup;
                 
                 break;
 
@@ -30,7 +30,7 @@ function CompaniesViewModel(items) {
         return http.request({
             url: requestUrl,
             method: "GET",
-            headers: { "Content-Type": "application/json", "Authorization": global.token }
+            headers: { "Content-Type": "application/json", "Authorization": `Bearer ${global.token}` }
         }).then(function (response) {
             var result = response.content.toString();
             var data = JSON.parse(result);

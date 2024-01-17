@@ -9,12 +9,14 @@
 			<array>
 				<string>arm64</string>
 			</array>
+			<key>buildNumber</key>
+			<string>3.5</string>
 			<key>certificate</key>
 			<dict>
 				<key>SHA1</key>
-				<string>0335A015CFFAA7DB9F7C0981A39AB3122EF26FD6</string>
+				<string>F28451FFE10BE0232317BC7A0197BB5845869067</string>
 				<key>dateExpires</key>
-				<string>4/22/21</string>
+				<string>12/26/24</string>
 				<key>type</key>
 				<string>Apple Development</string>
 			</dict>
@@ -25,12 +27,14 @@
 					<array>
 						<string>arm64</string>
 					</array>
+					<key>buildNumber</key>
+					<string>1</string>
 					<key>certificate</key>
 					<dict>
 						<key>SHA1</key>
-						<string>0335A015CFFAA7DB9F7C0981A39AB3122EF26FD6</string>
+						<string>F28451FFE10BE0232317BC7A0197BB5845869067</string>
 						<key>dateExpires</key>
-						<string>4/22/21</string>
+						<string>12/26/24</string>
 						<key>type</key>
 						<string>Apple Development</string>
 					</dict>
@@ -43,66 +47,22 @@
 						<key>name</key>
 						<string>Property Casualty Insurers Association of America</string>
 					</dict>
+					<key>versionNumber</key>
+					<string>6.5.11</string>
 				</dict>
 				<dict>
 					<key>architectures</key>
 					<array>
 						<string>arm64</string>
 					</array>
+					<key>buildNumber</key>
+					<string>1</string>
 					<key>certificate</key>
 					<dict>
 						<key>SHA1</key>
-						<string>0335A015CFFAA7DB9F7C0981A39AB3122EF26FD6</string>
+						<string>F28451FFE10BE0232317BC7A0197BB5845869067</string>
 						<key>dateExpires</key>
-						<string>4/22/21</string>
-						<key>type</key>
-						<string>Apple Development</string>
-					</dict>
-					<key>name</key>
-					<string>MDFInternationalization.framework</string>
-					<key>team</key>
-					<dict>
-						<key>id</key>
-						<string>G2SMTM65P8</string>
-						<key>name</key>
-						<string>Property Casualty Insurers Association of America</string>
-					</dict>
-				</dict>
-				<dict>
-					<key>architectures</key>
-					<array>
-						<string>arm64</string>
-					</array>
-					<key>certificate</key>
-					<dict>
-						<key>SHA1</key>
-						<string>0335A015CFFAA7DB9F7C0981A39AB3122EF26FD6</string>
-						<key>dateExpires</key>
-						<string>4/22/21</string>
-						<key>type</key>
-						<string>Apple Development</string>
-					</dict>
-					<key>name</key>
-					<string>MaterialComponents.framework</string>
-					<key>team</key>
-					<dict>
-						<key>id</key>
-						<string>G2SMTM65P8</string>
-						<key>name</key>
-						<string>Property Casualty Insurers Association of America</string>
-					</dict>
-				</dict>
-				<dict>
-					<key>architectures</key>
-					<array>
-						<string>arm64</string>
-					</array>
-					<key>certificate</key>
-					<dict>
-						<key>SHA1</key>
-						<string>0335A015CFFAA7DB9F7C0981A39AB3122EF26FD6</string>
-						<key>dateExpires</key>
-						<string>4/22/21</string>
+						<string>12/26/24</string>
 						<key>type</key>
 						<string>Apple Development</string>
 					</dict>
@@ -115,18 +75,22 @@
 						<key>name</key>
 						<string>Property Casualty Insurers Association of America</string>
 					</dict>
+					<key>versionNumber</key>
+					<string>1.0</string>
 				</dict>
 				<dict>
 					<key>architectures</key>
 					<array>
 						<string>arm64</string>
 					</array>
+					<key>buildNumber</key>
+					<string>1</string>
 					<key>certificate</key>
 					<dict>
 						<key>SHA1</key>
-						<string>0335A015CFFAA7DB9F7C0981A39AB3122EF26FD6</string>
+						<string>F28451FFE10BE0232317BC7A0197BB5845869067</string>
 						<key>dateExpires</key>
-						<string>4/22/21</string>
+						<string>12/26/24</string>
 						<key>type</key>
 						<string>Apple Development</string>
 					</dict>
@@ -139,19 +103,22 @@
 						<key>name</key>
 						<string>Property Casualty Insurers Association of America</string>
 					</dict>
+					<key>versionNumber</key>
+					<string>1.0</string>
 				</dict>
 				<dict>
 					<key>architectures</key>
 					<array>
-						<string>armv7</string>
 						<string>arm64</string>
 					</array>
+					<key>buildNumber</key>
+					<string>1</string>
 					<key>certificate</key>
 					<dict>
 						<key>SHA1</key>
-						<string>0335A015CFFAA7DB9F7C0981A39AB3122EF26FD6</string>
+						<string>F28451FFE10BE0232317BC7A0197BB5845869067</string>
 						<key>dateExpires</key>
-						<string>4/22/21</string>
+						<string>12/26/24</string>
 						<key>type</key>
 						<string>Apple Development</string>
 					</dict>
@@ -164,19 +131,22 @@
 						<key>name</key>
 						<string>Property Casualty Insurers Association of America</string>
 					</dict>
+					<key>versionNumber</key>
+					<string>1.0</string>
 				</dict>
 				<dict>
 					<key>architectures</key>
 					<array>
-						<string>armv7</string>
 						<string>arm64</string>
 					</array>
+					<key>buildNumber</key>
+					<string>1</string>
 					<key>certificate</key>
 					<dict>
 						<key>SHA1</key>
-						<string>0335A015CFFAA7DB9F7C0981A39AB3122EF26FD6</string>
+						<string>F28451FFE10BE0232317BC7A0197BB5845869067</string>
 						<key>dateExpires</key>
-						<string>4/22/21</string>
+						<string>12/26/24</string>
 						<key>type</key>
 						<string>Apple Development</string>
 					</dict>
@@ -189,19 +159,22 @@
 						<key>name</key>
 						<string>Property Casualty Insurers Association of America</string>
 					</dict>
+					<key>versionNumber</key>
+					<string>1.0</string>
 				</dict>
 				<dict>
 					<key>architectures</key>
 					<array>
-						<string>armv7</string>
 						<string>arm64</string>
 					</array>
+					<key>buildNumber</key>
+					<string>1</string>
 					<key>certificate</key>
 					<dict>
 						<key>SHA1</key>
-						<string>0335A015CFFAA7DB9F7C0981A39AB3122EF26FD6</string>
+						<string>F28451FFE10BE0232317BC7A0197BB5845869067</string>
 						<key>dateExpires</key>
-						<string>4/22/21</string>
+						<string>12/26/24</string>
 						<key>type</key>
 						<string>Apple Development</string>
 					</dict>
@@ -214,6 +187,8 @@
 						<key>name</key>
 						<string>Property Casualty Insurers Association of America</string>
 					</dict>
+					<key>versionNumber</key>
+					<string>1.0</string>
 				</dict>
 			</array>
 			<key>entitlements</key>
@@ -230,7 +205,9 @@
 			<key>profile</key>
 			<dict>
 				<key>UUID</key>
-				<string>37a7e5ab-8151-40c4-ac24-e95da84d297f</string>
+				<string>5a0f7cd6-6b02-4a4c-a1f8-785676668a91</string>
+				<key>dateExpires</key>
+				<string>12/27/24</string>
 				<key>name</key>
 				<string>iOS Team Provisioning Profile: net.pciaa.profile</string>
 			</dict>
@@ -241,6 +218,8 @@
 				<key>name</key>
 				<string>Property Casualty Insurers Association of America</string>
 			</dict>
+			<key>versionNumber</key>
+			<string>3.5.0</string>
 		</dict>
 	</array>
 </dict>

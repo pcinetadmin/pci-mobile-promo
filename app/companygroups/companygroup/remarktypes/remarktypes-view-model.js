@@ -1,16 +1,16 @@
-const ObservableModule = require("data/observable");
-var ObservableArray = require("data/observable-array").ObservableArray;
-var http = require("http");
-var dialogs = require("ui/dialogs");
+const ObservableModule = require("@nativescript/core/data/observable");
+var ObservableArray = require("@nativescript/core/data/observable-array").ObservableArray;
+var http = require("@nativescript/core/http");
+var dialogs = require("@nativescript/core/ui/dialogs");
 
 function RemarkTypesViewModel(items) {
     const viewModel = new ObservableArray(items);
     
     viewModel.load = function(companyId, isGroup, isExecutive, creatorId) {
         return http.request({
-            url: global.apiBaseServiceUrl + "company/companyremarktypes?companyId=" + companyId + "&isGroup=" + isGroup + "&isExecutive=" + isExecutive + "&creatorId=" + creatorId,
+            url: global.apiBaseServiceUrl + "companyremarktypes?companyId=" + companyId + "&isGroup=" + isGroup + "&isExecutive=" + isExecutive + "&creatorId=" + creatorId,
             method: "GET",
-            headers: { "Content-Type": "application/json", "Authorization": global.token }
+            headers: { "Content-Type": "application/json", "Authorization": `Bearer ${global.token}` }
         }).then(function (response) {
             var result = response.content.toString();
             var data = JSON.parse(result);

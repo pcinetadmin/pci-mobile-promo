@@ -1,10 +1,10 @@
-const platform = require("platform");
-const ObservableModule = require("data/observable");
-var ObservableArray = require("data/observable-array").ObservableArray;
-const appModule = require("application");
-var http = require("http");
-var frameModule = require("ui/frame");
-var dialogs = require("ui/dialogs");
+const platform = require("@nativescript/core/platform");
+const ObservableModule = require("@nativescript/core/data/observable");
+var ObservableArray = require("@nativescript/core/data/observable-array").ObservableArray;
+const appModule = require("@nativescript/core/application");
+var http = require("@nativescript/core/http");
+var frameModule = require("@nativescript/core/ui/frame");
+var dialogs = require("@nativescript/core/ui/dialogs");
 
 var page;
 var navigationContext;
@@ -267,9 +267,9 @@ function saveRemark() {
     }
 
     http.request({
-        url: global.apiBaseServiceUrl + "person/insertpersonremark",
+        url: global.apiBaseServiceUrl + "insertpersonremark",
         method: "POST",
-        headers: { "Content-Type": "application/json", "Authorization": global.token },
+        headers: { "Content-Type": "application/json", "Authorization": `Bearer ${global.token}` },
         content: JSON.stringify(pageData)
     }).then(function (response) {
         var result = response.content.toString();
@@ -298,14 +298,12 @@ function saveRemark() {
 function dateConverter(value, format) {
     let result = format;
 
-    if (value != null)
-    {
+    if (value === undefined || value === null) {
+        // result = "";
+    } else {
         const day = value.getDate();
-
         result = result.replace("DD", day < 10 ? `0${day}` : day);
-
         const month = value.getMonth() + 1;
-
         result = result.replace("MM", month < 10 ? `0${month}` : month);
         result = result.replace("YYYY", value.getFullYear());
     }

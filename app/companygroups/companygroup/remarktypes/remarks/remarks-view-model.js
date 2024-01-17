@@ -1,18 +1,18 @@
-const ObservableModule = require("data/observable");
-var ObservableArray = require("data/observable-array").ObservableArray;
-var http = require("http");
-var dialogs = require("ui/dialogs");
+const ObservableModule = require("@nativescript/core/data/observable");
+var ObservableArray = require("@nativescript/core/data/observable-array").ObservableArray;
+var http = require("@nativescript/core/http");
+var dialogs = require("@nativescript/core/ui/dialogs");
 
 function RemarksViewModel(items) {
     const viewModel = new ObservableArray(items);
     
     viewModel.load = function(filter, companyId, isGroup, isExecutive, page, pageSize, remarkTypeCode, creatorId) {
         return http.request({
-            url: global.apiBaseServiceUrl + "company/companyremarksfilter?filter=" + filter.replace(/ /g, "%20") + "&companyId=" + companyId + 
-                "&isGroup=" + isGroup + "&isExecutive" + isExecutive + "&page=" + page + "&pageSize=" + pageSize + 
+            url: global.apiBaseServiceUrl + "companyremarksfilter?filter=" + filter.replace(/ /g, "%20") + "&companyId=" + companyId + 
+                "&isGroup=" + isGroup + "&isExecutive=" + isExecutive + "&page=" + page + "&pageSize=" + pageSize + 
                 "&remarkTypeCode=" + remarkTypeCode + "&creatorId=" + creatorId,
             method: "GET",
-            headers: { "Content-Type": "application/json", "Authorization": global.token }
+            headers: { "Content-Type": "application/json", "Authorization": `Bearer ${global.token}` }
         }).then(function (response) {
             var result = response.content.toString();
             var data = JSON.parse(result);

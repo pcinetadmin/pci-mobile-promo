@@ -1,7 +1,7 @@
 const CommitteesViewModel = require("./committees-view-model");
-const observableModule = require("data/observable");
-var frameModule = require("ui/frame");
-var dialogs = require("ui/dialogs");
+const observableModule = require("@nativescript/core/data/observable");
+var frameModule = require("@nativescript/core/ui/frame");
+var dialogs = require("@nativescript/core/ui/dialogs");
 
 var page;
 var navigationContext;
@@ -22,13 +22,7 @@ function onNavigatingTo(args) {
         isGroup = navigationContext.isGroup;
 
         page.actionBar.title = "Committees";
-            
-        // if (isGroup === "Y") {
-        //     page.actionBar.title = "Group Committees";
-        // } else {
-        //     page.actionBar.title = "Company Committees";
-        // }
-    
+        
         var companyName = page.getViewById("companyName");
         
         companyName.text = navigationContext.companyName;
@@ -98,7 +92,7 @@ function onItemTap(args) {
         var model = view.bindingContext;
 
         model.isGroup = isGroup;
-        
+
         const navigationEntry = {
             moduleName: "companygroups/companygroup/committees/committeemembers/committeemembers-page",
             context: model,

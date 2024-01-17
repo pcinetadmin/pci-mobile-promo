@@ -1,11 +1,11 @@
 const PeopleViewModel = require("./people-view-model");
-const platform = require("platform");
-const ObservableModule = require("data/observable");
-var gestures = require("ui/gestures");
-var frameModule = require("ui/frame");
-var http = require("http");
-var dialogs = require("ui/dialogs");
-var email = require("nativescript-email");
+const platform = require("@nativescript/core/platform");
+const ObservableModule = require("@nativescript/core/data/observable");
+var gestures = require("@nativescript/core/ui/gestures");
+var frameModule = require("@nativescript/core/ui/frame");
+var http = require("@nativescript/core/http");
+var dialogs = require("@nativescript/core/ui/dialogs");
+var email = require("@nativescript/email");
 var phone = require("nativescript-phone");
 
 const MIN_X = -80;
@@ -89,7 +89,7 @@ function onNavigatingTo(args) {
 
             pageData.set("isLoading", true);
 
-            peopleList.load(peopleSearchText, isGroup, 1, peoplePageSize, companyId).then(function () {
+            peopleList.load(peopleSearchText, 1, peoplePageSize, companyId, isGroup).then(function () {
                 pageData.set("isLoading", false);
             });
 
@@ -145,7 +145,7 @@ function onSubmit(args) {
     
     pageData.set("isLoading", true);
 
-    peopleList.load(peopleSearchText, isGroup, 1, peoplePageSize, companyId).then(function (){
+    peopleList.load(peopleSearchText, 1, peoplePageSize, companyId, isGroup).then(function (){
         pageData.set("isLoading", false);
 
         peopleSearchSubmitted = true;
@@ -173,7 +173,7 @@ function onClear(args) {
         
         pageData.set("isLoading", true);
 
-        peopleList.load(peopleSearchText, isGroup, 1, peoplePageSize, companyId).then(function (){
+        peopleList.load(peopleSearchText, 1, peoplePageSize, companyId, isGroup).then(function (){
             pageData.set("isLoading", false);
 
             peopleSearchSubmitted = false;
@@ -238,7 +238,7 @@ function onLoadMoreItems(args) {
 
         pageData.set("isLoading", true);
 
-        peopleList.load(peopleSearchText, isGroup, peoplePageNumber, peoplePageSize, companyId).then(function (){
+        peopleList.load(peopleSearchText, peoplePageNumber, peoplePageSize, companyId, isGroup).then(function (){
             pageData.set("isLoading", false);
         });
     } catch(e) {
@@ -320,9 +320,9 @@ function onRemarkClick(args) {
 
         if (global.logonId === null) {
             return http.request({
-                url: global.apiBaseServiceUrl + "person/personinfo?personId=" + global.personId,
+                url: global.apiBaseServiceUrl + "personinfo?personId=" + global.personId,
                 method: "GET",
-                headers: { "Content-Type": "application/json", "Authorization": global.token }
+                headers: { "Content-Type": "application/json", "Authorization": `Bearer ${global.token}` }
             }).then(function (response) {
                 var result = response.content.toString();
                 var data = JSON.parse(result);

@@ -6,23 +6,25 @@ purpose of the file is to pass control to the app’s first module.
 
 require("./bundle-config");
 require("@proplugins/nativescript-platform-css");
-const application = require("application");
+const application = require("@nativescript/core/application");
 
 // Dev, test, prod urls
-const apiLoginUrlDev = "https://sts-dev.pciaa.net/api/pci/signin/issue";
-const apiLoginUrlTest = "https://sts-test.pciaa.net/api/pci/signin/issue";
-const apiLoginUrlProd = "https://sts.apci.org/api/pci/signin/issue";
-const apiBaseServiceUrlDev = "https://dev.pciaa.net/pciwebsite/profileapi/";
-const apiBaseServiceUrlTest = "https://test.pciaa.net/pciwebsite/profileapi/";
-const apiBaseServiceUrlProd = "https://www.apci.org/pciwebsite/profileapi/";
-const scopeDev = "http://dev.pciaa.net/";
-const scopeTest = "http://test.pciaa.net/";
-const scopeProd = "http://www.apci.org/";
+const auth0ClientIDDev = "QOlSmmDcgTcX6avB2xIq5rBE7MmC0aR6";
+const auth0ClientIDPreprod = "TPrMc2bWH45E2vxMlBkpSp5mD2x0y0uV";
+const auth0ClientIDProd = "daCV2GFeu7I5VUgifaepdraVSX4z9oEf";
+const auth0DomainDev = "https://dev-login.apci.org/";
+const auth0DomainPreprod = "https://preprod-login.apci.org/";
+const auth0DomainProd = "https://login.apci.org/";
+const apiBaseServiceUrlDev = "https://api-dev.apci.org/";
+const apiBaseServiceUrlPreprod = "https://api-preprod.apci.org/";
+const apiBaseServiceUrlProd = "https://api.apci.org/";
 
 // Define all global variables used throughout the entire solution.
-global.apiLoginUrl = apiLoginUrlProd;
-global.apiBaseServiceUrl = apiBaseServiceUrlProd;
-global.scope = scopeProd;
+global.auth0ClientID = auth0ClientIDProd;
+global.auth0Domain = auth0DomainProd;
+global.auth0RoleIdentifier = "https://apcia.org/roles";
+global.apiAudienceUrl = apiBaseServiceUrlProd;
+global.apiBaseServiceUrl = apiAudienceUrl + "api/promo/";
 global.token = null;
 global.personId = null;
 global.currentUser = null;
@@ -35,8 +37,8 @@ global.isProfileMembership = false;
 global.isProfileEngagement = false;
 global.isProfileUser = false;
 global.isExecutive = "N";
-global.companyGroupsSearchText = "";
-global.companyGroupsSearchTextCompany = "";
+global.groupsSearchText = "";
+global.companiesSearchTextCompany = "";
 global.peopleSearchText = "";
 global.peopleSearchTextCompany = "";
 global.peopleSearchTextGroup = "";

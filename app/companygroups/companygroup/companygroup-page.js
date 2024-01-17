@@ -1,7 +1,7 @@
 const CompanyGroupViewModel = require("./companygroup-view-model");
-const observableModule = require("data/observable");
-var frameModule = require("ui/frame");
-var dialogs = require("ui/dialogs");
+const observableModule = require("@nativescript/core/data/observable");
+var frameModule = require("@nativescript/core/ui/frame");
+var dialogs = require("@nativescript/core/ui/dialogs");
 
 var page;
 var navigationContext;
@@ -17,9 +17,13 @@ var pageData = new observableModule.fromObject({
 function onNavigatingTo(args) {
     page = args.object;
     navigationContext = page.navigationContext;
-
-    isGroup = navigationContext.isGroup;
-        
+    
+    if (navigationContext.companyName === navigationContext.groupName) {
+        isGroup = "Y";
+    } else {
+        isGroup = "N";
+    }
+    
     if (isGroup === "Y") {
         page.actionBar.title = "Group";
     } else {
@@ -30,15 +34,15 @@ function onNavigatingTo(args) {
     
     companyName.text = navigationContext.companyName;
 
-    if (args.isBackNavigation) {
-        // Do Nothing on Back Navigation
-    } else {
+    // if (args.isBackNavigation) {
+    //     // Do Nothing on Back Navigation
+    // } else {
         companyGroupList.empty();
 
         companyGroupList.load(isGroup);
 
         page.bindingContext = pageData;
-    }
+    // }
 }
 
 function onBackTap(args) {
@@ -56,8 +60,8 @@ function onItemTap(args)
         var index = args.index;
         var item = companyGroupList.getItem(index);
 
-        navigationContext.isGroup = isGroup;
         navigationContext.loadData = item.loadData;
+        navigationContext.isGroup = isGroup;
         
         const navigationEntry = {
             moduleName: item.navigateTo,

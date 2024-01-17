@@ -1,6 +1,6 @@
-const observableModule = require("data/observable");
-var ObservableArray = require("data/observable-array").ObservableArray;
-var dialogs = require("ui/dialogs");
+const observableModule = require("@nativescript/core/data/observable");
+var ObservableArray = require("@nativescript/core/data/observable-array").ObservableArray;
+var dialogs = require("@nativescript/core/ui/dialogs");
 
 function MetricsViewModel(items) {
     const viewModel = new ObservableArray(items);

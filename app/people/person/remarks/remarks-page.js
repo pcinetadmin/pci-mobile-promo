@@ -1,9 +1,9 @@
 const RemarksViewModel = require("./remarks-view-model");
-const platform = require("platform");
-const ObservableModule = require("data/observable");
-var http = require("http");
-var frameModule = require("ui/frame");
-var dialogs = require("ui/dialogs");
+const platform = require("@nativescript/core/platform");
+const ObservableModule = require("@nativescript/core/data/observable");
+var http = require("@nativescript/core/http");
+var frameModule = require("@nativescript/core/ui/frame");
+var dialogs = require("@nativescript/core/ui/dialogs");
 
 var page;
 var navigationContext;
@@ -92,9 +92,9 @@ function onAddTap(args) {
     {
         if (global.logonId === null) {
             return http.request({
-                url: global.apiBaseServiceUrl + "person/personinfo?personId=" + global.personId,
+                url: global.apiBaseServiceUrl + "personinfo?personId=" + global.personId,
                 method: "GET",
-                headers: { "Content-Type": "application/json", "Authorization": global.token }
+                headers: { "Content-Type": "application/json", "Authorization": `Bearer ${global.token}` }
             }).then(function (response) {
                 var result = response.content.toString();
                 var data = JSON.parse(result);
